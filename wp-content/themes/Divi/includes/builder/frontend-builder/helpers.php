@@ -167,6 +167,7 @@ function et_fb_backend_helpers() {
 			'logoutUrl'                => esc_url( wp_logout_url() ),
 			'logoutUrlRedirect'        => esc_url( wp_logout_url( $current_url ) ),
 			'themeOptionsUrl'          => esc_url( et_pb_get_options_page_link() ),
+			'builderPreviewStyle'      => ET_BUILDER_URI . '/styles/preview.css',
 		),
 		'nonces'                       => array(
 			'moduleContactFormSubmit'  => wp_create_nonce( 'et-pb-contact-form-submit' ),
@@ -179,6 +180,7 @@ function et_fb_backend_helpers() {
 			'processImportedData'      => wp_create_nonce( 'et_fb_process_imported_data_nonce' ),
 			'retrieveLibraryModules'   => wp_create_nonce( 'et_fb_retrieve_library_modules_nonce' ),
 			'saveLibraryModules'       => wp_create_nonce( 'et_fb_save_library_modules_nonce' ),
+			'preview'                  => wp_create_nonce( 'et_pb_preview_nonce' ),
 		),
 		'conditionalTags'              => et_fb_conditional_tag_params(),
 		'currentPage'                  => et_fb_current_page_params(),
@@ -357,10 +359,6 @@ function et_fb_backend_helpers() {
 				'right'                => esc_html__( 'Right', 'et_builder' ),
 				'bottom'               => esc_html__( 'Bottom', 'et_builder' ),
 				'left'                 => esc_html__( 'Left', 'et_builder' ),
-			),
-			'toggle'                   => array(
-				'yes'                  => esc_html__( 'Yes', 'et_builder' ),
-				'no'                   => esc_html__( 'No', 'et_builder' ),
 			),
 			'colorpicker'              => array(
 				'clear'                => esc_html__( 'Clear', 'et_builder' ),
@@ -551,8 +549,17 @@ function et_fb_backend_helpers() {
 			),
 		),
 		'unsavedConfirmation' => esc_html__( 'Unsaved changes will be lost if you leave the Divi Builder at this time.', 'et_builder' ),
+		'libraryLoadError'    => esc_html__( 'Error loading Library items from server. Please refresh the page and try again.', 'et_builder' ),
 	);
 
 	// Pass helpers via localization.
 	wp_localize_script( 'et-frontend-builder', 'ETBuilderBackend', $helpers );
 }
+
+if ( ! function_exists( 'et_fb_fix_plugin_conflicts' ) ) :
+function et_fb_fix_plugin_conflicts() {
+	// Disable Autoptimize plugin
+	remove_action( 'init', 'autoptimize_start_buffering', -1 );
+	remove_action( 'template_redirect', 'autoptimize_start_buffering', 2 );
+}
+endif;

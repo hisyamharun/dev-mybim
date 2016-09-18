@@ -655,12 +655,13 @@ class ET_Builder_Element {
 			$et_fb_processing_shortcode_object = false;
 			$raw_child_content = $content;
 			$content = $this->_shortcode_callback( $atts, $content, $function_name_processed );
+			$executed_shortcode = do_shortcode( $content );
 			$processed_content = false !== $global_shortcode_content ? $global_shortcode_content : $this->shortcode_content;
 			$attrs['content_new'] = array_key_exists( 'content_new', $this->whitelisted_fields ) ? $processed_content : et_fb_process_shortcode( $processed_content, $address, $global_parent, $global_parent_type );
 			$et_fb_processing_shortcode_object = true;
 		} else {
 			$processed_content = false !== $global_shortcode_content ? $global_shortcode_content : $this->shortcode_content;
-			$content = array_key_exists( 'content_new', $this->whitelisted_fields ) ? $processed_content : et_fb_process_shortcode( $processed_content, $address, $global_parent, $global_parent_type );
+			$content = array_key_exists( 'content_new', $this->whitelisted_fields ) || 'et_pb_code' === $function_name_processed || 'et_pb_fullwidth_code' === $function_name_processed ? $processed_content : et_fb_process_shortcode( $processed_content, $address, $global_parent, $global_parent_type );
 		}
 
 		if ( is_array( $content ) ) {
@@ -3537,6 +3538,21 @@ class ET_Builder_Element {
 		return $modules;
 	}
 
+	static function get_fb_unsupported_modules() {
+		$parent_modules = self::get_parent_modules();
+		$unsupported_modules_array = array();
+
+		foreach( $parent_modules as $post_type => $post_type_modules ) {
+			foreach ( $post_type_modules as $module_slug => $module ) {
+				if ( ! isset( $module->fb_support ) || ! $module->fb_support ) {
+					$unsupported_modules_array[] = $module_slug;
+				}
+			}
+		}
+
+		return array_unique( $unsupported_modules_array );
+	}
+
 	static function get_parent_shortcodes( $post_type ) {
 		$shortcodes = array();
 		$parent_modules = self::get_parent_modules( $post_type );
@@ -4028,6 +4044,11 @@ class ET_Builder_Element {
 	}
 
 	static function set_style( $function_name, $style ) {
+		// do not process all the styles if FB enabled. Only those for modules without fb support
+		if ( et_fb_is_enabled() && ! in_array( $function_name, self::get_fb_unsupported_modules() ) ) {
+			return;
+		}
+
 		$order_class_name = self::get_module_order_class( $function_name );
 
 		// Prepend .et_divi_builder class before all CSS rules in the Divi Builder plugin

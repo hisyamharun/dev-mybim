@@ -81,6 +81,11 @@
 
 				<div id="et-secondary-menu">
 				<?php
+					
+					if ( '' !== $et_secondary_nav ) {
+						echo $et_secondary_nav;
+					}
+
 					if ( ! $et_contact_info_defined && true === $show_header_social_icons ) {
 						get_template_part( 'includes/social_icons', 'header' );
 					} else if ( $et_contact_info_defined && true === $show_header_social_icons ) {
@@ -100,9 +105,7 @@
 						);
 					}
 
-					if ( '' !== $et_secondary_nav ) {
-						echo $et_secondary_nav;
-					}
+					
 
 					et_show_cart_total();
 				?>

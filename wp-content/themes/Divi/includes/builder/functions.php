@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ET_BUILDER_PRODUCT_VERSION' ) ) {
 	// Note, when this is updated, you must also update corresponding version in builder.js: `window.et_builder_version`
-	define( 'ET_BUILDER_PRODUCT_VERSION', '3.0' );
+	define( 'ET_BUILDER_PRODUCT_VERSION', '3.0.6' );
 }
 
 if ( ! defined( 'ET_BUILDER_VERSION' ) ) {
@@ -539,7 +539,13 @@ function et_pb_process_computed_property() {
 
 	// $_POST['depends_on'] is a single dimensional assoc array created by jQuery.ajax data param, sanatize each key and value, they will both be strings
 	foreach ( $depends_on as $key => $value ) {
-		$depends_on[ sanitize_text_field( $key ) ] = sanitize_text_field( $value );
+
+		// correctly sanitize the strings with %date variable. sanitize_text_field will strip the '%da' and '%date' will be saved as 'te'.
+		$prepared_value = str_replace( '%date', '___et-fb-date___', $value );
+		$sanitized_value = str_replace( '___et-fb-date___', '%date', sanitize_text_field( $prepared_value ) );
+
+		$depends_on[ sanitize_text_field( $key ) ] = $sanitized_value;
+
 	}
 	$module_slug       = sanitize_text_field( $_POST['module_type'] );
 	$post_type         = sanitize_text_field( $_POST['post_type'] );
@@ -633,7 +639,11 @@ function et_fb_process_to_shortcode( $object, $options = array(), $library_item_
 			if ( isset( $font_icon_fields[ $item['type'] ][ $attribute ] ) ) {
 				$value = esc_attr( $value );
 			} else {
-				$value = sanitize_text_field( $value );
+				// correctly sanitize the strings with %date variable. sanitize_text_field will strip the '%da' and '%date' will be saved as 'te'.
+				$prepared_value = str_replace( '%date', '___et-fb-date___', $value );
+				$sanitized_value = str_replace( '___et-fb-date___', '%date', sanitize_text_field( $prepared_value ) );
+
+				$value = $sanitized_value;
 			}
 
 			// handle content
@@ -1906,9 +1916,7 @@ function et_pb_add_builder_page_js_css(){
 		$force_cache_value = false;
 	}
 
-	// $force_cache_update = false !== $force_cache_value ? $force_cache_value : ET_BUILDER_FORCE_CACHE_PURGE;
-
-	$force_cache_update = true;
+	$force_cache_update = false !== $force_cache_value ? $force_cache_value : ET_BUILDER_FORCE_CACHE_PURGE;
 
 	// delete et_pb_clear_templates_cache option it's not needed anymore
 	et_delete_option( 'et_pb_clear_templates_cache' );
