@@ -1,0 +1,448 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CodePinch - WP Error Fix\n"
+"POT-Creation-Date: 2016-08-16 10:55-0400\n"
+"PO-Revision-Date: \n"
+"Language-Team: VasylTech <vasyl@vasyltech.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ..\n"
+"Last-Translator: \n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: media/js/errorfix.js:98 media/js/errorfix.js:231 application/Backend/Localization.php:11
+msgid "Activating..."
+msgstr ""
+
+#: media/js/errorfix.js:112 application/Backend/Localization.php:13 application/Backend/view/index.phtml:439
+msgid "Activate CodePinch"
+msgstr ""
+
+#: media/js/errorfix.js:164 application/Backend/Localization.php:14
+msgid "updating..."
+msgstr ""
+
+#: media/js/errorfix.js:314 application/Backend/Localization.php:16
+msgid "No errors detected"
+msgstr ""
+
+#: media/js/errorfix.js:317 media/js/errorfix.js:428 application/Backend/Localization.php:17
+msgid "Search"
+msgstr ""
+
+#: media/js/errorfix.js:318 media/js/errorfix.js:369 media/js/errorfix.js:429 application/Backend/Localization.php:20
+msgid "_START_ to _END_ of _TOTAL_"
+msgstr ""
+
+#: media/js/errorfix.js:319 media/js/errorfix.js:430 application/Backend/Localization.php:21
+msgid "filtered from _MAX_"
+msgstr ""
+
+#: media/js/errorfix.js:320 media/js/errorfix.js:431 application/Backend/Localization.php:22
+msgid "no records"
+msgstr ""
+
+#: media/js/errorfix.js:464 application/Backend/Localization.php:18
+msgid "List of fixes is empty"
+msgstr ""
+
+#: media/js/errorfix.js:555 media/js/errorfix.js:573 application/Backend/Localization.php:19
+msgid "Applying"
+msgstr ""
+
+#: media/js/errorfix.js:580 application/Backend/Localization.php:23
+msgid "applied successfully"
+msgstr ""
+
+#: media/js/errorfix.js:590 application/Backend/Localization.php:12
+msgid "Unexpected Error"
+msgstr ""
+
+#: media/js/errorfix.js:597 application/Backend/Localization.php:24
+msgid "Process completed"
+msgstr ""
+
+#: media/js/errorfix.js:600 application/Backend/Localization.php:25 application/Backend/view/index.phtml:397
+msgid "Apply"
+msgstr ""
+
+#: media/js/errorfix.js:763 application/Backend/Localization.php:26
+msgid "Sending..."
+msgstr ""
+
+#: media/js/errorfix.js:777 application/Backend/Localization.php:29 application/Backend/view/index.phtml:173
+msgid "Send Message"
+msgstr ""
+
+#: application/Backend/Ajax.php:373
+msgid "Failed to find the report"
+msgstr ""
+
+#: application/Backend/Localization.php:15
+msgid "License Activated. Reloading page..."
+msgstr ""
+
+#: application/Backend/Localization.php:27
+msgid "Message has been sent successfully"
+msgstr ""
+
+#: application/Backend/Localization.php:28
+msgid "Action failed. Try again"
+msgstr ""
+
+#: application/Backend/Localization.php:30
+msgid "All fields are required"
+msgstr ""
+
+#: application/Backend/Manager.php:122
+msgid "PHP cURL extension is required"
+msgstr ""
+
+#: application/Backend/Manager.php:128
+msgid "CodePinch is not active"
+msgstr ""
+
+#: application/Backend/Manager.php:223
+msgid "CodePinch Widget"
+msgstr ""
+
+#: vendor/ErrorFix/Server.php:168
+msgid "Failed to sent request to the server."
+msgstr ""
+
+#: wp-error-fix.php:141
+msgid "PHP 5.2 or higher is required."
+msgstr ""
+
+#: wp-error-fix.php:143
+msgid "WP 3.8 or higher is required."
+msgstr ""
+
+#: application/Backend/view/index.phtml:25
+msgid "Errors"
+msgstr ""
+
+#: application/Backend/view/index.phtml:27
+msgid "Graph"
+msgstr ""
+
+#: application/Backend/view/index.phtml:30
+msgid "Notes"
+msgstr ""
+
+#: application/Backend/view/index.phtml:33
+msgid "Fixed Errors"
+msgstr ""
+
+#: application/Backend/view/index.phtml:35
+msgid "Settings"
+msgstr ""
+
+#: application/Backend/view/index.phtml:36
+msgid "Contact"
+msgstr ""
+
+#: application/Backend/view/index.phtml:37
+msgid "About"
+msgstr ""
+
+#: application/Backend/view/index.phtml:45 application/Backend/view/index.phtml:102 application/Backend/view/index.phtml:167
+msgid "Message"
+msgstr ""
+
+#: application/Backend/view/index.phtml:46
+msgid "Occurred (#)"
+msgstr ""
+
+#: application/Backend/view/index.phtml:62
+msgid "All the errors are grouped by plugin, theme or WordPress core."
+msgstr ""
+
+#: application/Backend/view/index.phtml:72
+msgid "Note"
+msgstr ""
+
+#: application/Backend/view/index.phtml:73 application/Backend/view/index.phtml:90
+msgid "Accept"
+msgstr ""
+
+#: application/Backend/view/index.phtml:82 application/Backend/view/index.phtml:89 application/Backend/view/index.phtml:172
+#: application/Backend/view/index.phtml:256 application/Backend/view/index.phtml:295 application/Backend/view/index.phtml:306
+#: application/Backend/view/index.phtml:383 application/Backend/view/index.phtml:396 application/Backend/view/index.phtml:408
+#: application/Backend/view/index.phtml:415
+msgid "Close"
+msgstr ""
+
+#: application/Backend/view/index.phtml:83
+msgid "Accept Note"
+msgstr ""
+
+#: application/Backend/view/index.phtml:86
+msgid "The note will be removed from this list after you click Accept button below."
+msgstr ""
+
+#: application/Backend/view/index.phtml:103
+msgid "Resolved"
+msgstr ""
+
+#: application/Backend/view/index.phtml:114
+msgid "Notify about errors"
+msgstr ""
+
+#: application/Backend/view/index.phtml:115
+msgid "Send an email to me when a new errors occur."
+msgstr ""
+
+#: application/Backend/view/index.phtml:118 application/Backend/view/index.phtml:127 application/Backend/view/index.phtml:136
+msgid "Enabled"
+msgstr ""
+
+#: application/Backend/view/index.phtml:118 application/Backend/view/index.phtml:127 application/Backend/view/index.phtml:136
+msgid "Disabled"
+msgstr ""
+
+#: application/Backend/view/index.phtml:123
+msgid "Notify about available fixes"
+msgstr ""
+
+#: application/Backend/view/index.phtml:124
+msgid "Send an email to me when there is a fix available."
+msgstr ""
+
+#: application/Backend/view/index.phtml:132
+msgid "Apply fixes automatically"
+msgstr ""
+
+#: application/Backend/view/index.phtml:133
+msgid "All available fixes will be applied automatically if there is enough credit."
+msgstr ""
+
+#: application/Backend/view/index.phtml:141
+msgid "Notification email address"
+msgstr ""
+
+#: application/Backend/view/index.phtml:142
+msgid "Specify email address that should be used to notify about errors or available fixes."
+msgstr ""
+
+#: application/Backend/view/index.phtml:143
+msgid "Email address"
+msgstr ""
+
+#: application/Backend/view/index.phtml:148
+msgid "Exclude Directories"
+msgstr ""
+
+#: application/Backend/view/index.phtml:149
+msgid ""
+"Do not capture errors in specified list of directories (insert each relative path to directory in new line without leading "
+"slash). For example wp-content/plugins/abc."
+msgstr ""
+
+#: application/Backend/view/index.phtml:150
+msgid "List of excluded directories"
+msgstr ""
+
+#: application/Backend/view/index.phtml:157
+msgid "Feel free to contact us if you have any issues or questions. We will come back you you as soon as possible."
+msgstr ""
+
+#: application/Backend/view/index.phtml:159
+msgid "Name"
+msgstr ""
+
+#: application/Backend/view/index.phtml:160
+msgid "Enter your name"
+msgstr ""
+
+#: application/Backend/view/index.phtml:163
+msgid "Email Address"
+msgstr ""
+
+#: application/Backend/view/index.phtml:164
+msgid "Enter your email"
+msgstr ""
+
+#: application/Backend/view/index.phtml:168
+msgid "How can we help you?"
+msgstr ""
+
+#: application/Backend/view/index.phtml:169
+msgid "We speak English, Russian, Ukrainian and Polish. Message on any other language may delay our response."
+msgstr ""
+
+#: application/Backend/view/index.phtml:181
+msgid ""
+"Our patent-pending technology keeps your WordPress website error-free. The easy to use plugin provides solutions to PHP errors "
+"within hours, preventing costly maintenance time."
+msgstr ""
+
+#: application/Backend/view/index.phtml:184
+msgid "How does it work?"
+msgstr ""
+
+#: application/Backend/view/index.phtml:185
+msgid ""
+"CodePinch constantly monitors your website for new PHP errors. When error occurs, we receive an error report and if possible, "
+"resolve it within 24 business hours. When the fix is available for download, your website is notified about it."
+msgstr ""
+
+#: application/Backend/view/index.phtml:187
+msgid "What information is collected?"
+msgstr ""
+
+#: application/Backend/view/index.phtml:188
+#, php-format
+msgid ""
+"We collect information that is directly related to triggered error as specified in PHP %sset_error_handler%s documentation. In "
+"some cases we remotely fetch a software code from your website that caused an error. CodePinch doesn’t require FTP or admin "
+"credentials.  All the work is done on our server, providing a secure source for bug fixes and ongoing website maintenance."
+msgstr ""
+
+#: application/Backend/view/index.phtml:190
+msgid "What is a fix?"
+msgstr ""
+
+#: application/Backend/view/index.phtml:191
+msgid ""
+"When error is reported, we review it and if there is a way to resolve it programmatically, we provide a fix. When you apply the "
+"fix to your website, CodePinch automatically backups the original file and overwrite it with the fix. If necessary we can "
+"remotely restore original files upon request."
+msgstr ""
+
+#: application/Backend/view/index.phtml:193
+msgid "Does CodePinch resolve all errors?"
+msgstr ""
+
+#: application/Backend/view/index.phtml:194
+msgid ""
+"CodePinch may resolve only PHP errors that are listed on the Error List tab and only errors that can be resolved "
+"programmatically."
+msgstr ""
+
+#: application/Backend/view/index.phtml:197
+msgid "Check CodePinch.io for more information"
+msgstr ""
+
+#: application/Backend/view/index.phtml:211
+msgid "Notifications"
+msgstr ""
+
+#: application/Backend/view/index.phtml:229
+msgid "Current Balance"
+msgstr ""
+
+#: application/Backend/view/index.phtml:241 application/Backend/view/index.phtml:257 application/Backend/view/index.phtml:417
+msgid "Add Credit"
+msgstr ""
+
+#: application/Backend/view/index.phtml:246 application/Backend/view/index.phtml:307 application/Backend/view/index.phtml:420
+msgid "Annual Service"
+msgstr ""
+
+#: application/Backend/view/index.phtml:263
+msgid "Already purchased credit?"
+msgstr ""
+
+#: application/Backend/view/index.phtml:264
+msgid "Enter Activate Code Here"
+msgstr ""
+
+#: application/Backend/view/index.phtml:269
+msgid "Submit"
+msgstr ""
+
+#: application/Backend/view/index.phtml:274
+msgid "Select your amount"
+msgstr ""
+
+#: application/Backend/view/index.phtml:296
+msgid "Purchase Credit"
+msgstr ""
+
+#: application/Backend/view/index.phtml:311
+msgid "Get unlimited number or fixes for a full year. We will keep eye on your website and make sure it is error free."
+msgstr ""
+
+#: application/Backend/view/index.phtml:318
+msgid "Enter Activation Code"
+msgstr ""
+
+#: application/Backend/view/index.phtml:322
+msgid "Activate"
+msgstr ""
+
+#: application/Backend/view/index.phtml:327
+msgid "CLICK TO LEARN MORE"
+msgstr ""
+
+#: application/Backend/view/index.phtml:344
+msgid "Available Fixes"
+msgstr ""
+
+#: application/Backend/view/index.phtml:345
+msgid "Reload"
+msgstr ""
+
+#: application/Backend/view/index.phtml:358
+msgid "Fix Errors"
+msgstr ""
+
+#: application/Backend/view/index.phtml:359
+msgid "Cost"
+msgstr ""
+
+#: application/Backend/view/index.phtml:360
+msgid "Select"
+msgstr ""
+
+#: application/Backend/view/index.phtml:367
+msgid "Select All"
+msgstr ""
+
+#: application/Backend/view/index.phtml:370
+msgid "Total"
+msgstr ""
+
+#: application/Backend/view/index.phtml:376 application/Backend/view/index.phtml:384
+msgid "Apply Fixes"
+msgstr ""
+
+#: application/Backend/view/index.phtml:388
+#, php-format
+msgid "You are about to apply %s with the total cost of %s. Click the Apply button below to continue."
+msgstr ""
+
+#: application/Backend/view/index.phtml:389
+msgid "We backup all your original files and restore them if necessary upon request."
+msgstr ""
+
+#: application/Backend/view/index.phtml:398
+msgid "Complete"
+msgstr ""
+
+#: application/Backend/view/index.phtml:409
+msgid "Low Balance Notification"
+msgstr ""
+
+#: application/Backend/view/index.phtml:412
+msgid "You do not have enough credit to apply all selected fixes. Please add more credit or purchase annual service."
+msgstr ""
+
+#: application/Backend/view/index.phtml:427
+msgid "List of available fixes is empty"
+msgstr ""
+
+#: application/Backend/view/index.phtml:432
+msgid "CodePinch service is not a real-time system and it might take up to 24 business hours to prepare fixes."
+msgstr ""
+
+#: application/Backend/view/index.phtml:444
+msgid "By activating the CodePinch service you accept %sEnd User License Agreement%."
+msgstr ""
