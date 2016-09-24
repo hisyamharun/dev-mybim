@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ET_BUILDER_PRODUCT_VERSION' ) ) {
 	// Note, when this is updated, you must also update corresponding version in builder.js: `window.et_builder_version`
-	define( 'ET_BUILDER_PRODUCT_VERSION', '3.0' );
+	define( 'ET_BUILDER_PRODUCT_VERSION', '3.0.8' );
 }
 
 if ( ! defined( 'ET_BUILDER_VERSION' ) ) {
@@ -539,7 +539,13 @@ function et_pb_process_computed_property() {
 
 	// $_POST['depends_on'] is a single dimensional assoc array created by jQuery.ajax data param, sanatize each key and value, they will both be strings
 	foreach ( $depends_on as $key => $value ) {
-		$depends_on[ sanitize_text_field( $key ) ] = sanitize_text_field( $value );
+
+		// correctly sanitize the strings with %date variable. sanitize_text_field will strip the '%da' and '%date' will be saved as 'te'.
+		$prepared_value = str_replace( '%date', '___et-fb-date___', $value );
+		$sanitized_value = str_replace( '___et-fb-date___', '%date', sanitize_text_field( $prepared_value ) );
+
+		$depends_on[ sanitize_text_field( $key ) ] = $sanitized_value;
+
 	}
 	$module_slug       = sanitize_text_field( $_POST['module_type'] );
 	$post_type         = sanitize_text_field( $_POST['post_type'] );
@@ -633,7 +639,18 @@ function et_fb_process_to_shortcode( $object, $options = array(), $library_item_
 			if ( isset( $font_icon_fields[ $item['type'] ][ $attribute ] ) ) {
 				$value = esc_attr( $value );
 			} else {
-				$value = sanitize_text_field( $value );
+				// correctly sanitize the strings with %date variable. sanitize_text_field will strip the '%da' and '%date' will be saved as 'te'.
+				$prepared_value = str_replace( '%date', '___et-fb-date___', $value );
+				$sanitized_value = str_replace( '___et-fb-date___', '%date', sanitize_text_field( $prepared_value ) );
+
+				$replace_pairs = array (
+					'>' => '&gt;',
+					'<' => '&lt;',
+				);
+
+				$sanitized_value = strtr( $sanitized_value, $replace_pairs );
+
+				$value = $sanitized_value;
 			}
 
 			// handle content
@@ -1906,9 +1923,7 @@ function et_pb_add_builder_page_js_css(){
 		$force_cache_value = false;
 	}
 
-	// $force_cache_update = false !== $force_cache_value ? $force_cache_value : ET_BUILDER_FORCE_CACHE_PURGE;
-
-	$force_cache_update = true;
+	$force_cache_update = false !== $force_cache_value ? $force_cache_value : ET_BUILDER_FORCE_CACHE_PURGE;
 
 	// delete et_pb_clear_templates_cache option it's not needed anymore
 	et_delete_option( 'et_pb_clear_templates_cache' );
@@ -5958,6 +5973,53 @@ function et_fb_process_imported_content() {
 	die( json_encode( $processed_shortcode ) );
 }
 add_action( 'wp_ajax_et_fb_process_imported_content', 'et_fb_process_imported_content' );
+
+function et_fb_retrieve_builder_data() {
+	if ( ! isset( $_POST['et_fb_helper_nonce'] ) || ! wp_verify_nonce( $_POST['et_fb_helper_nonce'], 'et_fb_backend_helper_nonce' ) ) {
+		die( -1 );
+	}
+
+	if ( ! current_user_can( 'edit_posts' ) ) {
+		die( -1 );
+	}
+
+	$post_type = ! empty( $_POST['et_post_type'] ) ? sanitize_text_field( $_POST['et_post_type'] ) : 'post';
+	$post_id = ! empty( $_POST['et_post_id'] ) ? sanitize_text_field( $_POST['et_post_id'] ) : '';
+	$layout_type = ! empty( $_POST['et_layout_type'] ) ? sanitize_text_field( $_POST['et_layout_type'] ) : '';
+
+	$fields_data = array();
+	$fields_data['custom_css'] = ET_Builder_Element::get_custom_css_fields( $post_type );
+	$fields_data['advanced_fields'] = ET_Builder_Element::get_advanced_fields( $post_type );
+	$fields_data['general_fields'] = ET_Builder_Element::get_general_fields( $post_type );
+
+	$post_data = get_post( $post_id );
+	$post_content = $post_data->post_content;
+
+	switch ( $layout_type ) {
+		case 'module':
+			$use_fullwidth_section = false !== strpos( $post_content, '[et_pb_fullwidth_' ) ? true : false;
+
+			if ( ! $use_fullwidth_section ) {
+				$post_content = sprintf( '[et_pb_row][et_pb_column type="4_4"]%1$s[/et_pb_column][/et_pb_row]', $post_content );
+			}
+
+			$post_content = sprintf(
+				'[et_pb_section%2$s]%1$s[/et_pb_section]',
+				$post_content,
+				$use_fullwidth_section ? ' fullwidth="on"' : ''
+			);
+
+			break;
+		case 'row':
+			$post_content = '[et_pb_section]' . $post_content . '[/et_pb_section]';
+			break;
+	}
+
+	$fields_data['shortcode_object'] = et_fb_process_shortcode( $post_content );
+
+	die( json_encode( $fields_data ) );
+}
+add_action( 'wp_ajax_et_fb_retrieve_builder_data', 'et_fb_retrieve_builder_data' );
 
 function et_pb_get_options_page_link() {
 	if ( et_is_builder_plugin_active() ) {

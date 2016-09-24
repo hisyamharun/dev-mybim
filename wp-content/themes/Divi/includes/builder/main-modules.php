@@ -209,7 +209,7 @@ class ET_Builder_Module_Image extends ET_Builder_Module {
 			),
 			'max_width' => array(
 				'label'           => esc_html__( 'Image Max Width', 'et_builder' ),
-				'type'            => 'number',
+				'type'            => 'text',
 				'option_category' => 'layout',
 				'tab_slug'        => 'advanced',
 				'mobile_options'  => true,
@@ -1573,6 +1573,7 @@ class ET_Builder_Module_Text extends ET_Builder_Module {
 					'label'    => esc_html__( 'Text', 'et_builder' ),
 					'css'      => array(
 						'line_height' => "{$this->main_css_element} p",
+						'color' => "{$this->main_css_element}.et_pb_text",
 					),
 				),
 			),
@@ -2230,8 +2231,8 @@ class ET_Builder_Module_Tabs extends ET_Builder_Module {
 				'body'   => array(
 					'label'    => esc_html__( 'Body', 'et_builder' ),
 					'css'      => array(
-						'main' => "{$this->main_css_element} .et_pb_all_tabs",
-						'line_height' => "{$this->main_css_element} p",
+						'main' => "{$this->main_css_element} .et_pb_all_tabs .et_pb_tab",
+						'line_height' => "{$this->main_css_element} .et_pb_tab p",
 					),
 				),
 			),
@@ -2419,8 +2420,8 @@ class ET_Builder_Module_Tabs_Item extends ET_Builder_Module {
 				'body'   => array(
 					'label'    => esc_html__( 'Body', 'et_builder' ),
 					'css'      => array(
-						'main' => "{$this->main_css_element}",
-						'line_height' => "{$this->main_css_element} p",
+						'main' => "{$this->main_css_element}.et_pb_tab",
+						'line_height' => "{$this->main_css_element}.et_pb_tab p",
 					),
 					'line_height' => array(
 						'range_settings' => array(
@@ -4215,7 +4216,10 @@ class ET_Builder_Module_Post_Slider extends ET_Builder_Module {
 
 		$args = wp_parse_args( $args, $defaults );
 
-		$query_args = array( 'posts_per_page' => (int) $args['posts_number'] );
+		$query_args = array(
+			'posts_per_page' => (int) $args['posts_number'],
+			'post_status'    => 'publish',
+		);
 
 		if ( '' !== $args['include_categories'] ) {
 			$query_args['cat'] = $args['include_categories'];
@@ -7709,6 +7713,7 @@ class ET_Builder_Module_Portfolio extends ET_Builder_Module {
 		$query_args    = array(
 			'posts_per_page' => (int) $args['posts_number'],
 			'post_type'      => 'project',
+			'post_status'    => 'publish',
 		);
 
 		// Conditionally get paged data
@@ -7788,7 +7793,7 @@ class ET_Builder_Module_Portfolio extends ET_Builder_Module {
 
 			$query->posts_prev = array(
 				'label' => esc_html__( 'Next Entries &raquo;', 'et_builder' ),
-				'url' => previous_posts( false ),
+				'url' => ( $et_paged > 1 ) ? previous_posts( false ) : '',
 			);
 
 			// Added wp_pagenavi support
@@ -7924,13 +7929,44 @@ class ET_Builder_Module_Portfolio extends ET_Builder_Module {
 				<?php
 			}
 
-			if ( function_exists( 'wp_pagenavi' ) ) {
-				wp_pagenavi( array( 'query' => $portfolio ) );
-			} else {
-				if ( et_is_builder_plugin_active() ) {
-					include( ET_BUILDER_PLUGIN_DIR . 'includes/navigation.php' );
+			if ( 'on' === $show_pagination && ! is_search() ) {
+				if ( function_exists( 'wp_pagenavi' ) ) {
+					wp_pagenavi( array( 'query' => $portfolio ) );
 				} else {
-					get_template_part( 'includes/navigation', 'index' );
+					if ( et_is_builder_plugin_active() ) {
+						include( ET_BUILDER_PLUGIN_DIR . 'includes/navigation.php' );
+					} else {
+						$next_posts_link_html = $prev_posts_link_html = '';
+
+						if ( ! empty( $portfolio->posts_next['url'] ) ) {
+							$next_posts_link_html = sprintf(
+								'<div class="alignleft">
+									<a href="%1$s">%2$s</a>
+								</div>',
+								esc_url( $portfolio->posts_next['url'] ),
+								esc_html( $portfolio->posts_next['label'] )
+							);
+						}
+
+						if ( ! empty( $portfolio->posts_prev['url'] ) ) {
+							$prev_posts_link_html = sprintf(
+								'<div class="alignright">
+									<a href="%1$s">%2$s</a>
+								</div>',
+								esc_url( $portfolio->posts_prev['url'] ),
+								esc_html( $portfolio->posts_prev['label'] )
+							);
+						}
+
+						printf(
+							'<div class="pagination clearfix">
+								%1$s
+								%2$s
+							</div>',
+							$next_posts_link_html,
+							$prev_posts_link_html
+						);
+					}
 				}
 			}
 		} else {
@@ -8250,7 +8286,8 @@ class ET_Builder_Module_Filterable_Portfolio extends ET_Builder_Module {
 		}
 
 		$default_query_args = array(
-			'post_type' => 'project',
+			'post_type'   => 'project',
+			'post_status' => 'publish',
 		);
 
 		$query_args = wp_parse_args( $query_args, $default_query_args );
@@ -10135,7 +10172,7 @@ class ET_Builder_Module_Contact_Form extends ET_Builder_Module {
 
 	function predefined_child_modules() {
 		$output = sprintf(
-			'[et_pb_contact_field field_title="%1$s" field_type="input" field_id="Name" required_mark="on" fullwidth_field="off" /][et_pb_contact_field field_title="%2$s" field_type="email" field_id="Email" required_mark="on" fullwidth_field="off" /][et_pb_contact_field field_title="%3$s" field_type="text" field_id="Message" required_mark="on" /]',
+			'[et_pb_contact_field field_title="%1$s" field_type="input" field_id="Name" required_mark="on" fullwidth_field="off" /][et_pb_contact_field field_title="%2$s" field_type="email" field_id="Email" required_mark="on" fullwidth_field="off" /][et_pb_contact_field field_title="%3$s" field_type="text" field_id="Message" required_mark="on" fullwidth_field="on" /]',
 			esc_attr__( 'Name', 'et_builder' ),
 			esc_attr__( 'Email Address', 'et_builder' ),
 			esc_attr__( 'Message', 'et_builder' )
@@ -10974,8 +11011,10 @@ class ET_Builder_Module_Divider extends ET_Builder_Module {
 			}
 
 			if ( '' !== $divider_weight && $this->defaults['divider_weight'] !== $divider_weight ) {
-				$style .= sprintf( ' border-top-width: %1$spx;',
-					esc_attr( $divider_weight )
+				$divider_weight_processed = false === strpos( $divider_weight, 'px' ) ? $divider_weight . 'px' : $divider_weight;
+
+				$style .= sprintf( ' border-top-width: %1$s;',
+					esc_attr( $divider_weight_processed )
 				);
 			}
 
@@ -11814,6 +11853,7 @@ class ET_Builder_Module_Blog extends ET_Builder_Module {
 
 		$query_args = array(
 			'posts_per_page' => intval( $args['posts_number'] ),
+			'post_status'    => 'publish',
 		);
 
 		if ( defined( 'DOING_AJAX' ) && isset( $current_page[ 'paged'] ) ) {
@@ -14837,6 +14877,11 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 
 		$this->defaults = array();
 
+		$this->fields_defaults = array(
+			'hide_prev'          => array( 'off' ),
+			'hide_next'          => array( 'off' ),
+		);
+
 		$this->whitelisted_fields = array(
 			'in_same_term',
 			'taxonomy_name',
@@ -14961,6 +15006,9 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 				'type'            => 'text',
 				'option_category' => 'configuration',
 				'depends_show_if' => 'off',
+				'computed_affects' => array(
+					'__posts_navigation',
+				),
 				'description'     => et_get_safe_localization( __( 'Define custom text for the previous link. You can use the <strong>%title</strong> variable to include the post title. Leave blank for default.', 'et_builder' ) ),
 			),
 			'next_text' => array(
@@ -14968,6 +15016,9 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 				'type'            => 'text',
 				'option_category' => 'configuration',
 				'depends_show_if' => 'off',
+				'computed_affects' => array(
+					'__posts_navigation',
+				),
 				'description'     => et_get_safe_localization( __( 'Define custom text for the next link. You can use the <strong>%title</strong> variable to include the post title. Leave blank for default.', 'et_builder' ) ),
 			),
 			'disabled_on' => array(
@@ -15006,7 +15057,9 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 				'computed_callback' => array( 'ET_Builder_Module_Posts_Navigation', 'get_posts_navigation' ),
 				'computed_depends_on' => array(
 					'in_same_term',
-					'taxonomy_name'
+					'taxonomy_name',
+					'prev_text',
+					'next_text'
 				),
 			),
 		);
@@ -15029,6 +15082,8 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 		$defaults = array(
 			'in_same_term'   => 'off',
 			'taxonomy_name'  => 'category',
+			'prev_text'      => '%title',
+			'next_text'      => '%title',
 		);
 
 		$args = wp_parse_args( $args, $defaults );
@@ -15050,20 +15105,55 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 		// Get next post
 		$next_post = get_next_post( $in_same_term, '', $args['taxonomy_name'] );
 
-		$next = null === $next_post ? new stdClass() : array(
-			'title'     => isset($next_post->post_title) ? esc_html( $next_post->post_title ) : '',
-			'id'        => isset($next_post->ID) ? intval( $next_post->ID ) : '',
-			'permalink' => isset($next_post->ID) ? esc_url( get_the_permalink( $next_post->ID ) ) : '',
-		);
+		$next = new stdClass();
+
+		if ( null !== $next_post ) {
+
+			$next_title = isset($next_post->post_title) ? esc_html( $next_post->post_title ) : esc_html__( 'Next Post' );
+
+			$next_date = mysql2date( get_option( 'date_format' ), $next_post->post_date );
+			$next_permalink = isset($next_post->ID) ? esc_url( get_the_permalink( $next_post->ID ) ) : '';
+
+			$next_processed_title = '' === $args['next_text'] ? '%title' : $args['next_text'];
+
+			// process Wordpress' wildcards
+			$next_processed_title = str_replace( '%title', $next_title, $next_processed_title );
+			$next_processed_title = str_replace( '%date', $next_date, $next_processed_title );
+			$next_processed_title = str_replace( '%link', $next_permalink, $next_processed_title );
+
+			$next = array(
+				'title'     => $next_processed_title,
+				'id'        => isset($next_post->ID) ? intval( $next_post->ID ) : '',
+				'permalink' => $next_permalink,
+			);
+		}
 
 		// Get prev post
 		$prev_post = get_previous_post( $in_same_term, '', $args['taxonomy_name'] );
 
-		$prev = null === $prev_post ? new stdClass() : array(
-			'title'     => isset($prev_post->post_title ) ? esc_html( $prev_post->post_title ) : '',
-			'id'        => isset($prev_post->ID) ? intval( $prev_post->ID ) : '',
-			'permalink' => isset($prev_post->ID) ? esc_url( get_the_permalink( $prev_post->ID ) ) : '',
-		);
+		$prev = new stdClass();
+
+		if ( null !== $prev_post ) {
+
+			$prev_title = isset($prev_post->post_title) ? esc_html( $prev_post->post_title ) : esc_html__( 'Previous Post' );
+
+			$prev_date = mysql2date( get_option( 'date_format' ), $prev_post->post_date );
+
+			$prev_permalink = isset($prev_post->ID) ? esc_url( get_the_permalink( $prev_post->ID ) ) : '';
+
+			$prev_processed_title = '' === $args['prev_text'] ? '%title' : $args['prev_text'];
+
+			// process Wordpress' wildcards
+			$prev_processed_title = str_replace( '%title', $prev_title, $prev_processed_title );
+			$prev_processed_title = str_replace( '%date', $prev_date, $prev_processed_title );
+			$prev_processed_title = str_replace( '%link', $prev_permalink, $prev_processed_title );
+
+			$prev = array(
+				'title'     => $prev_processed_title,
+				'id'        => isset($prev_post->ID) ? intval( $prev_post->ID ) : '',
+				'permalink' => $prev_permalink,
+			);
+		}
 
 		// Formatting returned value
 		$posts_navigation = array(
@@ -15094,6 +15184,8 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 		$posts_navigation = self::get_posts_navigation( array(
 			'in_same_term'  => $in_same_term,
 			'taxonomy_name' => $taxonomy_name,
+			'prev_text'     => $prev_text,
+			'next_text'     => $next_text,
 		) );
 
 		ob_start();
@@ -15105,7 +15197,7 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 				<span class="nav-previous">
 					<a href="<?php echo esc_url( $posts_navigation['prev']['permalink'] ); ?>" rel="prev">
 						<span class="meta-nav">&larr;</span>
-						<?php echo esc_html( $prev_link_text ); ?>
+						<?php echo esc_html( $posts_navigation['prev']['title'] ); ?>
 					</a>
 				</span>
 			<?php
@@ -15117,8 +15209,8 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 			?>
 				<span class="nav-next">
 					<a href="<?php echo esc_url( $posts_navigation['next']['permalink'] ); ?>" rel="next">
+						<?php echo esc_html( $posts_navigation['next']['title'] ); ?>
 						<span class="meta-nav">&rarr;</span>
-						<?php echo esc_html( $next_link_text ); ?>
 					</a>
 				</span>
 			<?php
@@ -17023,7 +17115,8 @@ class ET_Builder_Module_Fullwidth_Portfolio extends ET_Builder_Module {
 		$args = wp_parse_args( $args, $defaults );
 
 		$query_args = array(
-			'post_type' => 'project',
+			'post_type'   => 'project',
+			'post_status' => 'publish',
 		);
 
 		if ( is_numeric( $args['posts_number'] ) && $args['posts_number'] > 0 ) {
@@ -18477,7 +18570,10 @@ class ET_Builder_Module_Fullwidth_Post_Slider extends ET_Builder_Module {
 
 		$args = wp_parse_args( $args, $defaults );
 
-		$query_args = array( 'posts_per_page' => (int) $args['posts_number'] );
+		$query_args = array(
+			'posts_per_page' => (int) $args['posts_number'],
+			'post_status'    => 'publish',
+		);
 
 		if ( '' !== $args['include_categories'] ) {
 			$query_args['cat'] = $args['include_categories'];

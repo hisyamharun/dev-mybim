@@ -326,7 +326,7 @@
 							if ( $et_pb_number_counter.length ) {
 								window.et_pb_reinit_number_counters( $et_pb_number_counter );
 							}
-							window.et_reinint_waypoint_modules();
+							window.et_reinit_waypoint_modules();
 						}, 1000 );
 					}
 				}
@@ -917,7 +917,7 @@
 			/**
 			 * Provide event listener for plugins to hook up to
 			 */
-			document.dispatchEvent( new Event('et_pb_before_init_modules') );
+			$(window).trigger('et_pb_before_init_modules');
 
 			var $et_pb_slider  = $( '.et_pb_slider' ),
 				$et_pb_tabs    = $( '.et_pb_tabs' ),
@@ -1373,7 +1373,9 @@
 						item_width = $active_carousel_group.innerWidth() / columns, //$active_carousel_group.children().first().innerWidth(),
 						original_item_width = ( 100 / columns ) + '%';
 
-
+					if ( 'undefined' == typeof items ) {
+						return;
+					}
 
 					if ( $the_portfolio.data('carouseling') ) {
 						return;
@@ -2935,16 +2937,18 @@
 			});
 
 			$et_pb_newsletter_button.click( function( event ) {
-				et_pb_submit_newsletter( $(this) );
+				et_pb_submit_newsletter( $(this), event );
 			} );
 
-			window.et_pb_submit_newsletter = function( $submit ) {
+			window.et_pb_submit_newsletter = function( $submit, event ) {
 				if ( $submit.closest( '.et_pb_login_form' ).length || $submit.closest( '.et_pb_feedburner_form' ).length ) {
 					et_pb_maybe_log_event( $submit.closest( '.et_pb_newsletter' ), 'con_goal' );
 					return;
 				}
 
-				event.preventDefault();
+				if ( typeof event !== 'undefined' ) {
+					event.preventDefault();
+				}
 
 				var $newsletter_container = $submit.closest( '.et_pb_newsletter' ),
 					$firstname = $newsletter_container.find( 'input[name="et_pb_signup_firstname"]' ),
@@ -3078,7 +3082,7 @@
 				});
 			}
 
-			window.et_reinint_waypoint_modules = function() {
+			window.et_reinit_waypoint_modules = et_pb_debounce( function() {
 				if ( $.fn.waypoint ) {
 					var $et_pb_circle_counter = $( '.et_pb_circle_counter' ),
 						$et_pb_number_counter = $( '.et_pb_number_counter' ),
@@ -3160,13 +3164,13 @@
 						$et_pb_ab_goal.waypoint({
 							offset: '80%',
 							handler: function() {
-								if ( et_pb_ab_logged_status['read_goal'] || ! $et_pb_ab_goal.visible( true ) ) {
+								if ( et_pb_ab_logged_status['read_goal'] || ! $et_pb_ab_goal.length || ! $et_pb_ab_goal.visible( true ) ) {
 									return;
 								}
 
 								// log the goal_read if goal is still visible after 3 seconds.
 								setTimeout( function() {
-									if ( $et_pb_ab_goal.visible( true ) && ! et_pb_ab_logged_status['read_goal'] ) {
+									if ( $et_pb_ab_goal.length && $et_pb_ab_goal.visible( true ) && ! et_pb_ab_logged_status['read_goal'] ) {
 										et_pb_ab_update_stats( 'read_goal' );
 									}
 								}, 3000 );
@@ -3184,7 +3188,7 @@
 						});
 					}
 				}
-			}
+			}, 100 );
 
 			function et_pb_init_ab_test() {
 				var $et_pb_ab_goal = $( '.et_pb_ab_goal' ),
@@ -3598,7 +3602,7 @@
 
 				et_audio_module_set();
 
-				window.et_reinint_waypoint_modules();
+				window.et_reinit_waypoint_modules();
 
 				if ( $( '.et_audio_content' ).length ) {
 					$( window ).trigger( 'resize' );
@@ -3705,9 +3709,48 @@
 			/**
 			 * Provide event listener for plugins to hook up to
 			 */
-			document.dispatchEvent( new Event('et_pb_after_init_modules') );
+			$(document).trigger('et_pb_after_init_modules');
 		});
 	}
+
+	// Modification of underscore's _.debounce()
+	// Underscore.js 1.8.3
+	// http://underscorejs.org
+	// (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	// Underscore may be freely distributed under the MIT license.
+	window.et_pb_debounce = function(func, wait, immediate) {
+		var timeout, args, context, timestamp, result;
+
+		var now = Date.now || new Date().getTime();
+
+		var later = function() {
+			var last = now - timestamp;
+
+			if (last < wait && last >= 0) {
+				timeout = setTimeout(later, wait - last);
+			} else {
+				timeout = null;
+				if (!immediate) {
+					result = func.apply(context, args);
+					if (!timeout) context = args = null;
+				}
+			}
+		};
+
+		return function() {
+			context = this;
+			args = arguments;
+			timestamp = now;
+			var callNow = immediate && !timeout;
+			if (!timeout) timeout = setTimeout(later, wait);
+			if (callNow) {
+				result = func.apply(context, args);
+				context = args = null;
+			}
+
+			return result;
+		};
+	};
 
 	if ( et_pb_custom.is_ab_testing_active && 'yes' === et_pb_custom.is_cache_plugin_active ) {
 		// update the window.et_load_event_fired variable to initiate the scripts properly

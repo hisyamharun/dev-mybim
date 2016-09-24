@@ -97,3 +97,5 @@ define( 'ET_FB_ASSETS_URI', ET_FB_URI . '/assets' );
 require_once ET_BUILDER_DIR . 'frontend-builder/view.php';
 require_once ET_BUILDER_DIR . 'frontend-builder/assets.php';
 require_once ET_BUILDER_DIR . 'frontend-builder/helpers.php';
+
+et_fb_fix_plugin_conflicts();
