@@ -1,8 +1,8 @@
-﻿=== Data Tables Generator by Supsystic ===
+=== Data Tables Generator by Supsystic ===
 Contributors: supsystic.com
 Tags: csv, csv file, csv to table, excel, table, tablesorter, post, data table, table, database, html table, table generator, builder, generator, cells, area chart, bar chart, candlestick chart, canvas, chart, charting, charts, column chart, gauge chart, geo chart, google chart, google visualization api, graph, graphing, graphs, html5, line chart, pie chart, scatter chart, spreadsheet, visualisation, visualise data, visualization, visualize data
-Tested up to: 4.6
-Stable tag: 1.4.3
+Tested up to: 4.6.1
+Stable tag: 1.4.5
 
 Create data tables with charts and graphs. Custom design, navigation, searching and ordering functions. Export to PDF, CSV, Print. Excel spreadsheet
 
@@ -150,6 +150,17 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 
 == Changelog ==
+
+= 1.4.5 / 22.09.2016 =
+ * Added Featured plugins page for admin area
+ * Added the update of charts data after the table's data was changed
+ * Added ability to set diagram parameters: width, height, titles of axes, colors of charts
+ * Added tutorial how to create diagrams in the Diagram tab if it is empty
+ * Added the Diagram Pro dialog to free version
+
+= 1.4.4 / 21.09.2016 =
+ * Fix data table search option bug
+ * Minor issues fix
 
 = 1.4.3 / 10.08.2016 =
  * Add Brazilian Portuguese language

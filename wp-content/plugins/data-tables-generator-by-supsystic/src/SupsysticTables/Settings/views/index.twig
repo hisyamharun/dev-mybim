@@ -14,8 +14,8 @@
 								{% block beforeSettings %}{% endblock %}
 								<div class="setting">
 									<div class="setting-description">
-										<label>Roles</label>
-										{{ tooltip.icon('Role for users who can use plugin. Administrator is included by default.', 'top', true) }}
+										<label>{{ environment.translate('Roles') }}</label>
+										{{ tooltip.icon(environment.translate('Role for users who can use plugin. Administrator is included by default'), 'top', true) }}
 
 										{% if environment.isPro() == false %}
 											<a target="_blank" href="{{ build_pro_url({ 'utm_medium': 'manage_roles' }) }}">
@@ -25,7 +25,7 @@
 										
 									</div>
 									<div class="setting-control">
-										<select multiple="multiple" name="settings[access_roles][]" class="chosen-select" data-placeholder="{{ ('Select avalilable roles to use tables.')}}">
+										<select multiple="multiple" name="settings[access_roles][]" class="chosen-select" data-placeholder="{{ environment.translate('Select avalilable roles to use tables')}}">
 											<option value="administrator" disabled selected>Administrator</option>
 											{% set roles = {
 												editor:'Editor',

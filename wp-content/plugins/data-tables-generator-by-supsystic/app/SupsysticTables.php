@@ -15,7 +15,7 @@ class SupsysticTables
         }
 
         $pluginPath = dirname(dirname(__FILE__));
-        $environment = new Rsc_Environment('st', '1.4.3', $pluginPath);
+        $environment = new Rsc_Environment('st', '1.4.5', $pluginPath);
 
         /* Configure */
         $environment->configure(

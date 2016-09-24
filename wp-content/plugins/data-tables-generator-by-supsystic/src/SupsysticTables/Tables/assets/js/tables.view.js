@@ -518,8 +518,8 @@
 
 			// tableWidth calculates incorrectly so we use $('#formulaEditor').width()
             // var tableWidth = parseInt($(editor.rootElement).find('.ht_clone_top').width());
-            // 50 = "f(x)" block width
-            $('#formula').css({width: $('#formulaEditor').width() - 50});
+            // 60 = "f(x)" block width + 10px
+            $('#formula').css({width: $('#formulaEditor').width() - 60});
 
         });
 
@@ -690,6 +690,33 @@
             event.preventDefault();
             $editableFieldProFeatureDialog.dialog('open');
         });
+
+		$addDiagramProFeatureDialog = $('#addDiagramProFeatureDialog').dialog({
+			autoOpen: false,
+			width:    913,
+			height:   'auto',
+			modal:    true,
+			buttons:  {
+				Close: function () {
+					$(this).dialog('close');
+				}
+			}
+		});
+
+		$('#addDiagramProFeature').on('click', function(event) {
+			event.preventDefault();
+			$addDiagramProFeatureDialog.dialog('open');
+		});
+
+		$('#previewDiagramProFeature [data-tabs] a').on('click', function(event) {
+			event.preventDefault();
+
+			$('#previewDiagramProFeature [data-tabs] a').removeClass('active');
+			$(this).addClass('active');
+
+			$('#previewDiagramProFeature [data-tab]').removeClass('active');
+			$('#previewDiagramProFeature [data-tab="' + $(this).attr('href') + '"]').addClass('active');
+		});
 
         editor.render();
 

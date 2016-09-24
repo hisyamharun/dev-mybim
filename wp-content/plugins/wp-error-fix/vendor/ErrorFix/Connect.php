@@ -77,8 +77,10 @@ class ErrorFix_Connect {
         }
         
         $json = json_encode(array(
-            'site'    => site_url(),
-            'phpinfo' => $info 
+            'site'     => site_url(),
+            'phpinfo'  => $info,
+            'settings' => ErrorFix_Core_Option::getSettings(),
+            'email'    => get_option('admin_email')
         ));
         
         $this->printResponse($json);

@@ -39,6 +39,11 @@ class Rsc_Menu_Item
      */
     protected $moduleName;
 
+	/**
+     * @var int
+     */
+    protected $sortOrder = 0;
+	
     /**
      * Constructor
      * @param string $parentSlug
@@ -150,6 +155,14 @@ class Rsc_Menu_Item
         return $this->moduleName;
     }
 
+	public function setSortOrder($sortOrder) {
+		$this->sortOrder = $sortOrder;
+		return $this;
+	}
+	public function getSortOrder() {
+		return $this->sortOrder;
+	}
+	
     /**
      * Register submenu item
      */

@@ -38,6 +38,12 @@
                                 </a>
                             </li>
                         {% endif %}
+						 <li {% if environment.isModule('featuredplugins') %}class="active"{% endif %}>
+                            <a id="menuItem_tables" href="{{ environment.generateUrl('featuredplugins') }}">
+								<i class="fa fa-fw fa-heart"></i>
+								{{ environment.translate('Featured Plugins') }}
+                            </a>
+                        </li>
                     {% endblock %}
                 </ul>
                 <div class="clear"></div>

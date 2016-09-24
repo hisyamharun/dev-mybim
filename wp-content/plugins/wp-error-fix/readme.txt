@@ -1,9 +1,9 @@
 === CodePinch - WP Error Fix ===
-Contributors: vasyltech
+Contributors: vasyltech, myjive
 Tags: error, warning, notice, bug, fix, hotfix, plugin, error fix, security, log, development tool
 Requires at least: 3.8
-Tested up to: 4.5.3
-Stable tag: 3.8.6
+Tested up to: 4.6.1
+Stable tag: 3.8.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,9 @@ changes if necessary.
 4. Error Fix Settings
 
 == Changelog ==
+
+= 3.8.7 =
+* Bug fixing
 
 = 3.8.6 =
 * Optimized error reporting feature

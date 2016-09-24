@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: pt_BR\n"
 
@@ -152,6 +152,12 @@ msgstr "Adicionar campo editável"
 
 msgid "Save as"
 msgstr "Salvar como"
+
+msgid "Save data in editable fields"
+msgstr ""
+
+msgid "Allow to save data into the table through editable fields."
+msgstr ""
 
 msgid "Diagrams"
 msgstr "Diagramas"
@@ -339,8 +345,17 @@ msgstr "Aprenda mais como fazer isso <a href=\"//supsystic.com/how-to-use-tables
 msgid "Check all other FAQs"
 msgstr "Verificar todos os FAQs"
 
+msgid "Roles"
+msgstr ""
+
+msgid "Role for users who can use plugin. Administrator is included by default"
+msgstr ""
+
 msgid "PRO option"
 msgstr "PRO opção"
+
+msgid "Select avalilable roles to use tables"
+msgstr ""
 
 msgid "Can't decode table rows from JSON."
 msgstr "Não decodifica as linhas da tabela do JSON."
@@ -603,13 +618,16 @@ msgstr "Desativar a quebra de palavras no conteúdo na tabela, assim todo o text
 msgid "Highlight the order column"
 msgstr "Destacar a coluna ordenada"
 
+msgid "Highlight the column that the table data is currently ordered on."
+msgstr ""
+
 msgid "Row striping"
 msgstr "Linha destacada"
 
 msgid "Responsive Mode"
-msgstr "Configurações principais de sua primeira tabela. Aqui você pode ver configurações principais que são ligados com línguagem, elementos da tabela, estilo e outras configurações diferentes. Geralmente isso é uma guia onde você pode editar a parte visual de toda a tabela, ligar/desligar o modo responsivo, definir a paginação e etc."
+msgstr "Modo Responsive"
 
-msgid "Standard Responsive mode - in this mode if table content doesnât fit all columns become under each other with one cell per row"
+msgid "Standard Responsive mode - in this mode if table content doesn’t fit all columns become under each other with one cell per row"
 msgstr "Modo Responsive Padrão - neste modo o conteúdo da tabela não se encaixa todas as colunas tornam-se  uma célula por linha uma sob a outra."
 
 msgid "Automatic column hiding - in this mode table columns will collapse from right to left if content does not fit to parent container width"

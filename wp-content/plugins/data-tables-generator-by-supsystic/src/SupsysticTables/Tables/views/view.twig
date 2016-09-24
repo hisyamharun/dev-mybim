@@ -287,6 +287,15 @@
                         {% if environment.isPro() == false %}
                             <ul>
                                 <li>
+                                    <button {{ tooltip.attr(environment.translate('Add diagram')) }} id="addDiagramProFeature">
+                                        <i class="fa fa-fw fa-bar-chart"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        {% endif %}
+                        {% if environment.isPro() == false %}
+                            <ul>
+                                <li>
                                     <button {{ tooltip.attr(environment.translate('Add editable field')) }} id="editableFieldProFeature">
                                         <i class="fa fa-fw fa-pencil-square-o"></i>
                                     </button>
@@ -747,7 +756,7 @@
                                 <th scope="row">
                                     <label for="styling-order-column">
                                         {{ environment.translate('Highlight the order column') }}
-                                        {{ tooltip.icon('Highlight the column that the table data is currently ordered on.') }}
+                                        {{ tooltip.icon(environment.translate('Highlight the column that the table data is currently ordered on.')) }}
                                     </label>
                                 </th>
                                 <td>
@@ -777,8 +786,8 @@
                                     <label for="styling-stripe">
                                         {{ environment.translate('Responsive Mode') }}
                                         {{ tooltip.icon(
-                                            environment.translate('Standard Responsive mode - in this mode if table content doesn’t fit all columns become under each other with one cell per row') ~ '<br>' ~
-                                            environment.translate('Automatic column hiding - in this mode table columns will collapse from right to left if content does not fit to parent container width') ~ '<br>' ~ 
+                                            environment.translate('Standard Responsive mode - in this mode if table content doesn’t fit all columns become under each other with one cell per row') ~ '<br>' ~ '<br>' ~
+                                            environment.translate('Automatic column hiding - in this mode table columns will collapse from right to left if content does not fit to parent container width') ~ '<br>' ~ '<br>' ~
                                             environment.translate('Horizontal scroll - in this mode scroll bar will be added if table overflows parent container width') ~ '<br>' ~ 
                                             environment.translate('Disable Responsivity - default table fluid layout') ~ '<br>'
                                         ) }}
@@ -843,15 +852,15 @@
             <div class="row row-tab" id="row-tab-css">
                 <div class="col-xs-12">
                     {% set defaultCss %}
-/* Here you can add custom CSS for the current table */
-/* Lean more about CSS: https://en.wikipedia.org/wiki/Cascading_Style_Sheets */
+                        /* Here you can add custom CSS for the current table */
+                        /* Lean more about CSS: https://en.wikipedia.org/wiki/Cascading_Style_Sheets */
 
-/* To prevent the use of styles to other tables use "#supsystic-table-{{ table.id }}" as a base selector
-for example:
-#supsystic-table-{{ table.id }} { ... }
-#supsystic-table-{{ table.id }} tbody { ... }
-#supsystic-table-{{ table.id }} tbody tr { ... }
-*/
+                        /* To prevent the use of styles to other tables use "#supsystic-table-{{ table.id }}" as a base selector
+                        for example:
+                        #supsystic-table-{{ table.id }} { ... }
+                        #supsystic-table-{{ table.id }} tbody { ... }
+                        #supsystic-table-{{ table.id }} tbody tr { ... }
+                        */
                     {% endset %}
                     <div id="css-editor">{% if table.meta.css | length > 0 %}{{ table.meta.css }}{% else %}{{ defaultCss }}{% endif %}</div>
                 </div>
@@ -883,6 +892,31 @@ for example:
             <p>
                 {{ environment.translate('Please be advised that this option is available only in %s. You can %s today and get this and other PRO option for your tables!')|format(url, url2)|raw }}
             </p>
+        </div>
+
+        <div id="addDiagramProFeatureDialog" class="supsystic-plugin" style="display: none;" title="{{ environment.translate('Diagram') }}">
+            {% set url = build_pro_url({ 'utm_medium': 'diagrams' })  %}
+             <a href="{{ url }}" class="button button-hero" style="margin-left: 5px; margin-bottom: 20px;" target="_blank">
+                 {{ environment.translate('Get PRO') }}
+             </a>
+            <div id="previewDiagramProFeature" style="z-index: 10;" title="{{ environment.translate('Diagram') }}">
+                <div class="tab-switch" data-tabs>
+                    <a class="active" href="#typeProFeature">{{ environment.translate('Type') }}</a>
+                    <a href="#settingsProFeature">{{ environment.translate('Settings') }}</a>
+                </div>
+                <div class="tabs">
+                    <div id="typeTabProFeature" class="tab active" data-tab="#typeProFeature">
+                        <a href="{{ url }}" target="_blank">
+                            <img src="{{ environment.getModule('diagram').getLocationUrl() }}/assets/img/diagrams_dialog_type_tab.png" alt="Diagrams" title="diagrams_dialog_tab_1 Tab Content" style="width: 100%; height: auto;"/>
+                        </a>
+                    </div>
+                    <div id="settingsTabProFeature" class="tab" data-tab="#settingsProFeature">
+                        <a href="{{ url }}" target="_blank">
+                            <img src="{{ environment.getModule('diagram').getLocationUrl() }}/assets/img/diagrams_dialog_settings_tab.png" alt="Diagrams" title="Settings Tab Content" style="width: 100%; height: auto;"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="insertUrlDialog" style="display: none;" title="{{ environment.translate('Insert url') }}">

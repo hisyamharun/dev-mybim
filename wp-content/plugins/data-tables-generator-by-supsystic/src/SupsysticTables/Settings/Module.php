@@ -59,11 +59,11 @@ class SupsysticTables_Settings_Module extends SupsysticTables_Core_BaseModule
             ->setMenuSlug($menu->getMenuSlug() . '&module=' . $this->getModuleName())
             ->setMenuTitle($this->translate('Settings'))
             ->setPageTitle($this->translate('Settings'))
-            ->setModuleName('settings');
+            ->setModuleName('settings')
+			->setSortOrder(40);
 
 		// We do not register menu because we need to change its position later
         $menu->addSubmenuItem('settings', $submenu);
-            //->register();
     }
 
 }

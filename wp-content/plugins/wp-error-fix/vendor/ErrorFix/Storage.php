@@ -129,9 +129,9 @@ class ErrorFix_Storage {
 
         foreach (self::$errors as $hash => $error) {
             $path = $error->filepath;
-            if (!is_readable($path)) {
+            if (!@is_readable($path)) {
                 $this->cache[$path] = null;
-            } elseif (!isset($this->cache[$path]) && is_readable($path)) {
+            } elseif (!isset($this->cache[$path]) && @is_readable($path)) {
                 $this->cache[$path] = md5(@file_get_contents($path));
             }
 

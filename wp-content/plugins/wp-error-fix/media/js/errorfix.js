@@ -707,7 +707,7 @@
                 var value = null;
             
                 if ($(this).is(':checkbox')) {
-                    value = $(this).prop('checked');
+                    value = $(this).prop('checked') ? 1 : 0;
                 } else {
                     value = $(this).val();
                 }

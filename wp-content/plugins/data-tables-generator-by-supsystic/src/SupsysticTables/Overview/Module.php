@@ -60,9 +60,9 @@ class SupsysticTables_Overview_Module extends SupsysticTables_Core_BaseModule
             ->setMenuSlug($menu->getMenuSlug() . '&module=' . $this->getModuleName())
             ->setMenuTitle($environment->translate('Overview'))
             ->setPageTitle($environment->translate('Overview'))
-            ->setModuleName('overview');
+            ->setModuleName('overview')
+			->setSortOrder(10);
 
-        $menu->addSubmenuItem('overview', $submenu)
-            ->register();
+        $menu->addSubmenuItem('overview', $submenu);
     }
 }

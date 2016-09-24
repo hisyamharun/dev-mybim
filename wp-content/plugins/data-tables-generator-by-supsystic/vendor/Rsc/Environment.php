@@ -190,7 +190,7 @@ class Rsc_Environment
                 $this->menu
             );
 
-            $this->menu->register();
+            //$this->menu->register();
         }
 
         $this->twig->addGlobal('environment', $this);
@@ -222,6 +222,9 @@ class Rsc_Environment
         do_action($this->pluginName . '_plugin_loaded', $this);
 
         $this->resolver->init();
+		if($this->menu) {
+			$this->menu->register();
+		}
     }
 
     public function isPro()

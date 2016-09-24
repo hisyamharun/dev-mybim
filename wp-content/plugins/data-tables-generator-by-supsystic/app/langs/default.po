@@ -139,6 +139,12 @@ msgstr ""
 msgid "Save as"
 msgstr ""
 
+msgid "Save data in editable fields"
+msgstr ""
+
+msgid "Allow to save data into the table through editable fields."
+msgstr ""
+
 msgid "Diagrams"
 msgstr ""
 
@@ -325,7 +331,16 @@ msgstr ""
 msgid "Check all other FAQs"
 msgstr ""
 
+msgid "Roles"
+msgstr ""
+
+msgid "Role for users who can use plugin. Administrator is included by default"
+msgstr ""
+
 msgid "PRO option"
+msgstr ""
+
+msgid "Select avalilable roles to use tables"
 msgstr ""
 
 msgid "Can\'t decode table rows from JSON."
@@ -587,6 +602,9 @@ msgid "Disable wrapping of content in the table, so all text in the cells is on 
 msgstr ""
 
 msgid "Highlight the order column"
+msgstr ""
+
+msgid "Highlight the column that the table data is currently ordered on."
 msgstr ""
 
 msgid "Row striping"

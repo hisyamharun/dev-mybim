@@ -39,7 +39,7 @@ if (defined('ABSPATH') && !defined('ERRORFIX_LOADED')) {
         'autofix'      => (ErrorFix_Core_Option::getVip() || !empty($settings['autofix']) ? true : false),
         'endpoint'     => 'http://errorfix.vasyltech.com/v3',
         'exclude'      => (!empty($settings['exclude']) ? array_map('trim', explode("\n", $settings['exclude'])) : array()),
-        'version'      => '3.8.6'
+        'version'      => '3.8.7'
     ));
     
     //error fix can be loaded only once

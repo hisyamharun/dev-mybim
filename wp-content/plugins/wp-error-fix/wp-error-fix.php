@@ -3,7 +3,7 @@
 /**
   Plugin Name: CodePinch
   Description: Patent-pending technology that provides solutions to PHP errors within hours, preventing costly maintenance time and keeping your WordPress site error-free.
-  Version: 3.8.6
+  Version: 3.8.7
   Author: Vasyl Martyniuk <vasyl@vasyltech.com>
   Author URI: http://www.vasyltech.com
 

@@ -260,6 +260,7 @@ class SupsysticTables_Tables_Module extends SupsysticTables_Core_BaseModule
                 ->setCachingAllowed($cachingAllowed)
                 ->addDependency('jquery')
                 ->addDependency('supsystic-tables-datatables-js')
+				->addDependency('supsystic-tables-datatables-numeral')
         );
     }
 
@@ -460,7 +461,8 @@ class SupsysticTables_Tables_Module extends SupsysticTables_Core_BaseModule
             ->setMenuSlug($menu->getMenuSlug() . '#add')
             ->setMenuTitle($environment->translate('Add table'))
             ->setModuleName('tables')
-            ->setPageTitle($environment->translate('Add table'));
+            ->setPageTitle($environment->translate('Add table'))
+			->setSortOrder(20);
 
         $menu->addSubmenuItem('add_table', $item);
 
@@ -469,7 +471,8 @@ class SupsysticTables_Tables_Module extends SupsysticTables_Core_BaseModule
            ->setMenuSlug($menu->getMenuSlug() . '&module=tables')
            ->setMenuTitle($environment->translate('Tables'))
            ->setModuleName('tables')
-           ->setPageTitle($environment->translate('Tables'));
+           ->setPageTitle($environment->translate('Tables'))
+			->setSortOrder(30);
 
         $menu->addSubmenuItem('tables', $item);
 		
@@ -479,8 +482,6 @@ class SupsysticTables_Tables_Module extends SupsysticTables_Core_BaseModule
 			$menu->deleteSubmenuItem('settings');
 			$menu->addSubmenuItem('settings', $settings);
 		}
-
-        $menu->register();
     }
 
     public function disallowIndexing($id) {

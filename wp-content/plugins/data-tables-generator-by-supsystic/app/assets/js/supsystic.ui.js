@@ -17,6 +17,7 @@
 
         $('[data-toggle="tooltip"]').tooltipster({
                 contentAsHTML: true,
+                interactive: true,
                 position: 'top-left',
                 updateAnimation: true,
                 animation: 'swing',

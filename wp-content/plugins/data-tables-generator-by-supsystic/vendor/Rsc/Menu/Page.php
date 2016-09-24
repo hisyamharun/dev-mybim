@@ -226,12 +226,24 @@ class Rsc_Menu_Page
     {
         add_action('admin_menu', array($this, 'addMenuPage'));
         if (count($this->submenu) > 0) {
+			usort($this->submenu, array($this, 'sortSubMenuItemsClb'));
             /** @var Rsc_Menu_Item $submenu */
             foreach ($this->submenu as $submenu) {
                 add_action('admin_menu', array($submenu, 'register'));
             }
         }
     }
+	
+	public function sortSubMenuItemsClb($a, $b) {
+		$sortOrderA = $a->getSortOrder();
+		$sortOrderB = $b->getSortOrder();
+		if($sortOrderA == $sortOrderB)
+			return 0;
+		if($sortOrderA > $sortOrderB)
+			return 1;
+		if($sortOrderA < $sortOrderB)
+			return -1;
+	}
 
     /**
      * Add menu page
