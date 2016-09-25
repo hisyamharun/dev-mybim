@@ -1,0 +1,20 @@
+/*
+ Theme Name:     Divi Child Theme - MyBIM
+ Theme URI:      N/A
+ Description:    Divi Child Theme - MyBIM
+ Author:         Fiztech Solutions Sdn Bhd
+ Author URI:     http://www.fiztech.com.my
+ Template:       Divi
+ Version:        0.0.1
+*/
+ 
+@import url("../Divi/style.css");
+ 
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+/*
+.no-excerpt .post-content {
+font-size: 0 !important;
+}
+*/
