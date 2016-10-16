@@ -886,7 +886,7 @@ final class ET_Core_Portability {
 				<div class="et-core-modal-header">
 					<h3 class="et-core-modal-title"><?php esc_html_e( 'Portability', ET_CORE_TEXTDOMAIN ); ?></h3><a href="#" class="et-core-modal-close" data-et-core-modal="close"></a>
 				</div>
-				<div data-et-core-tabs>
+				<div data-et-core-tabs class="et-core-modal-tabs-enabled">
 					<ul class="et-core-tabs">
 						<li><a href="#et-core-portability-export"><?php esc_html_e( 'Export', ET_CORE_TEXTDOMAIN ); ?></a></li>
 						<li><a href="#et-core-portability-import"><?php esc_html_e( 'Import', ET_CORE_TEXTDOMAIN ); ?></a></li>
