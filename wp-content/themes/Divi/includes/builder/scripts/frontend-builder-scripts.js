@@ -2371,6 +2371,10 @@
 				}
 
 				window.et_pb_map_init = function( $this_map_container ) {
+					if (typeof google === 'undefined') {
+						return;
+					}
+
 					var $this_map = $this_map_container.children('.et_pb_map'),
 						this_map_grayscale = $this_map_container.attr( 'data-grayscale' ) || 0,
 						is_draggable = ( et_is_mobile_device && $this_map.data('mobile-dragging') !== 'off' ) || ! et_is_mobile_device,
@@ -2435,9 +2439,11 @@
 				if ( window.et_load_event_fired ) {
 					et_pb_init_maps();
 				} else {
-					google.maps.event.addDomListener(window, 'load', function() {
-						et_pb_init_maps();
-					} );
+					if ( typeof google !== 'undefined' ) {
+						google.maps.event.addDomListener(window, 'load', function() {
+							et_pb_init_maps();
+						} );
+					}
 				}
 			}
 
@@ -2566,6 +2572,18 @@
 				$this.find('.et_parallax_bg').css( { 'height' : bg_height } );
 			}
 
+			function et_toggle_animation_callback( initial_toggle_state, $module, $section ) {
+				if ( 'closed' === initial_toggle_state ) {
+					$module.removeClass('et_pb_toggle_close').addClass('et_pb_toggle_open');
+				} else {
+					$module.removeClass('et_pb_toggle_open').addClass('et_pb_toggle_close');
+				}
+
+				if ( $section.hasClass( 'et_pb_section_parallax' ) && !$section.children().hasClass( 'et_pb_parallax_css') ) {
+					$.proxy( et_parallax_set_height, $section )();
+				}
+			}
+
 			$( '.et_pb_section' ).on( 'click', '.et_pb_toggle_title', function() {
 				var $this_heading         = $(this),
 					$module               = $this_heading.closest('.et_pb_toggle'),
@@ -2593,17 +2611,15 @@
 					return;
 				}
 
-				$content.slideToggle( 700, function() {
-					if ( 'closed' === initial_toggle_state ) {
-						$module.removeClass('et_pb_toggle_close').addClass('et_pb_toggle_open');
-					} else {
-						$module.removeClass('et_pb_toggle_open').addClass('et_pb_toggle_close');
-					}
-
-					if ( $section.hasClass( 'et_pb_section_parallax' ) && !$section.children().hasClass( 'et_pb_parallax_css') ) {
-						$.proxy( et_parallax_set_height, $section )();
-					}
-				} );
+				if ( $('body').hasClass('safari') ) {
+					$content.fadeToggle( 700, function() {
+						et_toggle_animation_callback( initial_toggle_state, $module, $section );
+					} );
+				} else {
+					$content.slideToggle( 700, function() {
+						et_toggle_animation_callback( initial_toggle_state, $module, $section );
+					} );
+				}
 
 				if ( is_accordion ) {
 					$accordion_active_toggle.find('.et_pb_toggle_content').slideToggle( 700, function() {
@@ -3164,13 +3180,13 @@
 						$et_pb_ab_goal.waypoint({
 							offset: '80%',
 							handler: function() {
-								if ( et_pb_ab_logged_status['read_goal'] || ! $et_pb_ab_goal.visible( true ) ) {
+								if ( et_pb_ab_logged_status['read_goal'] || ! $et_pb_ab_goal.length || ! $et_pb_ab_goal.visible( true ) ) {
 									return;
 								}
 
 								// log the goal_read if goal is still visible after 3 seconds.
 								setTimeout( function() {
-									if ( $et_pb_ab_goal.visible( true ) && ! et_pb_ab_logged_status['read_goal'] ) {
+									if ( $et_pb_ab_goal.length && $et_pb_ab_goal.visible( true ) && ! et_pb_ab_logged_status['read_goal'] ) {
 										et_pb_ab_update_stats( 'read_goal' );
 									}
 								}, 3000 );

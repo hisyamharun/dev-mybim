@@ -2,7 +2,11 @@ var ET_PageBuilder = ET_PageBuilder || {};
 
 window.wp = window.wp || {};
 
+<<<<<<< HEAD
 window.et_builder_version = '3.0.6';
+=======
+window.et_builder_version = '3.0.11';
+>>>>>>> master
 
 ( function($) {
 	var et_error_modal_shown = window.et_error_modal_shown,
@@ -257,7 +261,6 @@ window.et_builder_version = '3.0.6';
 
 	}
 	et_builder_load_backbone_templates();
-
 
 	$( document ).ready( function() {
 
@@ -3472,6 +3475,8 @@ window.et_builder_version = '3.0.6';
 
 				$et_form_validation = $this_el.find('form.validate');
 
+				$warning = $this_el.find('.et-pb-option--warning');
+
 				// validation
 				if ( $et_form_validation.length ) {
 					et_builder_debug_message('validation enabled');
@@ -3712,6 +3717,19 @@ window.et_builder_version = '3.0.6';
 					}
 				}
 
+				if ( $warning.length ) {
+					$warning.each(function() {
+						var $warning_option = $(this);
+						var $warning_field = $warning_option.find('.et-pb-option-warning');
+						var display_if = $warning_field.attr('data-display_if');
+						var name = $warning_field.attr('data-name');
+
+						if ( et_pb_options[name] === display_if ) {
+							$warning_option.addClass('et-pb-option--warning-active');
+						}
+					});
+				}
+
 				this.renderMap();
 
 				et_pb_init_main_settings( this.$el, this_module_cid );
@@ -3736,7 +3754,7 @@ window.et_builder_version = '3.0.6';
 					lat = ! _.isUndefined( latlng[0] ) ? parseFloat( latlng[0] ) : false,
 					lng = ! _.isUndefined( latlng[1] ) ? parseFloat( latlng[1] ) : false;
 
-				if ( lat && ! _.isNaN( lat ) && lng && ! _.isNaN( lng ) ) {
+				if ( typeof google !== 'undefined' && lat && ! _.isNaN( lat ) && lng && ! _.isNaN( lng ) ) {
 					return new google.maps.LatLng( lat, lng );
 				}
 
@@ -3747,7 +3765,7 @@ window.et_builder_version = '3.0.6';
 				this_el = this,
 				$map = this.$el.find('.et-pb-map');
 
-				if ( $map.length ) {
+				if ( typeof google !== 'undefined' && $map.length ) {
 					view_cid = this.view_cid;
 
 					var $address = this.$el.find('.et_pb_address'),
@@ -4257,7 +4275,7 @@ window.et_builder_version = '3.0.6';
 
 				$map = this.$el.find('.et-pb-map');
 
-				if ( $map.length ) {
+				if ( typeof google !== 'undefined' && $map.length ) {
 					var map,
 						marker,
 						$address = this.$el.find('.et_pb_pin_address'),
@@ -11606,6 +11624,7 @@ window.et_builder_version = '3.0.6';
 				ET_PageBuilder_AB_Testing.update();
 			}, 600 );
 		}
+
 
 		function et_prepare_template_content( content ) {
 			if ( -1 !== content.indexOf( '[et_pb_' ) ) {

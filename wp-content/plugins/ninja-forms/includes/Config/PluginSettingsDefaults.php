@@ -3,7 +3,11 @@
 return apply_filters( 'ninja_forms_plugin_settings_defaults', array(
 
     'date_format' => __( 'm/d/Y', 'ninja-forms' ),
+<<<<<<< HEAD
     'currency_symbol' => '$',
+=======
+    'currency' => 'USD',
+>>>>>>> master
 
     'recaptcha_site_key' => '',
     'recaptcha_secret_key' => '',

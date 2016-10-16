@@ -68,12 +68,17 @@ require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');
             <table class="dup-support-hlp-hdrs">
                 <tr >
                     <td style="height:30px; text-align: center;">
+<<<<<<< HEAD
                         <span style="display: inline-block; margin-top: 5px"><?php _e('Partner with Us', 'duplicator') ?></span>
+=======
+                        <span style="display: inline-block; margin-top: 5px"><?php _e('Rate Duplicator', 'duplicator') ?></span>
+>>>>>>> master
                     </td>
                 </tr>
             </table>
             <table style="text-align: center;width:100%; font-size:11px; font-style:italic; margin-top:25px">
                 <tr>
+<<<<<<< HEAD
                     <td class="dup-support-grid-img" style="padding-left:40px">
                         <div class="dup-support-cell" onclick="jQuery('#dup-donate-form').submit()">
                             <form id="dup-donate-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" > 
@@ -93,6 +98,13 @@ require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');
                 <tr>
                     <td colspan="2">
                    
+=======
+                    <td valign="top">
+                        <a href="http://wordpress.org/extend/plugins/duplicator" target="_blank"><img id="dup-img-5stars" src="<?php echo DUPLICATOR_PLUGIN_URL ?>assets/img/5star.png" /></a>
+                        <div  style=" font-size: 16px; font-weight: bold">
+							<a href="http://wordpress.org/extend/plugins/duplicator" target="_blank"><?php _e('Leave 5 Stars', 'duplicator') ?></a>
+						</div>
+>>>>>>> master
                     </td>
                 </tr>
             </table>

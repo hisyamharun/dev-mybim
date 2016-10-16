@@ -116,6 +116,7 @@ class DUP_UI {
 		} 
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * Shows a random affilate link
 	 * @return type string
@@ -190,5 +191,7 @@ class DUP_UI {
 		}
 		return $html;
 	}
+=======
+>>>>>>> master
 }
 ?>

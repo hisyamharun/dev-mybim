@@ -4,6 +4,7 @@ class ET_Builder_Section extends ET_Builder_Structure_Element {
 	function init() {
 		$this->name = esc_html__( 'Section', 'et_builder' );
 		$this->slug = 'et_pb_section';
+		$this->fb_support = true;
 
 		$this->whitelisted_fields = array(
 			'background_image',
@@ -903,6 +904,7 @@ class ET_Builder_Row extends ET_Builder_Structure_Element {
 	function init() {
 		$this->name = esc_html__( 'Row', 'et_builder' );
 		$this->slug = 'et_pb_row';
+		$this->fb_support = true;
 
 		$this->advanced_options = array(
 			'custom_margin_padding' => array(
@@ -1084,6 +1086,10 @@ class ET_Builder_Row extends ET_Builder_Structure_Element {
 				'option_category' => 'layout',
 				'depends_show_if' => 'on',
 				'validate_unit'   => true,
+<<<<<<< HEAD
+=======
+				'fixed_unit'      => 'px',
+>>>>>>> master
 				'range_settings'  => array(
 					'min'  => 500,
 					'max'  => 2600,
@@ -1097,6 +1103,10 @@ class ET_Builder_Row extends ET_Builder_Structure_Element {
 				'option_category' => 'layout',
 				'depends_show_if' => 'off',
 				'validate_unit'   => true,
+<<<<<<< HEAD
+=======
+				'fixed_unit'      => '%',
+>>>>>>> master
 				'range_settings'  => array(
 					'min'  => 0,
 					'max'  => 100,
@@ -1880,6 +1890,7 @@ class ET_Builder_Row_Inner extends ET_Builder_Structure_Element {
 	function init() {
 		$this->name = esc_html__( 'Row', 'et_builder' );
 		$this->slug = 'et_pb_row_inner';
+		$this->fb_support = true;
 
 		$this->advanced_options = array(
 			'custom_margin_padding' => array(
@@ -2418,7 +2429,7 @@ class ET_Builder_Row_Inner extends ET_Builder_Structure_Element {
 			}
 
 			if ( ! empty( $padding_mobile_values_processed ) ) {
-				et_pb_generate_responsive_css( $padding_mobile_values_processed, '.et_pb_column %%order_class%%', '', $function_name );
+				et_pb_generate_responsive_css( $padding_mobile_values_processed, '.et_pb_column %%order_class%%', '', $function_name, ' !important; ' );
 			}
 		}
 
@@ -2464,6 +2475,7 @@ class ET_Builder_Column extends ET_Builder_Structure_Element {
 		$this->name                       = esc_html__( 'Column', 'et_builder' );
 		$this->slug                       = 'et_pb_column';
 		$this->additional_shortcode_slugs = array( 'et_pb_column_inner' );
+		$this->fb_support = true;
 
 		$this->whitelisted_fields = array(
 			'type',

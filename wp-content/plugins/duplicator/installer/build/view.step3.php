@@ -63,8 +63,13 @@ VIEW: STEP 3- INPUT -->
 	<div class="s3-btns-msg">Click buttons above to complete process</div>
 	
 	<div class="s3-go-back">
+<<<<<<< HEAD
 		<i style='font-size:11px'>To re-install <a href="javascript:history.go(-2)">start over at step 1</a>.</i><br/>
 		<i style="font-size:11px;">The .htaccess file was reset.  Resave plugins that write to this file.</i>
+=======
+		<i>To re-install <a href="javascript:history.go(-2)">start over at step 1</a>.</i><br/>
+		<i>The .htaccess file was reset.  Resave plugins that write to this file.</i>
+>>>>>>> master
 	</div>
 
 
@@ -205,7 +210,11 @@ VIEW: STEP 3- INPUT -->
 		switch ($num) {
 			case 1: 
 				$key = 'free_inst_s3btn1';
+<<<<<<< HEAD
 				$txt = 'Want More Power?';
+=======
+				$txt = 'Considered Going Pro?';
+>>>>>>> master
 				break;
 			case 2: 
 				$key = 'free_inst_s3btn2';
@@ -218,7 +227,11 @@ VIEW: STEP 3- INPUT -->
 	?>
 	
 	<div class="s3-gopro-btn">
+<<<<<<< HEAD
 		<a style="width:100%" class="s3-final-btns" href="https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wordpress_plugin&utm_campaign=duplicator_pro&utm_content="<?php echo $key;?>" target="_blank">&#10097;&#10097; <?php echo $txt;?></a> 
+=======
+		<a href="https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wordpress_plugin&utm_campaign=duplicator_pro&utm_content="<?php echo $key;?>" target="_blank"> <?php echo $txt;?></a> 
+>>>>>>> master
 	</div>
 	<br/><br/>
 		

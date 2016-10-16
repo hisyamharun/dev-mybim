@@ -2,7 +2,11 @@
 
 if ( ! defined( 'ET_BUILDER_PRODUCT_VERSION' ) ) {
 	// Note, when this is updated, you must also update corresponding version in builder.js: `window.et_builder_version`
+<<<<<<< HEAD
 	define( 'ET_BUILDER_PRODUCT_VERSION', '3.0.6' );
+=======
+	define( 'ET_BUILDER_PRODUCT_VERSION', '3.0.11' );
+>>>>>>> master
 }
 
 if ( ! defined( 'ET_BUILDER_VERSION' ) ) {
@@ -460,19 +464,76 @@ endif;
  * @return array
  */
 function et_fb_conditional_tag_params() {
+	$is_rtl = is_rtl();
+
+	if ( 'on' === et_get_option( 'divi_disable_translations', 'off' ) ) {
+		$is_rtl = false;
+	}
+
 	$conditional_tags = array(
 		'is_front_page'               => is_front_page(),
+		'is_home_page'                => is_home() || is_front_page(),
 		'is_search'                   => is_search(),
 		'is_single'                   => is_single(),
 		'is_singular'                 => is_singular(),
 		'is_singular_project'         => is_singular( 'project' ),
-		'is_rtl'                      => is_rtl(),
+		'is_rtl'                      => $is_rtl,
 		'et_is_builder_plugin_active' => et_is_builder_plugin_active(),
 		'is_user_logged_in'           => is_user_logged_in(),
 		'et_is_ab_testing_active'     => et_is_ab_testing_active() ? 'yes' : 'no',
 	);
 
 	return apply_filters( 'et_fb_conditional_tag_params', $conditional_tags );
+}
+
+
+function _et_fb_get_app_preferences_defaults() {
+	$app_preferences = array(
+		'settings_bar_location'    => array(
+			'type'    => 'string',
+			'default' => 'bottom',
+		),
+		'modal_snap_location'    => array(
+			'type'    => 'string',
+			'default' => 'left',
+		),
+		'modal_snap'             => array(
+			'type'    => 'bool',
+			'default' => false,
+		),
+		'modal_fullscreen'       => array(
+			'type'    => 'bool',
+			'default' => false,
+		),
+		'modal_dimension_width'  => array(
+			'type'    => 'int',
+			'default' => 400,
+		),
+		'modal_dimension_height' => array(
+			'type'    => 'int',
+			'default' => 400,
+		),
+		'modal_position_x'       => array(
+			'type'    => 'int',
+			'default' => 30,
+		),
+		'modal_position_y'       => array(
+			'type'    => 'int',
+			'default' => 50,
+		),
+	);
+
+	return apply_filters( 'et_fb_app_preferences_defaults', $app_preferences );
+}
+
+function et_fb_app_preferences() {
+	$app_preferences = _et_fb_get_app_preferences_defaults();
+
+	foreach ( $app_preferences as $preference_key => $preference ) {
+		$app_preferences[ $preference_key ]['value'] = et_get_option( 'et_fb_pref_' . $preference_key, $preference['default'] );
+	}
+
+	return apply_filters( 'et_fb_app_preferences', $app_preferences );
 }
 
 /**
@@ -643,6 +704,16 @@ function et_fb_process_to_shortcode( $object, $options = array(), $library_item_
 				$prepared_value = str_replace( '%date', '___et-fb-date___', $value );
 				$sanitized_value = str_replace( '___et-fb-date___', '%date', sanitize_text_field( $prepared_value ) );
 
+<<<<<<< HEAD
+=======
+				$replace_pairs = array (
+					'>' => '&gt;',
+					'<' => '&lt;',
+				);
+
+				$sanitized_value = strtr( $sanitized_value, $replace_pairs );
+
+>>>>>>> master
 				$value = $sanitized_value;
 			}
 
@@ -696,7 +767,11 @@ function et_fb_process_to_shortcode( $object, $options = array(), $library_item_
 					$output .= $content;
 				} else {
 					if ( isset( $item['content'] ) ) {
-						$output .= $item['content'];
+						$_content = $item['content'];
+
+						$_content = str_replace( '\\', '\\\\', $_content );
+
+						$output .= $_content;
 					} else {
 						$output .= '';
 					}
@@ -795,6 +870,30 @@ function et_fb_ajax_save() {
 
 	if ( isset($_POST['settings'] ) && is_array( $_POST['settings'] ) ) {
 		$update_post_meta = et_pb_update_page_settings( $post_id, $_POST['settings'] );
+	}
+
+	if ( isset($_POST['preferences'] ) && is_array( $_POST['preferences'] ) ) {
+		$app_preferences = _et_fb_get_app_preferences_defaults();
+
+		foreach( $app_preferences as $preference_key => $preference_data ) {
+
+			$preference_value = isset( $_POST['preferences'][ $preference_key ] ) && isset( $_POST['preferences'][ $preference_key ]['value'] ) ? $_POST['preferences'][ $preference_key ]['value'] : $preference_data['default'];
+
+			// sanitize based on type
+			switch ( $preference_data['type'] ) {
+				case 'int':
+					$preference_value = absint( $preference_value );
+					break;
+				case 'bool':
+					$preference_value = $preference_value === 'true' ? 'true' : 'false';
+					break;
+				default:
+					$preference_value = sanitize_text_field( $preference_value );
+					break;
+			}
+
+			et_update_option( 'et_fb_pref_' . $preference_key, $preference_value );
+		}
 	}
 
 	if ( $update ) {
@@ -1925,7 +2024,10 @@ function et_pb_add_builder_page_js_css(){
 	wp_enqueue_script( 'underscore' );
 	wp_enqueue_script( 'backbone' );
 
-	wp_enqueue_script( 'google-maps-api', esc_url( add_query_arg( array( 'key' => et_pb_get_google_api_key(), 'callback' => 'initMap' ), is_ssl() ? 'https://maps.googleapis.com/maps/api/js' : 'http://maps.googleapis.com/maps/api/js' ) ), array(), '3', true );
+	if ( et_pb_enqueue_google_maps_script() ) {
+		wp_enqueue_script( 'google-maps-api', esc_url( add_query_arg( array( 'key' => et_pb_get_google_api_key(), 'callback' => 'initMap' ), is_ssl() ? 'https://maps.googleapis.com/maps/api/js' : 'http://maps.googleapis.com/maps/api/js' ) ), array(), '3', true );
+	}
+
 	wp_enqueue_script( 'wp-color-picker' );
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_script( 'wp-color-picker-alpha', ET_BUILDER_URI . '/scripts/ext/wp-color-picker-alpha.min.js', array( 'jquery', 'wp-color-picker' ), ET_BUILDER_VERSION, true );
@@ -2018,6 +2120,7 @@ function et_pb_add_builder_page_js_css(){
 		'memory_limit_not_increased' => esc_html__( "Your memory limit can't be changed automatically", 'et_builder' ),
 		'google_api_key' => et_pb_get_google_api_key(),
 		'options_page_url' => et_pb_get_options_page_link(),
+		'et_pb_google_maps_script_notice' => et_pb_enqueue_google_maps_script(),
 	), et_pb_history_localization() ) ) );
 
 	wp_localize_script( 'et_pb_admin_js', 'et_pb_ab_js_options', apply_filters( 'et_pb_ab_js_options', array(
@@ -5967,6 +6070,53 @@ function et_fb_process_imported_content() {
 }
 add_action( 'wp_ajax_et_fb_process_imported_content', 'et_fb_process_imported_content' );
 
+function et_fb_retrieve_builder_data() {
+	if ( ! isset( $_POST['et_fb_helper_nonce'] ) || ! wp_verify_nonce( $_POST['et_fb_helper_nonce'], 'et_fb_backend_helper_nonce' ) ) {
+		die( -1 );
+	}
+
+	if ( ! current_user_can( 'edit_posts' ) ) {
+		die( -1 );
+	}
+
+	$post_type = ! empty( $_POST['et_post_type'] ) ? sanitize_text_field( $_POST['et_post_type'] ) : 'post';
+	$post_id = ! empty( $_POST['et_post_id'] ) ? sanitize_text_field( $_POST['et_post_id'] ) : '';
+	$layout_type = ! empty( $_POST['et_layout_type'] ) ? sanitize_text_field( $_POST['et_layout_type'] ) : '';
+
+	$fields_data = array();
+	$fields_data['custom_css'] = ET_Builder_Element::get_custom_css_fields( $post_type );
+	$fields_data['advanced_fields'] = ET_Builder_Element::get_advanced_fields( $post_type );
+	$fields_data['general_fields'] = ET_Builder_Element::get_general_fields( $post_type );
+
+	$post_data = get_post( $post_id );
+	$post_content = $post_data->post_content;
+
+	switch ( $layout_type ) {
+		case 'module':
+			$use_fullwidth_section = false !== strpos( $post_content, '[et_pb_fullwidth_' ) ? true : false;
+
+			if ( ! $use_fullwidth_section ) {
+				$post_content = sprintf( '[et_pb_row][et_pb_column type="4_4"]%1$s[/et_pb_column][/et_pb_row]', $post_content );
+			}
+
+			$post_content = sprintf(
+				'[et_pb_section%2$s]%1$s[/et_pb_section]',
+				$post_content,
+				$use_fullwidth_section ? ' fullwidth="on"' : ''
+			);
+
+			break;
+		case 'row':
+			$post_content = '[et_pb_section]' . $post_content . '[/et_pb_section]';
+			break;
+	}
+
+	$fields_data['shortcode_object'] = et_fb_process_shortcode( $post_content );
+
+	die( json_encode( $fields_data ) );
+}
+add_action( 'wp_ajax_et_fb_retrieve_builder_data', 'et_fb_retrieve_builder_data' );
+
 function et_pb_get_options_page_link() {
 	if ( et_is_builder_plugin_active() ) {
 		return admin_url( 'admin.php?page=et_divi_options#tab_et_dashboard_tab_content_api_main' );
@@ -6068,6 +6218,30 @@ function et_fb_prepare_tag( $tag ) {
 
 	return isset( $aliases[ $tag ] ) ? $aliases[ $tag ] : $tag;
 }
+
+if ( ! function_exists( 'et_strip_shortcodes' ) ) :
+function et_strip_shortcodes( $content ) {
+	$content = trim( $content );
+
+	$strip_content_shortcodes = array(
+		'et_pb_code',
+		'et_pb_fullwidth_code',
+	);
+
+	foreach ( $strip_content_shortcodes as $shortcode_name ) {
+		$regex = sprintf(
+			'(\[%1$s[^\]]*\][^\[]*\[\/%1$s\])',
+			esc_html( $shortcode_name )
+		);
+
+		$content = preg_replace( $regex, '', $content );
+	}
+
+	$content = preg_replace( '(\[[^\]]+\])', '', $content );
+
+	return $content;
+}
+endif;
 
 function et_fb_reset_shortcode_object_processing() {
 	$GLOBALS['et_fb_processing_shortcode_object'] = false;
