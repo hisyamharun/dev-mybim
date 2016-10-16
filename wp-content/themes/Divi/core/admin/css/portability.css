@@ -11,6 +11,10 @@
 /*-----------------------------------------------------------------------------
   1.0 - Modal
 ------------------------------------------------------------------------------*/
+[data-et-core-portability] .et-core-modal {
+	top: 25%;
+}
+
 [data-et-core-portability-cancel] {
 	opacity: 0;
 	display: none;
@@ -51,12 +55,9 @@
 	opacity: 0;
 }
 
-.et-core-portability-import-placeholder {
-	width: 166px;
-}
-
+.et-core-portability-import-placeholder,
 .et-core-portability-import-form input[type="file"] {
-	width: 178px;
+	width: 183px;
 }
 
 .et-core-portability-import-form .et-core-button {
