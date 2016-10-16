@@ -5,11 +5,16 @@
  * @author 		AJDE
  * @category 	Admin
  * @package 	eventon/Admin
+<<<<<<< refs/remotes/origin/dev4
  * @version     2.3.13
+=======
+ * @version     2.4.4
+>>>>>>> AddedFlatsome Themes
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+<<<<<<< refs/remotes/origin/dev4
 /**
  * Duplicate event action.
  *
@@ -40,6 +45,33 @@ function eventon_duplicate_event() {
 		wp_die(__( 'Event creation failed, could not find original event:', 'eventon' ) . ' ' . $id);
 	}
 }
+=======
+// Duplicate event action.
+	function eventon_duplicate_event() {
+		if (! ( isset( $_GET['post']) || isset( $_POST['post'])  || ( isset($_REQUEST['action']) && 'duplicate_post_save_as_new_page' == $_REQUEST['action'] ) ) ) {
+			wp_die(__( 'No event to duplicate has been supplied!', 'eventon' ));
+		}
+
+		// Get the original page
+		$id = (isset($_GET['post']) ? $_GET['post'] : $_POST['post']);
+		check_admin_referer( 'eventon-duplicate-event_' . $id );
+		$post = eventon_get_event_to_duplicate($id);
+
+		// Copy the page and insert it
+		if (isset($post) && $post!=null) {
+			$new_id = eventon_create_duplicate_from_event($post);
+
+			// hook after duplicate event created
+			do_action( 'eventon_duplicate_product', $new_id, $post );
+
+			// Redirect to the edit screen for the new draft page
+			wp_redirect( admin_url( 'post.php?action=edit&post=' . $new_id ) );
+			exit;
+		} else {
+			wp_die(__( 'Event creation failed, could not find original event:', 'eventon' ) . ' ' . $id);
+		}
+	}
+>>>>>>> AddedFlatsome Themes
 
 
 // Duplication of the post

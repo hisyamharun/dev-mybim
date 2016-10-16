@@ -1,7 +1,11 @@
 /*
 *	Eventon Settings tab - addons and licenses
+<<<<<<< refs/remotes/origin/dev4
 *	@version: 0.4
 *	@updated: 2015-1-31
+=======
+*	@version: 2.4
+>>>>>>> AddedFlatsome Themes
 */
 
 jQuery(document).ready(function($){
@@ -77,6 +81,10 @@ jQuery(document).ready(function($){
 					var data_arg = {
 						action:'eventon_validate_license',
 						key:license_key,
+<<<<<<< refs/remotes/origin/dev4
+=======
+						type:'main'
+>>>>>>> AddedFlatsome Themes
 					};
 					$.ajax({
 						beforeSend: function(){	show_pop_loading();	},
@@ -89,7 +97,11 @@ jQuery(document).ready(function($){
 							// if valid license format
 							if(data.status=='good'){
 								var data_arg_2 = {
+<<<<<<< refs/remotes/origin/dev4
 									action:'eventon_verify_key',
+=======
+									action:'eventon_get_license_api_url',
+>>>>>>> AddedFlatsome Themes
 									key:license_key,
 									slug:'eventon',
 								};
@@ -99,6 +111,7 @@ jQuery(document).ready(function($){
 									url:the_ajax_script.ajaxurl,
 									data: data_arg_2,
 									dataType:'json',
+<<<<<<< refs/remotes/origin/dev4
 									success:function(data2){
 										// GET json license information
 										$.getJSON(data2.this_content, function(dataJ){
@@ -138,6 +151,43 @@ jQuery(document).ready(function($){
 											box.find('.action').hide();
 											box.find('.activation_text').html('Yay! your eventon copy is activated now.');
 
+=======
+									success:function(dataV){
+										// GET json license information
+										$.getJSON(dataV.json_url, function(dataJ){
+											
+											// Actual license present
+											if(dataJ['verify-purchase'].created_at != '' ){
+												// update remote validity			
+												var data_arg_3 = {
+													action:'eventon_remote_validity',
+													remote_validity:dataJ['verify-purchase'].created_at,
+													buyer: dataJ['verify-purchase'].buyer,
+													slug:'eventon',
+													key: license_key
+												};
+												$.ajax({
+													beforeSend: function(){},
+													type: 'POST',
+													url:the_ajax_script.ajaxurl,
+													data: data_arg_3,
+													dataType:'json',
+													success:function(data3){
+														show_pop_good_msg('<span class="EVOcheckmark"></span> Excellent! Purchase key verified and saved. Thank you for activating EventON!');
+														$('.ajde_popup').delay(3000).queue(function(n){
+															$(this).animate({'margin-top':'70px','opacity':0}).fadeOut();
+															$('#ajde_popup_bg').fadeOut();
+															location.reload();
+															n();
+														});													
+													}
+												});
+											}else{
+												show_pop_good_msg('Envato license does not have a valid purchase information.');
+											}										
+										});
+										
+>>>>>>> AddedFlatsome Themes
 									},complete:function(){	hide_pop_loading();	}
 								});
 							}else{
@@ -171,6 +221,10 @@ jQuery(document).ready(function($){
 					var data_arg = {
 						action:'eventon_validate_license',
 						key:license_key,
+<<<<<<< refs/remotes/origin/dev4
+=======
+						type:'addon'
+>>>>>>> AddedFlatsome Themes
 					};
 					$.ajax({
 						beforeSend: function(){	show_pop_loading();	},

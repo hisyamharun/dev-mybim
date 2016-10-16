@@ -1,7 +1,11 @@
 <?php
 /**
  * AJDE Plugin Settings Library
+<<<<<<< refs/remotes/origin/dev4
  * @version 	1.5.6
+=======
+ * @version 	1.5.9
+>>>>>>> AddedFlatsome Themes
  * @updated 	2016
  */
 
@@ -9,7 +13,11 @@ if(isset($GLOBALS['ajde'])) return;
 
 class ajde{
 
+<<<<<<< refs/remotes/origin/dev4
 	public $version = '1.5.6';
+=======
+	public $version = '1.5.9';
+>>>>>>> AddedFlatsome Themes
 
 	public function __construct(){
 

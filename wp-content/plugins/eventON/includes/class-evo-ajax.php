@@ -17,6 +17,7 @@ class evo_ajax{
 	public function __construct(){
 		$ajax_events = array(
 			'ics_download'=>'eventon_ics_download',
+<<<<<<< refs/remotes/origin/dev4
 			'deactivate_lic'=>'eventon_deactivate_evo',
 			'the_ajax_hook'=>'evcal_ajax_callback',
 			'evo_dynamic_css'=>'eventon_dymanic_css',
@@ -29,6 +30,11 @@ class evo_ajax{
 			'remote_test'=>'remote_test',
 			'export_events'=>'export_events',
 			'get_addons_list'=>'get_addons_list',
+=======
+			'the_ajax_hook'=>'evcal_ajax_callback',
+			'evo_dynamic_css'=>'eventon_dymanic_css',
+			'export_events_ics'=>'export_events_ics',
+>>>>>>> AddedFlatsome Themes
 		);
 		foreach ( $ajax_events as $ajax_event => $class ) {
 
@@ -129,6 +135,7 @@ class evo_ajax{
 				$eve_args = apply_filters('eventon_ajax_arguments',$eve_args, $_POST);
 
 			// Calendar content		
+<<<<<<< refs/remotes/origin/dev4
 			$content_li = $eventon->evo_generator->eventon_generate_events( $eve_args);
 
 			
@@ -143,6 +150,42 @@ class evo_ajax{
 				'focus_start_date_range'=>$focus_start_date_range,
 				'focus_end_date_range'=>$focus_end_date_range,		
 			);			
+=======
+				$EVENTlist = $eventon->evo_generator->evo_get_wp_events_array('', $eve_args, $eve_args['filters']);
+
+				if(!empty($eve_args['sep_month']) && $eve_args['sep_month']=='yes' && $eve_args['number_of_months']>1){
+					$content_li = $eventon->evo_generator->separate_eventlist_to_months($EVENTlist, $eve_args['event_count'], $eve_args);
+				}else{
+					$date_range_events_array = $eventon->evo_generator->generate_event_data( 
+						$EVENTlist, 
+						$focus_start_date_range,
+						$focused_month_num , $focused_year 
+					);
+					$content_li = $eventon->evo_generator->evo_process_event_list_data($date_range_events_array, $eve_args);
+				}
+				
+			//$content_li = $eventon->evo_generator->eventon_generate_events( $eve_args);
+
+			// Update the events list to remove post meta values to reduce load on AJAX
+				$NEWevents = array();
+				foreach($EVENTlist as $event_id=>$event){
+					unset($event['event_pmv']);
+					$NEWevents[$event_id]= $event;
+				}
+
+			// RETURN VALUES
+			// Array of content for the calendar's AJAX call returned in JSON format
+				$return_content = array(
+					'status'=>(!$evodata? 'Need updated':$status),
+					'eventList'=>$NEWevents,
+					'content'=>$content_li,
+					'cal_month_title'=>$calendar_month_title,
+					'month'=>$focused_month_num,
+					'year'=>$focused_year,
+					'focus_start_date_range'=>$focus_start_date_range,
+					'focus_end_date_range'=>$focus_end_date_range,		
+				);			
+>>>>>>> AddedFlatsome Themes
 			
 			
 			echo json_encode($return_content);
@@ -221,6 +264,7 @@ class evo_ajax{
 		    return $text;
 		}
 
+<<<<<<< refs/remotes/origin/dev4
 	// export events as CSV
 	// @version 2.2.30
 		function export_events(){
@@ -600,6 +644,68 @@ class evo_ajax{
 				update_post_meta($post->ID, '_featured', 'yes');
 
 			wp_safe_redirect( remove_query_arg( array('trashed', 'untrashed', 'deleted', 'ids'), wp_get_referer() ) );
+=======
+	// download all event data as ICS
+		function export_events_ics(){
+			global $eventon;
+
+			if(!wp_verify_nonce($_REQUEST['nonce'], 'eventon_download_events')) die('Nonce Security Failed.');
+
+			$events = $eventon->evo_generator->get_all_event_data();
+			if(!empty($events)):
+				$slug = 'eventon_events';
+				header("Content-Type: text/Calendar; charset=utf-8");
+				header("Content-Disposition: inline; filename={$slug}.ics");
+				echo "BEGIN:VCALENDAR\n";
+				echo "VERSION:2.0\n";
+				echo "PRODID:-//eventon.com NONSGML v1.0//EN\n";
+				echo "CALSCALE:GREGORIAN\n";
+				echo "METHOD:PUBLISH\n";
+
+				foreach($events as $event_id=>$event){
+					$location = $summary = '';
+
+					if(!empty($event['details'])){
+						$summary = wp_trim_words($event['details'], 50, '[..]');
+					}
+
+					$location_name = (!empty($event['location_name']))? $event['location_name'] : ''; 
+					$location = (!empty($event['location_address']))? $location_name.' - '.$event['location_address'] : ''; 
+
+					$uid = uniqid();
+					echo "BEGIN:VEVENT\n";
+					echo "UID:{$uid}\n"; // required by Outlok
+					echo "DTSTAMP:".date_i18n('Ymd').'T'.date_i18n('His')."\n"; // required by Outlook
+					echo "DTSTART:" . evo_get_adjusted_utc($event['start']) ."\n"; 
+					echo "DTEND:" . evo_get_adjusted_utc($event['end']) ."\n";
+					if(!empty($location)) echo "LOCATION:". $this->esc_ical_text($location) ."\n";
+					echo "SUMMARY:".htmlspecialchars_decode($event['name'])."\n";
+					if(!empty($summary)) echo "DESCRIPTION: ".$this->esc_ical_text($summary)."\n";
+					echo "END:VEVENT\n";
+
+					// repeating instances
+						if(!empty($event['repeats']) && is_array($event['repeats'])){
+							foreach( $event['repeats'] as $interval=>$repeats){
+								if($interval==0) continue;
+
+								$uid = uniqid();
+								echo "BEGIN:VEVENT\n";
+								echo "UID:{$uid}\n"; // required by Outlok
+								echo "DTSTAMP:".date_i18n('Ymd').'T'.date_i18n('His')."\n"; // required by Outlook
+								echo "DTSTART:" . evo_get_adjusted_utc($repeats[0]) ."\n"; 
+								echo "DTEND:" . evo_get_adjusted_utc($repeats[1]) ."\n";
+								if(!empty($location)) echo "LOCATION:". $this->esc_ical_text($location) ."\n";
+								echo "SUMMARY:".htmlspecialchars_decode($event['name'])."\n";
+								if(!empty($summary)) echo "DESCRIPTION: ".$this->esc_ical_text($summary)."\n";
+								echo "END:VEVENT\n";
+							}
+						}
+
+				}
+				echo "END:VCALENDAR";
+
+			endif;
+>>>>>>> AddedFlatsome Themes
 		}
 
 	/* dynamic styles */
@@ -609,6 +715,7 @@ class evo_ajax{
 			exit;
 		}
 
+<<<<<<< refs/remotes/origin/dev4
 	// EVENTBRITE
 		function evcal_ajax_callback_3(){
 			// pre
@@ -871,5 +978,7 @@ class evo_ajax{
 		}
 
 
+=======
+>>>>>>> AddedFlatsome Themes
 }
 new evo_ajax();

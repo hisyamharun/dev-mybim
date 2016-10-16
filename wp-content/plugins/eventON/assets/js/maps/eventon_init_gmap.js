@@ -11,11 +11,19 @@ function getGeocoder(){
 	return geocoder;
 }
 
+<<<<<<< refs/remotes/origin/dev4
 function initialize(map_canvas_id, address,mapformat, zoom_level, location_type, scrollwheel, styles) {
 	var map;
 	geocoder = new google.maps.Geocoder();
 			
 	var latlng = new google.maps.LatLng(45.524732, -122.677031);	
+=======
+function initialize(map_canvas_id, address,mapformat, zoom_level, location_type, scrollwheel, styles, iconURL) {
+	var map;
+	geocoder = new google.maps.Geocoder();
+			
+	var latlng = new google.maps.LatLng(45.524732, -122.677031);
+>>>>>>> AddedFlatsome Themes
 
 	if(scrollwheel==false ){
 		var myOptions = {			
@@ -54,7 +62,12 @@ function initialize(map_canvas_id, address,mapformat, zoom_level, location_type,
 				
 				var marker = new google.maps.Marker({
 					map: map,
+<<<<<<< refs/remotes/origin/dev4
 					position: latlng
+=======
+					position: latlng,
+					icon: iconURL
+>>>>>>> AddedFlatsome Themes
 				});
 				//map.setCenter(results[0].geometry.location);
 				map.setCenter(marker.getPosition());
@@ -73,7 +86,12 @@ function initialize(map_canvas_id, address,mapformat, zoom_level, location_type,
 				map.setCenter(results[0].geometry.location);
 				var marker = new google.maps.Marker({
 					map: map,
+<<<<<<< refs/remotes/origin/dev4
 					position: results[0].geometry.location
+=======
+					position: results[0].geometry.location,
+					icon: iconURL
+>>>>>>> AddedFlatsome Themes
 				});				
 				
 			} else {

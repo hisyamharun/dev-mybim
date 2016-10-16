@@ -112,7 +112,20 @@
 								
 			//obj.siblings('.event_description').find('.evcal_gmaps').html(address);
 			if($('#'+map_canvas_id).length>0)
+<<<<<<< refs/remotes/origin/dev4
 				initialize(map_canvas_id, address, mapformat, zoomlevel, location_type, scroll, styles);
+=======
+				initialize(
+					map_canvas_id, 
+					address, 
+					mapformat, 
+					zoomlevel, 
+					location_type, 
+					scroll, 
+					styles,
+					evodata.attr('data-mapiconurl')
+				);
+>>>>>>> AddedFlatsome Themes
 		}
 		
 		//console.log(options);

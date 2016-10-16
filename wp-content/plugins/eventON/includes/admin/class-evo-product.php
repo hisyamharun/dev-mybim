@@ -136,7 +136,11 @@ class evo_product{
 
 				$debug = '';
 
+<<<<<<< refs/remotes/origin/dev4
 				// if product slud present
+=======
+				// if product slug present
+>>>>>>> AddedFlatsome Themes
 				if(!empty($slug) && !empty($product_data[$slug])){
 					$new_data = $product_data;
 					$new_data[$slug]['email']=$email;					
@@ -212,6 +216,13 @@ class evo_product{
 					return true;
 				}else{return false;}
 			}
+<<<<<<< refs/remotes/origin/dev4
+=======
+			public function get_field($slug, $field){
+				$product_data = get_option('_evo_products');
+				return (!empty($product_data[$slug][$field]) )? $product_data[$slug][$field]: false;
+			}
+>>>>>>> AddedFlatsome Themes
 		// update addons existance using WP activated plugin data
 		// used in addons & licenses page
 			public function ADD_update_addons(){ 
@@ -276,13 +287,23 @@ class evo_product{
 				}
 			}else{return '--';}
 		}
+<<<<<<< refs/remotes/origin/dev4
 		public function is_activated(){
+=======
+
+		// eventon products kriyathmakada kiya baleema
+		public function kriyathmakada(){
+>>>>>>> AddedFlatsome Themes
 			if(!empty($this->products[$this->slug])){
 				return (!empty($this->products[$this->slug]['status']) && $this->products[$this->slug]['status']=='active' &&
 					!empty($this->products[$this->slug]['key'])
 				)? true:false;
 			}else{return false;}
 		}
+<<<<<<< refs/remotes/origin/dev4
+=======
+
+>>>>>>> AddedFlatsome Themes
 		public function get_current_version($slug){
 			if(!empty($this->products[$slug])){
 				return $this->products[$slug]['version'];
@@ -334,6 +355,7 @@ class evo_product{
 			}else{	return true;	}
 		}		
 		// check purchase code correct format
+<<<<<<< refs/remotes/origin/dev4
 		public function purchase_key_format($key, $type='eventon'){				
 			if(!strpos($key, '-'))
 				return false;
@@ -343,4 +365,21 @@ class evo_product{
 			return (strlen($str[1])==4 && strlen($str[2])==4 && strlen($str[3])==4 )? true: false;
 		}
 	
+=======
+		// @version 2.4
+			public function purchase_key_format($key, $type='eventon'){				
+				if(!strpos($key, '-'))	return false;
+
+				if($type== 'eventon' || $type=='main'){
+					// /5fbe9924-1a99-4ea6-baad-22aace2a2ac0
+					$str = explode('-', $key);
+					return (strlen($str[1])==4 && strlen($str[2])==4 && strlen($str[3])==4 )? true: false;
+				}else{
+					// EVO8a8126de-acda-4017-8553-d45f51f4e581
+					$str = explode('-', $key);
+
+					return (strlen($str[1])==4 && strlen($str[2])==4 && strlen($str[3])==4 && strpos($str[0], 'EV')!== false)? true: false;
+				}				
+			}	
+>>>>>>> AddedFlatsome Themes
 }

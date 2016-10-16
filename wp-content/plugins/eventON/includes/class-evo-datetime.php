@@ -11,7 +11,14 @@
 
 class evo_datetime{		
 	/**	Construction function	 */
+<<<<<<< refs/remotes/origin/dev4
 		public function __construct(){}
+=======
+		public function __construct(){
+			$this->wp_time_format = get_option('time_format');
+			$this->wp_date_format = get_option('date_format');
+		}
+>>>>>>> AddedFlatsome Themes
 
 	// RETURN UNIX
 		// return repeat interval correct unix time stamp for start OR end
@@ -56,14 +63,22 @@ class evo_datetime{
 	 * Return: array(start, end)
 	 * Returns WP proper formatted corrected event time based on repeat interval provided
 	 */
+<<<<<<< refs/remotes/origin/dev4
 		public function get_correct_formatted_event_repeat_time($post_meta, $repeat_interval='', $format=''){
 			$format = (!empty($format)? $format: get_option('date_format'));
+=======
+		public function get_correct_formatted_event_repeat_time($post_meta, $repeat_interval='', $date_format=''){
+			
+			// get date and time formats
+			$date_format = (!empty($date_format)? $date_format: get_option('date_format'));			
+>>>>>>> AddedFlatsome Themes
 			$wp_time_format = get_option('time_format');
 
 			if(!empty($repeat_interval) && !empty($post_meta['repeat_intervals']) && $repeat_interval!='0'){
 				$intervals = unserialize($post_meta['repeat_intervals'][0]);
 
 				$formatted_unix_s = eventon_get_formatted_time($intervals[$repeat_interval][0]);
+<<<<<<< refs/remotes/origin/dev4
 				$start = eventon_get_lang_formatted_timestr($format.' h:i:a', $formatted_unix_s);
 
 				return array(
@@ -77,10 +92,56 @@ class evo_datetime{
 				return array(
 					'start'=> $start,
 					'end'=> ( !empty($post_meta['evcal_erow'])? date($format.' h:i:a',$post_meta['evcal_erow'][0]): $start)
+=======
+				$formatted_unix_e = eventon_get_formatted_time($intervals[$repeat_interval][1]);
+
+				return array(
+					// this didnt work on tickets addon
+					'start_'=> eventon_get_lang_formatted_timestr($date_format.' '.$wp_time_format, $formatted_unix_s),
+					'end_'=> eventon_get_lang_formatted_timestr($date_format.' '.$wp_time_format, $formatted_unix_e),
+
+					'start'=> date_i18n($date_format.' h:i:a',$intervals[$repeat_interval][0]),
+					'end'=> date_i18n($date_format.' h:i:a',$intervals[$repeat_interval][1]),
+				);
+
+			}else{// no repeat interval values saved
+				$start = !empty($post_meta['evcal_srow'])? date_i18n($date_format.' h:i:a', $post_meta['evcal_srow'][0]) :0;
+				$start_row =  !empty($post_meta['evcal_srow'])? $post_meta['evcal_srow'][0]: time();
+				$end_row =  !empty($post_meta['evcal_erow'])? $post_meta['evcal_erow'][0]: $post_meta['evcal_erow'][0];
+				$end = ( !empty($post_meta['evcal_erow'])? date_i18n($date_format.' h:i:a',$post_meta['evcal_erow'][0]): $start);
+
+				$formatted_unix_s = eventon_get_formatted_time($start_row);
+				$formatted_unix_e = eventon_get_formatted_time($end_row);
+
+
+
+				//echo $end_row.' '.$post_meta['evcal_srow'][0];
+				return array(
+					'start'=> $start,
+					'end'=> $end,
+					'start_'=> eventon_get_lang_formatted_timestr($date_format.' '.$wp_time_format, $formatted_unix_s),
+					'end_'=> eventon_get_lang_formatted_timestr($date_format.' '.$wp_time_format, $formatted_unix_e),
+>>>>>>> AddedFlatsome Themes
 				);
 			}
 		}
 
+<<<<<<< refs/remotes/origin/dev4
+=======
+	// return start OR end time unix in translated and formatted date-time-string
+		function get_formatted_smart_time_piece($unix, $pmv, $lang=''){
+			$time_ = eventon_get_formatted_time($unix);
+			$_is_allday = (!empty($epmv['evcal_allday']) && $epmv['evcal_allday'][0]=='yes')? true:false;
+			
+			if($_is_allday){
+				$output = $this->date($this->wp_date_format, $time_).' ('.evo_lang_get('evcal_lang_allday','All Day').')';
+			}else{// not all day
+				$output = $this->date($this->wp_date_format.' '.$this->wp_time_format, $time_);
+			}
+			return $output;
+		}
+
+>>>>>>> AddedFlatsome Themes
 	
 
 	// return a smarter complete date-time -translated and formatted to date-time string

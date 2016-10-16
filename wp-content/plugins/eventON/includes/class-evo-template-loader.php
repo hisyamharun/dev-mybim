@@ -9,13 +9,17 @@
  * @author 		AJDE
  */
 class EVO_Template_Loader {
+<<<<<<< refs/remotes/origin/dev4
 	/**
 	 * Constructor
 	 */
+=======
+>>>>>>> AddedFlatsome Themes
 	public function __construct() {
 		add_filter( 'template_include', array( $this, 'template_loader' ) , 99);
 	}
 
+<<<<<<< refs/remotes/origin/dev4
 
 		/**
 	 * Load a template.
@@ -33,6 +37,8 @@ class EVO_Template_Loader {
 	 * @param mixed $template
 	 * @return string
 	 */
+=======
+>>>>>>> AddedFlatsome Themes
 	public function template_loader( $template ) {
 		global $eventon_sin_event, $eventon;
 		

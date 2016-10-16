@@ -9,7 +9,11 @@
  */
 
 class EvcalWidget extends WP_Widget{	
+<<<<<<< refs/remotes/origin/dev4
 	function EvcalWidget(){
+=======
+	function __construct(){
+>>>>>>> AddedFlatsome Themes
 		$widget_ops = array('classname' => 'EvcalWidget', 
 			'description' => 'EventON basic or upcoming list Event Calendar widget.' );
 		parent::__construct('EvcalWidget', 'EventON Basic Calendar', $widget_ops);
@@ -291,7 +295,11 @@ register_widget( 'EvcalWidget' );
 // EventON Second widget
 class EvcalWidget_SC extends WP_Widget{
 	
+<<<<<<< refs/remotes/origin/dev4
 	function EvcalWidget_SC(){
+=======
+	function __construct(){
+>>>>>>> AddedFlatsome Themes
 		$widget_ops = array('classname' => 'EvcalWidget_SC', 
 			'description' => 'EventON shortcode executor in the widget.' );
 		parent::__construct('EvcalWidget_SC', 'EventON Shortcode Executor (ESE)', $widget_ops);
@@ -376,7 +384,11 @@ register_widget( 'EvcalWidget_SC' );
 
 // EventON Next months event
 	class EvcalWidget_next_month extends WP_Widget{	
+<<<<<<< refs/remotes/origin/dev4
 		function EvcalWidget_next_month(){
+=======
+		function __construct(){
+>>>>>>> AddedFlatsome Themes
 			$month = date('F');
 			$widget_ops = array('classname' => 'EvcalWidget_next_month', 
 				'description' => 'This widget will show events from next month.' );
@@ -446,7 +458,11 @@ register_widget( 'EvcalWidget_SC' );
 
 // EventON Upcoming Events Widget
 	class EvcalWidget_three extends WP_Widget{	
+<<<<<<< refs/remotes/origin/dev4
 		function EvcalWidget_three(){
+=======
+		function __construct(){
+>>>>>>> AddedFlatsome Themes
 			$month = date('F');
 			$widget_ops = array('classname' => 'EvcalWidget_three', 
 				'description' => 'This widget will show all upcoming events for the current month ('.$month.').' );
@@ -517,7 +533,11 @@ register_widget( 'EvcalWidget_SC' );
 // EventON Events from categories Widget
 	class EvcalWidget_four extends WP_Widget{
 		
+<<<<<<< refs/remotes/origin/dev4
 		function EvcalWidget_four(){
+=======
+		function __construct(){
+>>>>>>> AddedFlatsome Themes
 			$widget_ops = array('classname' => 'EvcalWidget_four', 
 				'description' => 'Show events from only certain event type categories using this widget.' );
 			parent::__construct('EvcalWidget_four', 'EventON Event Type Calendar', $widget_ops);

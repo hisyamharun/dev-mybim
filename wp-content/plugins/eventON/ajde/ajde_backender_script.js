@@ -106,7 +106,11 @@ jQuery(document).ready(function($){
 		$('.fa_icons_selection').on('click','li', function(){
 
 			var icon = $(this).find('i').data('name');
+<<<<<<< refs/remotes/origin/dev4
 			console.log(icon)
+=======
+			//console.log(icon)
+>>>>>>> AddedFlatsome Themes
 
 			fa_icon_selection.attr({'class':'fa '+icon});
 			fa_icon_selection.siblings('input').val(icon);
@@ -121,8 +125,12 @@ jQuery(document).ready(function($){
 				&& container.has(e.target).length === 0) // ... nor a descendant of the container
 				{
 					$('.fa_icons_selection').fadeOut('fast');
+<<<<<<< refs/remotes/origin/dev4
 				}
 			
+=======
+				}			
+>>>>>>> AddedFlatsome Themes
 		});
 	
 	// multicolor title/name display

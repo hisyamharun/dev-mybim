@@ -43,9 +43,15 @@
 					<?php
 						echo (!empty($term_meta['evcal_org_address']))? '<p>'.$term_meta['evcal_org_address'].'</p>':null; 
 					?>
+<<<<<<< refs/remotes/origin/dev4
 				</div>
 				
 			</div>			
+=======
+				</div>				
+			</div>	
+			<?php if( !empty($term_meta['evcal_org_address']) ):?><div id='evo_locationcard_gmap' class="evo_location_map" data-address='<?php echo stripslashes($term_meta['evcal_org_address']);?>' data-latlng='' data-location_type='add'data-zoom='16'></div><?php endif;?>		
+>>>>>>> AddedFlatsome Themes
 			<h3 class="location_subtitle"><?php evo_lang_e('Events by this organizer');?></h3>
 		
 		<?php 

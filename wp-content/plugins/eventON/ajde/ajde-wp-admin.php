@@ -167,7 +167,10 @@ class ajde_wp_admin{
 					</ul>
 				</div>
 			</div>
+<<<<<<< refs/remotes/origin/dev4
 
+=======
+>>>>>>> AddedFlatsome Themes
 			<?php return ob_get_clean();
 		}
 

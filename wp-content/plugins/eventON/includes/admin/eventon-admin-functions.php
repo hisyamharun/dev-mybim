@@ -144,6 +144,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				}else{	
 					save_evoOPT('1', 'wp_remote_get','didnt_work');
 					return false;	}
+<<<<<<< refs/remotes/origin/dev4
 
 			}
 			
@@ -222,6 +223,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			endif;
 
 			return ob_get_clean();
+=======
+			}			
+>>>>>>> AddedFlatsome Themes
 		}
 
 // HEX code to RGB
@@ -269,7 +273,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	        'comment_status' 	=> 'closed'
 	    );
 	    $page_id = wp_insert_post( $page_data );
+<<<<<<< refs/remotes/origin/dev4
 
+=======
+>>>>>>> AddedFlatsome Themes
 	    update_option( $option, $page_id );
 	}
 

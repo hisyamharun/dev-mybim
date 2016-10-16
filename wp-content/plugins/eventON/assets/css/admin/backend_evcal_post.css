@@ -39,6 +39,10 @@
 		text-decoration: none;
 	}
 	.eventon_mb .actions a.button_evo:hover, a.button_evo:hover{	background-color:#919191;}	
+<<<<<<< refs/remotes/origin/dev4
+=======
+	.evomb_body p.yesno_row{display: block;}
+>>>>>>> AddedFlatsome Themes
 
 /** EVENT COLOR **/
 	.evcal_color_box{
@@ -541,7 +545,10 @@
 	}	
 	#evo_mb label{
 		font-style:italic;
+<<<<<<< refs/remotes/origin/dev4
 		font-size:12px;
+=======
+>>>>>>> AddedFlatsome Themes
 		margin-bottom: 10px;
 		display: block;
 		cursor: default;

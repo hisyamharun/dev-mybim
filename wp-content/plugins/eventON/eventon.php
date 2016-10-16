@@ -3,11 +3,19 @@
  * Plugin Name: EventON
  * Plugin URI: http://www.myeventon.com/
  * Description: A beautifully crafted minimal calendar experience
+<<<<<<< refs/remotes/origin/dev4
  * Version: 2.3.23
  * Author: AshanJay
  * Author URI: http://www.ashanjay.com
  * Requires at least: 4.0
  * Tested up to: 4.5.2
+=======
+ * Version: 2.4.6
+ * Author: AshanJay
+ * Author URI: http://www.ashanjay.com
+ * Requires at least: 4.0
+ * Tested up to: 4.6
+>>>>>>> AddedFlatsome Themes
  *
  * Text Domain: eventon
  * Domain Path: /lang/languages/
@@ -23,7 +31,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! class_exists( 'EventON' ) ) {
 
 class EventON {
+<<<<<<< refs/remotes/origin/dev4
 	public $version = '2.3.23';
+=======
+	public $version = '2.4.6';
+>>>>>>> AddedFlatsome Themes
 	/**
 	 * @var evo_generator
 	 */
@@ -44,6 +56,13 @@ class EventON {
 		return self::$_instance;
 	}
 
+<<<<<<< refs/remotes/origin/dev4
+=======
+	public function template_path(){
+		return $this->template_url;
+	}
+
+>>>>>>> AddedFlatsome Themes
 	/** Constructor. */
 	public function __construct() {
 
@@ -82,6 +101,10 @@ class EventON {
 		define( "AJDE_EVCAL_BASENAME", plugin_basename(__FILE__) ); //eventON/eventon.php
 		define( "EVENTON_BASE", basename(dirname(__FILE__)) ); //eventON
 		define( "BACKEND_URL", get_bloginfo('url').'/wp-admin/' ); 
+<<<<<<< refs/remotes/origin/dev4
+=======
+		$this->assets_path = str_replace(array('http:','https:'), '',AJDE_EVCAL_URL).'/assets/';
+>>>>>>> AddedFlatsome Themes
 		// save addon class file url so addons can access this
 		$this->evo_url();
 	}
@@ -172,10 +195,17 @@ class EventON {
 		eventon_init_caps();
 		
 		global $pagenow;
+<<<<<<< refs/remotes/origin/dev4
 		$__needed_pages = array('update-core.php','plugins.php', 'admin.php','admin-ajax.php', 'plugin-install.php','index.php');
 
 		// only for admin Eventon updater
 			if(is_admin() && !empty($pagenow) && in_array($pagenow, $__needed_pages) ){
+=======
+		$__needed_pages = array('update-core.php','plugins.php', 'admin.php','admin-ajax.php', 'plugin-install.php','index.php','post.php','post-new.php','widgets.php');
+
+		// only for admin Eventon updater
+			if(is_admin()  ){
+>>>>>>> AddedFlatsome Themes
 
 				// Initiate eventon updater	
 				require_once( 'includes/admin/class-evo-updater.php' );		
@@ -307,17 +337,25 @@ class EventON {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'eventon' );
 		
 		load_textdomain( 'eventon', WP_LANG_DIR . "/eventon/eventon-admin-".$locale.".mo" );
+<<<<<<< refs/remotes/origin/dev4
 		load_textdomain( 'eventon', WP_LANG_DIR . "/plugins/eventon-admin-".$locale.".mo" );
 		
+=======
+		load_textdomain( 'eventon', WP_LANG_DIR . "/plugins/eventon-admin-".$locale.".mo" );		
+>>>>>>> AddedFlatsome Themes
 		
 		if ( is_admin() ) {
 			load_plugin_textdomain( 'eventon', false, plugin_basename( dirname( __FILE__ ) ) . "/lang" );
 		}
 
+<<<<<<< refs/remotes/origin/dev4
 		// frontend
 		/*
 			this is controlled by myeventon settings> language		
 		*/
+=======
+		// frontend - translations are controlled by myeventon settings> language	
+>>>>>>> AddedFlatsome Themes
 	}
 	
 	public function get_current_version(){
@@ -338,6 +376,35 @@ class EventON {
 	// deprecated function after 2.2.12
 		public function addon_has_new_version($values){}
 
+<<<<<<< refs/remotes/origin/dev4
+=======
+	// template locator function to use for addons
+		function template_locator($file, $default_locations, $append='', $args=''){
+			$childThemePath = get_stylesheet_directory();
+
+			// Paths to check
+			$paths = apply_filters('evo_file_template_paths', array(
+				1=>TEMPLATEPATH.'/'.$this->template_url. $append, // TEMPLATEPATH/eventon/--append--
+				2=>$childThemePath.'/',
+				3=>$childThemePath.'/'.$this->template_url. $append,
+			));
+
+			$location = $default_locations .$file;
+			// FILE Exist
+			if ( $file ) {			
+				// each path
+				foreach($paths as $path){				
+					if(file_exists($path.$file) ){	
+						$location = $path.$file;	
+						break;
+					}
+				}
+			}
+
+			return $location;
+		}
+
+>>>>>>> AddedFlatsome Themes
 }
 
 }// class exists

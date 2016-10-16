@@ -7,7 +7,11 @@
  * @author 		EventON
  * @category 	lang
  * @package 	EventON/lang
+<<<<<<< refs/remotes/origin/dev4
  * @version     0.1
+=======
+ * @version     2.4
+>>>>>>> AddedFlatsome Themes
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -33,4 +37,15 @@ __( 'wednesday', 'eventon' );
 __( 'thursday', 'eventon' );
 __( 'friday', 'eventon' );
 __( 'saturday', 'eventon' );
+<<<<<<< refs/remotes/origin/dev4
 __( 'sunday', 'eventon' );
+=======
+__( 'sunday', 'eventon' );
+
+// taxonomies
+__( 'event type', 'eventon' ); 
+__( 'event type 2', 'eventon' ); 
+__( 'event type 3', 'eventon' ); 
+__( 'event type 4', 'eventon' ); 
+__( 'event type 5', 'eventon' ); 
+>>>>>>> AddedFlatsome Themes
