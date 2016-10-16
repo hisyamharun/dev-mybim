@@ -119,7 +119,6 @@ function et_fb_backend_helpers() {
 		'shortcode_tags'               => et_fb_shortcode_tags(),
 		'getFontIconSymbols'           => et_pb_get_font_icon_symbols(),
 		'failureNotification'          => et_builder_get_failure_notification_modal(),
-		'exitNotification'             => et_builder_get_exit_notification_modal(),
 		'getTaxonomies'                => apply_filters( 'et_fb_taxonomies', array(
 			'category'                 => get_categories(),
 			'project_category'         => get_categories( array( 'taxonomy' => 'project_category' ) ),
@@ -164,7 +163,6 @@ function et_fb_backend_helpers() {
 		),
 		'conditionalTags'              => et_fb_conditional_tag_params(),
 		'currentPage'                  => et_fb_current_page_params(),
-		'appPreferences'               => et_fb_app_preferences(),
 		'classNames'                   => array(
 			'hide_on_mobile_class'     => 'et-hide-mobile',
 		),

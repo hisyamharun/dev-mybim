@@ -1086,7 +1086,6 @@ class ET_Builder_Row extends ET_Builder_Structure_Element {
 				'option_category' => 'layout',
 				'depends_show_if' => 'on',
 				'validate_unit'   => true,
-				'fixed_unit'      => 'px',
 				'range_settings'  => array(
 					'min'  => 500,
 					'max'  => 2600,
@@ -1100,7 +1099,6 @@ class ET_Builder_Row extends ET_Builder_Structure_Element {
 				'option_category' => 'layout',
 				'depends_show_if' => 'off',
 				'validate_unit'   => true,
-				'fixed_unit'      => '%',
 				'range_settings'  => array(
 					'min'  => 0,
 					'max'  => 100,
@@ -2423,7 +2421,7 @@ class ET_Builder_Row_Inner extends ET_Builder_Structure_Element {
 			}
 
 			if ( ! empty( $padding_mobile_values_processed ) ) {
-				et_pb_generate_responsive_css( $padding_mobile_values_processed, '.et_pb_column %%order_class%%', '', $function_name, ' !important; ' );
+				et_pb_generate_responsive_css( $padding_mobile_values_processed, '.et_pb_column %%order_class%%', '', $function_name );
 			}
 		}
 
