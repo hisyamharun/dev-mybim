@@ -2,7 +2,11 @@
 
 if ( ! defined( 'ET_BUILDER_PRODUCT_VERSION' ) ) {
 	// Note, when this is updated, you must also update corresponding version in builder.js: `window.et_builder_version`
+<<<<<<< HEAD
+	define( 'ET_BUILDER_PRODUCT_VERSION', '3.0.6' );
+=======
 	define( 'ET_BUILDER_PRODUCT_VERSION', '3.0.11' );
+>>>>>>> master
 }
 
 if ( ! defined( 'ET_BUILDER_VERSION' ) ) {
@@ -700,6 +704,8 @@ function et_fb_process_to_shortcode( $object, $options = array(), $library_item_
 				$prepared_value = str_replace( '%date', '___et-fb-date___', $value );
 				$sanitized_value = str_replace( '___et-fb-date___', '%date', sanitize_text_field( $prepared_value ) );
 
+<<<<<<< HEAD
+=======
 				$replace_pairs = array (
 					'>' => '&gt;',
 					'<' => '&lt;',
@@ -707,6 +713,7 @@ function et_fb_process_to_shortcode( $object, $options = array(), $library_item_
 
 				$sanitized_value = strtr( $sanitized_value, $replace_pairs );
 
+>>>>>>> master
 				$value = $sanitized_value;
 			}
 

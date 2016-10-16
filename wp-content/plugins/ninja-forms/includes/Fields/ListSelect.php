@@ -24,6 +24,8 @@ class NF_Fields_ListSelect extends NF_Abstracts_List
         parent::__construct();
 
         $this->_nicename = __( 'Select', 'ninja-forms' );
+<<<<<<< HEAD
+=======
 
         add_filter( 'ninja_forms_merge_tag_calc_value_' . $this->_type, array( $this, 'get_calc_value' ), 10, 2 );
     }
@@ -37,5 +39,6 @@ class NF_Fields_ListSelect extends NF_Abstracts_List
             }
         }
         return $value;
+>>>>>>> master
     }
 }

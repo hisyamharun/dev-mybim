@@ -2,7 +2,11 @@ var ET_PageBuilder = ET_PageBuilder || {};
 
 window.wp = window.wp || {};
 
+<<<<<<< HEAD
+window.et_builder_version = '3.0.6';
+=======
 window.et_builder_version = '3.0.11';
+>>>>>>> master
 
 ( function($) {
 	var et_error_modal_shown = window.et_error_modal_shown,

@@ -169,10 +169,13 @@
 				<td><?php echo DUP_Util::GetCurrentUser(); ?></td>
 			</tr>
 			<tr>
+<<<<<<< HEAD
+=======
 				<td><?php _e("Process", 'duplicator'); ?></td>
 				<td><?php echo DUP_Util::GetProcessOwner(); ?></td>
 			</tr>
 			<tr>
+>>>>>>> master
 				<td><a href="http://php.net/manual/en/features.safe-mode.php" target="_blank"><?php _e("Safe Mode", 'duplicator'); ?></a></td>
 				<td>
 				<?php echo (((strtolower(@ini_get('safe_mode')) == 'on')	  ||  (strtolower(@ini_get('safe_mode')) == 'yes') || 

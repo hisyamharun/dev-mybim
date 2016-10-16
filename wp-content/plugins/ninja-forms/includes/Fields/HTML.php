@@ -39,6 +39,10 @@ class NF_Fields_HTML extends NF_Abstracts_Input
         );
 
         $this->_nicename = __( 'HTML', 'ninja-forms' );
+<<<<<<< HEAD
+    }
+
+=======
 
         add_filter( 'nf_sub_hidden_field_types', array( $this, 'hide_field_type' ) );
     }
@@ -49,4 +53,5 @@ class NF_Fields_HTML extends NF_Abstracts_Input
 
         return $field_types;
     }
+>>>>>>> master
 }

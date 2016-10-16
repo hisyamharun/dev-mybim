@@ -153,6 +153,9 @@ return apply_filters( 'ninja_forms_form_display_settings', array(
         'help' => __( 'We\'ve noticed that don\'t have a submit button on your form. We can add one for your automatically.', 'ninja-forms' ),
     ),
 
+<<<<<<< HEAD
+
+=======
     /*
      * CURRENCY
      */
@@ -166,5 +169,6 @@ return apply_filters( 'ninja_forms_form_display_settings', array(
         'group' => 'advanced',
         'value'   => ''
     ),
+>>>>>>> master
 
 ));

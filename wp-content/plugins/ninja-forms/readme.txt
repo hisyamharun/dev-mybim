@@ -3,7 +3,11 @@ Contributors: wpninjasllc, kstover, jameslaws, kbjohnson90, klhall1987, wpnzach,
 Tags: form, forms, contact form, custom form, form builder, form creator, form manager, form creation, contact forms, custom forms, forms builder, forms creator, forms manager, forms creation, form administration,
 Requires at least: 4.4
 Tested up to: 4.6.1
+<<<<<<< HEAD
+Stable tag: 3.0.5
+=======
 Stable tag: 3.0.6
+>>>>>>> master
 License: GPLv2 or later
 
 Drag and drop fields in an intuitive UI to create create contact forms, email subscription forms, order forms, payment forms, send emails and more!
@@ -102,6 +106,16 @@ For help and video tutorials, please visit our website: [Ninja Forms Documentati
 
 == Upgrade Notice ==
 
+<<<<<<< HEAD
+= 3.0.5 (13 September 2016) =
+
+*Bugs:*
+
+* Fixed a bug with checking for a disabled PHP functions that might cause a fatal error.
+
+== Changelog ==
+
+=======
 = 3.0.6 (27 September 2016) =
 
 *Changes:*
@@ -146,6 +160,7 @@ For help and video tutorials, please visit our website: [Ninja Forms Documentati
 * Fixed a bug with column class collisions in CSS.
 * Fixed a bug with field help text not displaying on the form.
 
+>>>>>>> master
 = 3.0.5 (13 September 2016) =
 
 *Bugs:*

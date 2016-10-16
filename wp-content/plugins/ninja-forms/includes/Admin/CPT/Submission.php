@@ -115,10 +115,13 @@ class NF_Admin_CPT_Submission
 
     public function custom_columns( $column, $sub_id )
     {
+<<<<<<< HEAD
+=======
         if( 'nf_sub' != get_post_type() ) {
             return;
         }
 
+>>>>>>> master
         $sub = Ninja_Forms()->form()->get_sub( $sub_id );
 
         if( 'id' == $column ) {
@@ -231,7 +234,11 @@ class NF_Admin_CPT_Submission
 
         $mod_date = apply_filters( 'nf_edit_sub_date_modified', $sub->get_mod_date( 'm/d/Y H:i' ), $post->ID );
 
+<<<<<<< HEAD
+        Ninja_Forms::template( 'admin-metabox-sub-info.html.php', compact( 'seq_num', 'status', 'user', 'form_title', 'sub_date', 'mod_date' ) );
+=======
         Ninja_Forms::template( 'admin-metabox-sub-info.html.php', compact( 'post', 'seq_num', 'status', 'user', 'form_title', 'sub_date', 'mod_date' ) );
+>>>>>>> master
     }
 
     /**

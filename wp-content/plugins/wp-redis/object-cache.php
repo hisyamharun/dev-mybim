@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< HEAD
+=======
 // WP Redis
+>>>>>>> master
 // This file needs to be symlinked or copied to wp-content/object-cache.php
 
 # Users with setups where multiple installs share a common wp-config.php or $table_prefix
@@ -228,6 +231,8 @@ function wp_cache_add_non_persistent_groups( $groups ) {
 }
 
 /**
+<<<<<<< HEAD
+=======
  * Adds a group or set of groups to the list of groups that use Redis hashes.
  *
  * @param string|array $groups A group or an array of groups to add.
@@ -239,6 +244,7 @@ function wp_cache_add_redis_hash_groups( $groups ) {
 }
 
 /**
+>>>>>>> master
  * Reset internal cache keys and structures. If the cache backend uses global
  * blog or site IDs as part of its cache keys, this function instructs the
  * backend to reset those keys and perform any cleanup since blog or site IDs
@@ -323,6 +329,8 @@ class WP_Object_Cache {
 	var $non_persistent_groups = array();
 
 	/**
+<<<<<<< HEAD
+=======
 	 * List of groups which use Redis hashes.
 	 *
 	 * @var array
@@ -331,6 +339,7 @@ class WP_Object_Cache {
 	var $redis_hash_groups = array();
 
 	/**
+>>>>>>> master
 	 * The blog prefix to prepend to keys in non-global groups.
 	 *
 	 * @var int
@@ -422,6 +431,8 @@ class WP_Object_Cache {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
 	 * Sets the list of groups that use Redis hashes.
 	 *
 	 * @param array $groups List of groups that use Redis hashes.
@@ -434,6 +445,7 @@ class WP_Object_Cache {
 	}
 
 	/**
+>>>>>>> master
 	 * Decrement numeric cache item's value
 	 *
 	 * @param int|string $key The cache key to increment
@@ -469,7 +481,11 @@ class WP_Object_Cache {
 			return $existing;
 		}
 
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$redis_safe_group = $this->_key( '', $group );
 			$result = $this->_call_redis( 'hIncrBy', $redis_safe_group, $key, -$offset, $group );
 			if ( $result < 0 ) {
@@ -515,7 +531,11 @@ class WP_Object_Cache {
 		}
 
 		if ( $this->_should_persist( $group ) ) {
+<<<<<<< HEAD
+			if ( self::USE_GROUPS ) {
+=======
 			if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 				$redis_safe_group = $this->_key( '', $group );
 				$result = $this->_call_redis( 'hDel', $redis_safe_group, $key );
 			} else {
@@ -538,7 +558,11 @@ class WP_Object_Cache {
 	 * @return boolean True on success, false on failure.
 	 */
 	public function delete_group( $group ) {
+<<<<<<< HEAD
+		if ( ! self::USE_GROUPS ) {
+=======
 		if ( ! $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			return false;
 		}
 
@@ -614,7 +638,11 @@ class WP_Object_Cache {
 			return false;
 		}
 
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$redis_safe_group = $this->_key( '', $group );
 			$value = $this->_call_redis( 'hGet', $redis_safe_group, $key );
 		} else {
@@ -676,7 +704,11 @@ class WP_Object_Cache {
 			return $existing;
 		}
 
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$redis_safe_group = $this->_key( '', $group );
 			$result = $this->_call_redis( 'hIncrBy', $redis_safe_group, $key, $offset, $group );
 			if ( $result < 0 ) {
@@ -770,7 +802,11 @@ class WP_Object_Cache {
 		}
 
 		// Redis doesn't support expire on hash group keys
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$redis_safe_group = $this->_key( '', $group );
 			$this->_call_redis( 'hSet', $redis_safe_group, $key, $data );
 			return true;
@@ -841,7 +877,11 @@ class WP_Object_Cache {
 			return false;
 		}
 
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$redis_safe_group = $this->_key( '', $group );
 			return $this->_call_redis( 'hExists', $redis_safe_group, $key );
 		}
@@ -857,7 +897,11 @@ class WP_Object_Cache {
 	 * @return boolean
 	 */
 	protected function _isset_internal( $key, $group ) {
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$multisite_safe_group = $this->multisite && ! isset( $this->global_groups[ $group ] ) ? $this->blog_prefix . $group : $group;
 			return isset( $this->cache[ $multisite_safe_group ][ $key ] );
 		} else {
@@ -875,7 +919,11 @@ class WP_Object_Cache {
 	 */
 	protected function _get_internal( $key, $group ) {
 		$value = null;
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$multisite_safe_group = $this->multisite && ! isset( $this->global_groups[ $group ] ) ? $this->blog_prefix . $group : $group;
 			if ( isset( $this->cache[ $multisite_safe_group ][ $key ] ) ) {
 				$value = $this->cache[ $multisite_safe_group ][ $key ];
@@ -904,7 +952,11 @@ class WP_Object_Cache {
 		if ( is_null( $value ) ) {
 			$value = '';
 		}
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$multisite_safe_group = $this->multisite && ! isset( $this->global_groups[ $group ] ) ? $this->blog_prefix . $group : $group;
 			if ( ! isset( $this->cache[ $multisite_safe_group ] ) ) {
 				$this->cache[ $multisite_safe_group ] = array();
@@ -923,7 +975,11 @@ class WP_Object_Cache {
 	 * @param string $group
 	 */
 	protected function _unset_internal( $key, $group ) {
+<<<<<<< HEAD
+		if ( self::USE_GROUPS ) {
+=======
 		if ( $this->_should_use_redis_hashes( $group ) ) {
+>>>>>>> master
 			$multisite_safe_group = $this->multisite && ! isset( $this->global_groups[ $group ] ) ? $this->blog_prefix . $group : $group;
 			if ( isset( $this->cache[ $multisite_safe_group ][ $key ] ) ) {
 				unset( $this->cache[ $multisite_safe_group ][ $key ] );
@@ -968,6 +1024,8 @@ class WP_Object_Cache {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
 	 * Should this group use Redis hashes?
 	 *
 	 * @param string $group Cache group.
@@ -981,6 +1039,7 @@ class WP_Object_Cache {
 	}
 
 	/**
+>>>>>>> master
 	 * Wrapper method for connecting to Redis, which lets us retry the connection
 	 */
 	protected function _connect_redis() {
@@ -1017,12 +1076,18 @@ class WP_Object_Cache {
 			$port = ! empty( $redis_server['port'] ) ? $redis_server['port'] : 6379;
 		}
 		$this->redis->connect( $redis_server['host'], $port, 1, null, 100 ); # 1s timeout, 100ms delay between reconnections
+<<<<<<< HEAD
+		if ( ! empty( $redis_server['auth'] ) ) {
+			try {
+				$this->redis->auth( $redis_server['auth'] );
+=======
 		foreach ( array( 'auth' => 'auth', 'database' => 'select' ) as $k => $method ) {
 			if ( ! isset( $redis_server[ $k ] ) ) {
 				continue;
 			}
 			try {
 				$this->redis->$method( $redis_server[ $k ] );
+>>>>>>> master
 			} catch ( RedisException $e ) {
 				// PhpRedis throws an Exception when it fails a server call.
 				// To prevent WordPress from fataling, we catch the Exception.
@@ -1077,7 +1142,11 @@ class WP_Object_Cache {
 				// To prevent WordPress from fataling, we catch the Exception.
 				$retry_exception_messages = array( 'socket error on read socket', 'Connection closed', 'Redis server went away' );
 				$retry_exception_messages = apply_filters( 'wp_redis_retry_exception_messages', $retry_exception_messages );
+<<<<<<< HEAD
+				if ( in_array( $e->getMessage(), $retry_exception_messages ) ) {
+=======
 				if ( in_array( $e->getMessage(), $retry_exception_messages, true ) ) {
+>>>>>>> master
 					try {
 						$this->last_triggered_error = 'WP Redis: ' . $e->getMessage();
 						// Be friendly to developers debugging production servers by triggering an error

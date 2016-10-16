@@ -61,10 +61,13 @@ final class NF_Display_Render
             }
         }
 
+<<<<<<< HEAD
+=======
         $currency = $form->get_setting( 'currency', Ninja_Forms()->get_setting( 'currency' ) );
         $currency_symbol = Ninja_Forms::config( 'CurrencySymbol' );
         $form->update_setting( 'currency_symbol', ( isset( $currency_symbol[ $currency ] ) ) ? $currency_symbol[ $currency ] : '' );
 
+>>>>>>> master
         $title = apply_filters( 'ninja_forms_form_title', $form->get_setting( 'title' ), $form_id );
         $form->update_setting( 'title', $title );
 
@@ -166,11 +169,21 @@ final class NF_Display_Render
 
                 // TODO: Find a better way to do this.
                 if ('shipping' == $settings['type']) {
+<<<<<<< HEAD
+                    // TODO: Does the currency marker need to stripped here?
+                    $settings['shipping_cost'] = str_replace( array( '$', '£', '€' ), '', $settings['shipping_cost']);
+                    $settings['shipping_cost'] = str_replace( Ninja_Forms()->get_setting( 'currency_symbol' ), '', $settings['shipping_cost']);
+                    $settings['shipping_cost'] = number_format($settings['shipping_cost'], 2);
+                } elseif ('product' == $settings['type']) {
+                    // TODO: Does the currency marker need to stripped here?
+                    $settings['product_price'] = str_replace( array( '$', '£', '€' ), '', $settings['product_price']);
+=======
                     $settings['shipping_cost'] = preg_replace ('/[^\d,\.]/', '', $settings['shipping_cost']);
                     $settings['shipping_cost'] = str_replace( Ninja_Forms()->get_setting( 'currency_symbol' ), '', $settings['shipping_cost']);
                     $settings['shipping_cost'] = number_format($settings['shipping_cost'], 2);
                 } elseif ('product' == $settings['type']) {
                     $settings['product_price'] = preg_replace ('/[^\d,\.]/', '', $settings[ 'product_price' ] );
+>>>>>>> master
                     $settings['product_price'] = str_replace( Ninja_Forms()->get_setting( 'currency_symbol' ), '', $settings['product_price']);
                     $settings['product_price'] = number_format($settings['product_price'], 2);
                 } elseif ('total' == $settings['type'] && isset($settings['value'])) {
@@ -235,10 +248,13 @@ final class NF_Display_Render
 
         $form[ 'settings' ][ 'is_preview' ] = TRUE;
 
+<<<<<<< HEAD
+=======
         $currency = ( isset( $form[ 'settings' ][ 'currency' ] ) && $form[ 'settings' ][ 'currency' ] ) ? $form[ 'settings' ][ 'currency' ] : Ninja_Forms()->get_setting( 'currency' ) ;
         $currency_symbol = Ninja_Forms::config( 'CurrencySymbol' );
         $form[ 'settings' ][ 'currency_symbol' ] = ( isset( $currency_symbol[ $currency ] ) ) ? $currency_symbol[ $currency ] : '';
 
+>>>>>>> master
         $before_form = apply_filters( 'ninja_forms_display_before_form', '', $form_id, TRUE );
         $form[ 'settings' ][ 'beforeForm'] = $before_form;
 
@@ -329,12 +345,20 @@ final class NF_Display_Render
 
                 // TODO: Find a better way to do this.
                 if ('shipping' == $field['settings']['type']) {
+<<<<<<< HEAD
+                    $field['settings']['shipping_cost'] = str_replace( array( '$', '£', '€' ), '', $field['settings']['shipping_cost'] );
+=======
                     $field['settings']['shipping_cost'] = preg_replace ('/[^\d,\.]/', '', $field['settings']['shipping_cost'] );
+>>>>>>> master
                     $field['settings']['shipping_cost'] = str_replace( Ninja_Forms()->get_setting( 'currency_symbol' ), '', $field['settings']['shipping_cost'] );
                     $field['settings']['shipping_cost'] = number_format($field['settings']['shipping_cost'], 2);
                 } elseif ('product' == $field['settings']['type']) {
                     // TODO: Does the currency marker need to stripped here?
+<<<<<<< HEAD
+                    $field['settings']['product_price'] = str_replace( array( '$', '£', '€' ), '', $field['settings']['product_price'] );
+=======
                     $field['settings']['product_price'] = preg_replace ('/[^\d,\.]/', '', $field['settings']['product_price'] );
+>>>>>>> master
                     $field['settings']['product_price'] = str_replace( Ninja_Forms()->get_setting( 'currency_symbol' ), '', $field['settings']['product_price'] );
                     $field['settings']['product_price'] = number_format($field['settings']['product_price'], 2);
                 } elseif ('total' == $field['settings']['type']) {

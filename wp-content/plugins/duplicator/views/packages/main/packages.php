@@ -33,6 +33,13 @@
 	td.error-msg a i {color:maroon}
 	td.error-msg span {display:inline-block; padding:7px 18px 0px 0px; color:maroon}
 	
+<<<<<<< HEAD
+	/*Add Rotator */
+	span#dup-add-link {display:none; font-size:13px}
+</style>
+
+<form id="form-duplicator" method="post">
+=======
 </style>
 
 <form id="form-duplicator" method="post">
@@ -42,17 +49,29 @@
 		<a href="admin.php?page=duplicator-about"  style="color:maroon"><i><i class="fa fa-check-circle"></i> <?php _e("Help Support Duplicator", 'duplicator') ?></i> </a>
 	</div>
 <?php endif; ?>	
+>>>>>>> master
 
 <!-- ====================
 TOOL-BAR -->
 <table id="dup-toolbar">
 	<tr valign="top">
 		<td style="white-space: nowrap">
+<<<<<<< HEAD
+			<div class="alignleft actions">
+				<select id="dup-pack-bulk-actions">
+					<option value="-1" selected="selected"><?php _e("Bulk Actions", 'duplicator') ?></option>
+					<option value="delete" title="<?php _e("Delete selected package(s)", 'duplicator') ?>"><?php _e("Delete", 'duplicator') ?></option>
+				</select>
+				<input type="button" id="dup-pack-bulk-apply" class="button action" value="<?php _e("Apply", 'duplicator') ?>" onclick="Duplicator.Pack.Delete()">
+			</div>
+			<br class="clear">
+=======
 			<select id="dup-pack-bulk-actions">
 				<option value="-1" selected="selected"><?php _e("Bulk Actions", 'duplicator') ?></option>
 				<option value="delete" title="<?php _e("Delete selected package(s)", 'duplicator') ?>"><?php _e("Delete", 'duplicator') ?></option>
 			</select>
 			<input type="button" id="dup-pack-bulk-apply" class="button action" value="<?php _e("Apply", 'duplicator') ?>" onclick="Duplicator.Pack.Delete()">
+>>>>>>> master
 		</td>
 		<td align="center" >
 			<a href="?page=duplicator-tools" id="btn-logs-dialog" class="button"  title="<?php _e("Package Logs", 'duplicator') ?>..."><i class="fa fa-list-alt"></i>
@@ -182,7 +201,14 @@ TOOL-BAR -->
 	?>
 	<tfoot>
 		<tr>
+<<<<<<< HEAD
+			<th colspan="4">					
+				<?php echo DUP_UI::ShowRandomAffilateLink(); ?>
+			</th>
+			<th colspan="7" style='text-align:right; font-size:12px'>						
+=======
 			<th colspan="11" style='text-align:right; font-size:12px'>						
+>>>>>>> master
 				<?php echo _e("Packages", 'duplicator') . ': ' . $totalElements; ?> |
 				<?php echo _e("Total Size", 'duplicator') . ': ' . DUP_Util::ByteSize($totalSize); ?> 
 			</th>
@@ -246,5 +272,9 @@ jQuery(document).ready(function($)
 		window.location.href = '?page=duplicator&action=detail&tab=detail&id=' + package_id;
 	}
 	
+<<<<<<< HEAD
+	$('#dup-add-link').slideDown(1500);
+=======
+>>>>>>> master
 });
 </script>

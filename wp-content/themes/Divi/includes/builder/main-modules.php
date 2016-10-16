@@ -15099,7 +15099,11 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 
 		$next = new stdClass();
 
+<<<<<<< HEAD
+		if ( null !== $next_post ) {
+=======
 		if ( ! empty( $next_post ) ) {
+>>>>>>> master
 
 			$next_title = isset($next_post->post_title) ? esc_html( $next_post->post_title ) : esc_html__( 'Next Post' );
 
@@ -15113,9 +15117,17 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 			$next_processed_title = str_replace( '%date', $next_date, $next_processed_title );
 			$next_processed_title = str_replace( '%link', $next_permalink, $next_processed_title );
 
+<<<<<<< HEAD
+			$next = array(
+				'title'     => $next_processed_title,
+				'id'        => isset($next_post->ID) ? intval( $next_post->ID ) : '',
+				'permalink' => $next_permalink,
+			);
+=======
 			$next->title = $next_processed_title;
 			$next->id = isset($next_post->ID) ? intval( $next_post->ID ) : '';
 			$next->permalink = $next_permalink;
+>>>>>>> master
 		}
 
 		// Get prev post
@@ -15123,7 +15135,11 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 
 		$prev = new stdClass();
 
+<<<<<<< HEAD
+		if ( null !== $prev_post ) {
+=======
 		if ( ! empty( $prev_post ) ) {
+>>>>>>> master
 
 			$prev_title = isset($prev_post->post_title) ? esc_html( $prev_post->post_title ) : esc_html__( 'Previous Post' );
 
@@ -15138,9 +15154,17 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 			$prev_processed_title = str_replace( '%date', $prev_date, $prev_processed_title );
 			$prev_processed_title = str_replace( '%link', $prev_permalink, $prev_processed_title );
 
+<<<<<<< HEAD
+			$prev = array(
+				'title'     => $prev_processed_title,
+				'id'        => isset($prev_post->ID) ? intval( $prev_post->ID ) : '',
+				'permalink' => $prev_permalink,
+			);
+=======
 			$prev->title = $prev_processed_title;
 			$prev->id = isset($prev_post->ID) ? intval( $prev_post->ID ) : '';
 			$prev->permalink = $prev_permalink;
+>>>>>>> master
 		}
 
 		// Formatting returned value
@@ -15185,7 +15209,11 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 				<span class="nav-previous">
 					<a href="<?php echo esc_url( $posts_navigation['prev']->permalink ); ?>" rel="prev">
 						<span class="meta-nav">&larr;</span>
+<<<<<<< HEAD
+						<?php echo esc_html( $posts_navigation['prev']['title'] ); ?>
+=======
 						<?php echo esc_html( $posts_navigation['prev']->title ); ?>
+>>>>>>> master
 					</a>
 				</span>
 			<?php
@@ -15196,8 +15224,13 @@ class ET_Builder_Module_Posts_Navigation extends ET_Builder_Module {
 
 			?>
 				<span class="nav-next">
+<<<<<<< HEAD
+					<a href="<?php echo esc_url( $posts_navigation['next']['permalink'] ); ?>" rel="next">
+						<?php echo esc_html( $posts_navigation['next']['title'] ); ?>
+=======
 					<a href="<?php echo esc_url( $posts_navigation['next']->permalink ); ?>" rel="next">
 						<?php echo esc_html( $posts_navigation['next']->title ); ?>
+>>>>>>> master
 						<span class="meta-nav">&rarr;</span>
 					</a>
 				</span>

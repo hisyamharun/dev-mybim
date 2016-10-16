@@ -5,7 +5,11 @@ class WP_Redis_CLI_Command {
 	/**
 	 * Launch redis-cli using Redis configuration for WordPress
 	 */
+<<<<<<< HEAD
+	public function __invoke() {
+=======
 	public function cli() {
+>>>>>>> master
 		global $redis_server;
 
 		if ( empty( $redis_server ) ) {
@@ -24,15 +28,24 @@ class WP_Redis_CLI_Command {
 			}
 		}
 
+<<<<<<< HEAD
+		$cmd = WP_CLI\Utils\esc_cmd( 'redis-cli -h %s -p %s -a %s', $redis_server['host'], $redis_server['port'], $redis_server['auth'] );
+=======
 		if ( ! isset( $redis_server['database'] ) ) {
 			$redis_server['database'] = 0;
 		}
 
 		$cmd = WP_CLI\Utils\esc_cmd( 'redis-cli -h %s -p %s -a %s -n %d', $redis_server['host'], $redis_server['port'], $redis_server['auth'], $redis_server['database'] );
+>>>>>>> master
 		WP_CLI::launch( $cmd );
 
 	}
 
+<<<<<<< HEAD
+}
+
+WP_CLI::add_command( 'redis-cli', 'WP_Redis_CLI_Command' );
+=======
 	/**
 	 * Debug object cache hit / miss ratio for any page URL.
 	 *
@@ -229,3 +242,4 @@ class WP_Redis_CLI_Command {
 }
 
 WP_CLI::add_command( 'redis', 'WP_Redis_CLI_Command' );
+>>>>>>> master

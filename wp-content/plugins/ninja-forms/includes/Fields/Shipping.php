@@ -83,7 +83,11 @@ class NF_Fields_Shipping extends NF_Abstracts_Input
                     break;
             }
         }
+<<<<<<< HEAD
+
+=======
         $value = preg_replace ('/[^\d,\.]/', '', $value );
+>>>>>>> master
         return $value;
     }
 }

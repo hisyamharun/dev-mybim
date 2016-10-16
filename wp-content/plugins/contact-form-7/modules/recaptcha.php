@@ -261,11 +261,22 @@ var recaptchaCallback = function() {
 			var sitekey = divs[j].getAttribute('data-sitekey');
 
 			if (divs[j].className && divs[j].className.match(pattern) && sitekey) {
+<<<<<<< HEAD
+				var widget_id = grecaptcha.render(divs[j], {
+=======
 				var params = {
+>>>>>>> master
 					'sitekey': sitekey,
 					'theme': divs[j].getAttribute('data-theme'),
 					'type': divs[j].getAttribute('data-type'),
 					'size': divs[j].getAttribute('data-size'),
+<<<<<<< HEAD
+					'tabindex': divs[j].getAttribute('data-tabindex'),
+					'callback': divs[j].getAttribute('data-callback'),
+					'expired-callback': divs[j].getAttribute('data-expired-callback')
+				});
+
+=======
 					'tabindex': divs[j].getAttribute('data-tabindex')
 				};
 
@@ -282,6 +293,7 @@ var recaptchaCallback = function() {
 				}
 
 				var widget_id = grecaptcha.render(divs[j], params);
+>>>>>>> master
 				recaptchaWidgets.push(widget_id);
 				break;
 			}
@@ -317,7 +329,11 @@ function wpcf7_recaptcha_shortcode_handler( $tag ) {
 	$atts['data-tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 	$atts['data-callback'] = $tag->get_option( 'callback', '', true );
 	$atts['data-expired-callback'] =
+<<<<<<< HEAD
+		$tag->get_option( 'expired-callback', '', true );
+=======
 		$tag->get_option( 'expired_callback', '', true );
+>>>>>>> master
 
 	$atts['class'] = $tag->get_class_option(
 		wpcf7_form_controls_class( $tag->type, 'g-recaptcha' ) );

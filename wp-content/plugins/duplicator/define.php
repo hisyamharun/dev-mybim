@@ -2,7 +2,11 @@
 //Prevent directly browsing to the file
 if (function_exists('plugin_dir_url')) 
 {		
+<<<<<<< HEAD
+    define('DUPLICATOR_VERSION',        '1.1.16');
+=======
     define('DUPLICATOR_VERSION',        '1.1.18');
+>>>>>>> master
     define('DUPLICATOR_HOMEPAGE',       'http://lifeinthegrid.com/labs/duplicator');
     define('DUPLICATOR_GIVELINK',       'http://lifeinthegrid.com/partner');
     define('DUPLICATOR_HELPLINK',       'http://lifeinthegrid.com/duplicator-docs');

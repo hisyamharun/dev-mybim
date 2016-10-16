@@ -1086,7 +1086,10 @@ class ET_Builder_Row extends ET_Builder_Structure_Element {
 				'option_category' => 'layout',
 				'depends_show_if' => 'on',
 				'validate_unit'   => true,
+<<<<<<< HEAD
+=======
 				'fixed_unit'      => 'px',
+>>>>>>> master
 				'range_settings'  => array(
 					'min'  => 500,
 					'max'  => 2600,
@@ -1100,7 +1103,10 @@ class ET_Builder_Row extends ET_Builder_Structure_Element {
 				'option_category' => 'layout',
 				'depends_show_if' => 'off',
 				'validate_unit'   => true,
+<<<<<<< HEAD
+=======
 				'fixed_unit'      => '%',
+>>>>>>> master
 				'range_settings'  => array(
 					'min'  => 0,
 					'max'  => 100,

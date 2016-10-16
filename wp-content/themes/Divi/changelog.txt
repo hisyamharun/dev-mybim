@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 version 3.0.11 ( updated 10-04-2016 )
 - Fixed a bug that caused auto-saves to be re-applied when editing a post, reverting recent changes while editing a post using the default editor. Line breaks were also stripped in the process.
 - A "#" character will now be added automatically to hex values added in the Visual Builder color picker if the user forgets to add them when typing custom color codes. 
@@ -125,6 +127,7 @@ version 3.0.7 ( updated 09-20-2016 )
 	* includes/builder/styles/frontend-builder-style.css
 	* includes/builder/scripts/frontend-builder-scripts.js
 
+>>>>>>> master
 version 3.0.6 ( updated 09-16-2016 )
 - Columns with equalized column heights will now appear correctly in the Visual Builder while responsive previews are active. 
 - Unpublished posts will no longer appear in post feeds while editing inside the Visual Builder.

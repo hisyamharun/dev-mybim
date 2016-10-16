@@ -613,7 +613,11 @@
 </script>
 
 <script id="tmpl-nf-rte-merge-tags-button" type="text/template">
+<<<<<<< HEAD
+    <span class="dashicons dashicons-list-view merge-tags"></span>
+=======
     <span class="dashicons dashicons-list-view"></span>
+>>>>>>> master
 </script>
 
 <script id="tmpl-nf-rte-link-button" type="text/template">

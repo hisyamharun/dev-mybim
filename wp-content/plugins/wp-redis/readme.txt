@@ -1,9 +1,16 @@
 === WP Redis ===
 Contributors: getpantheon, danielbachhuber, mboynes, Outlandish Josh
+<<<<<<< HEAD
+Tags: cache, plugin
+Requires at least: 3.0.1
+Tested up to: 4.5.1
+Stable tag: 0.5.0
+=======
 Tags: cache, plugin, redis
 Requires at least: 3.0.1
 Tested up to: 4.6.1
 Stable tag: 0.6.0
+>>>>>>> master
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +18,11 @@ Back your WP Object Cache with Redis, a high-performance in-memory storage backe
 
 == Description ==
 
+<<<<<<< HEAD
+[![Build Status](https://travis-ci.org/pantheon-systems/wp-redis.svg?branch=master)](https://travis-ci.org/pantheon-systems/wp-redis)
+=======
 [![Travis CI](https://travis-ci.org/pantheon-systems/wp-redis.svg?branch=master)](https://travis-ci.org/pantheon-systems/wp-redis) [![CircleCI](https://circleci.com/gh/pantheon-systems/wp-redis/tree/master.svg?style=svg)](https://circleci.com/gh/pantheon-systems/wp-redis/tree/master)
+>>>>>>> master
 
 For sites concerned with high traffic, speed for logged-in users, or dynamic pageloads, a high-speed and persistent object cache is a must. You also need something that can scale across multiple instances of your application, so using local file caches or APC are out.
 
@@ -19,7 +30,11 @@ Redis is a great answer, and one we bundle on the Pantheon platform. This is our
 
 It's important to note that a persistent object cache isn't a panacea - a page load with 2,000 Redis calls can be 2 full seconds of object cache transactions. Make sure you use the object cache wisely: keep to a sensible number of keys, don't store a huge amount of data on each key, and avoid stampeding frontend writes and deletes.
 
+<<<<<<< HEAD
+Go forth and make awesome! And, once you've built something great, [send us feature requests (or bug reports)](https://github.com/pantheon-systems/wp-redis/issues).
+=======
 Go forth and make awesome! And, once you've built something great, [send us feature requests (or bug reports)](https://github.com/pantheon-systems/wp-redis/issues). Take a look at the wiki for [useful code snippets and other tips](https://github.com/pantheon-systems/wp-redis/wiki).
+>>>>>>> master
 
 == Installation ==
 
@@ -29,6 +44,17 @@ This assumes you have a PHP environment with the [required PhpRedis extension](h
 2. If you're not running on Pantheon, edit wp-config.php to add your cache credentials, e.g.:
 
         $redis_server = array(
+<<<<<<< HEAD
+            'host' => '127.0.0.1',
+            'port' => 6379,
+            'auth' => '12345',
+        );
+
+3. Engage thrusters: you are now backing WP's Object Cache with Redis.
+4. (Optional) To use the same Redis server with multiple, discreet WordPress installs, you can use the `WP_CACHE_KEY_SALT` constant to define a unique salt for each install.
+5. (Optional) To use true cache groups, with the ability to delete all keys for a given group, define the `WP_REDIS_USE_CACHE_GROUPS` constant to true. However, when enabled, the expiration value is not respected because expiration on group keys isn't a feature supported by Redis.
+6. (Optional) On an existing site previously using WordPress' transient cache, use WP-CLI to delete all (`%_transient_%`) transients from the options table: `wp transient delete-all`. WP Redis assumes responsibility for the transient cache.
+=======
             'host'     => '127.0.0.1',
             'port'     => 6379,
             'auth'     => '12345',
@@ -82,6 +108,7 @@ Both of these test suites can be run locally, with a varying amount of setup.
 PHPUnit requires the [WordPress PHPUnit test suite](https://make.wordpress.org/core/handbook/testing/automated-testing/phpunit/), and access to a database with name `wordpress_test`. If you haven't already configured the test suite locally, you can run `bash bin/install-wp-tests.sh wordpress_test root '' localhost`. You'll also need to enable Redis and the PHPRedis extension in order to run the test suite against Redis.
 
 Behat requires a Pantheon site with Redis enabled. Once you've created the site, you'll need [install Terminus](https://github.com/pantheon-systems/terminus#installation), and set the `TERMINUS_TOKEN`, `TERMINUS_SITE`, and `TERMINUS_ENV` environment variables. Then, you can run `./bin/behat-prepare.sh` to prepare the site for the test suite.
+>>>>>>> master
 
 == Frequently Asked Questions ==
 
@@ -101,6 +128,18 @@ A page load with 2,000 Redis calls can be 2 full seonds of object cache transact
 
 This declaration means use of `wp_cache_set( 'foo', 'bar', 'bad-actor' );` and `wp_cache_get( 'foo', 'bad-actor' );` will not use Redis, and instead fall back to WordPress' default runtime object cache.
 
+<<<<<<< HEAD
+= How can I contribute? =
+
+The best way to contribute to the development of this plugin is by participating on the GitHub project:
+
+https://github.com/pantheon-systems/wp-redis
+
+Pull requests and issues are welcome!
+
+== Changelog ==
+
+=======
 == Changelog ==
 
 = 0.6.0 (September 21, 2016) =
@@ -108,6 +147,7 @@ This declaration means use of `wp_cache_set( 'foo', 'bar', 'bad-actor' );` and `
 * Permits a Redis database to be defined with `$redis_server['database']`.
 * Introduces `wp_cache_add_redis_hash_groups()`, which permits registering specific groups to use Redis hashes, and is more precise than our existing `WP_REDIS_USE_CACHE_GROUPS` constant.
 
+>>>>>>> master
 = 0.5.0 (April 27, 2016) =
 
 * Performance boost! Removes redundant `exists` call from `wp_cache_get()`, which easily halves the number of Redis calls.
