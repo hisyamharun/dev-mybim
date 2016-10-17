@@ -175,7 +175,7 @@ function et_browser_body_class($classes) {
 /*this function allows for the auto-creation of post excerpts*/
 if ( ! function_exists( 'truncate_post' ) ) {
 
-	function truncate_post( $amount, $echo = true, $post = '', $strip_shortcodes = false ) {
+	function truncate_post( $amount, $echo = true, $post = '' ) {
 		global $shortname;
 
 		if ( '' == $post ) global $post;
@@ -200,12 +200,8 @@ if ( ! function_exists( 'truncate_post' ) ) {
 			// due to unparsed audio shortcode
 			$truncate = preg_replace( '@\[audio[^\]]*?\].*?\[\/audio]@si', '', $truncate );
 
-			if ( $strip_shortcodes ) {
-				$truncate = et_strip_shortcodes( $truncate );
-			} else {
-				// apply content filters
-				$truncate = apply_filters( 'the_content', $truncate );
-			}
+			// apply content filters
+			$truncate = apply_filters( 'the_content', $truncate );
 
 			// decide if we need to append dots at the end of the string
 			if ( strlen( $truncate ) <= $amount ) {
