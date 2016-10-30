@@ -1,0 +1,66 @@
+08.09.2016 - ver 1.1.5	
+
+	- Improved widesoft plugin creation standards 
+	- Improved fr ver detector
+	- Improved automatic chart builder for new wordpress installations   
+	
+09.06.2016 - ver 1.1.4
+
+	- Updated "data-browser-by-ws.pot" translation file
+	- Added  close button for single post lightbox  
+	- Improved lightbox css style 
+	- Improved browsers list / order by ID 
+
+06.06.2016 - ver 1.1.3	
+
+	- Fixed / No Calling core loading files directly 
+	- Fixed / use ajax in standard way 
+	- Fixed / No Including jquery files (or calling them remotely)
+	- Fixed / preventing Direct File Access to plugin files  	
+	- Fixed False Description in general setting section
+	
+01.05.2016 - ver 1.1.2	
+	
+	- Added ability to populate or empty chart section just by one click  
+	- Added ability to populate or empty single post section just by one click 
+	- Added ability to populate or empty post list section just by one click 
+
+08.04.2016 - ver 1.1.1
+
+	- Fixed bug when user clicked on the delete sign that caused resetting queries .
+	- Fixed compatibility with the new Google chart API  
+	- Added ability to exclude "empty_value" item for basic post parameters  
+	- Added ability to exclude "empty_value" item for taxonomies  
+	- Added ability to exclude "empty_value" item for custom fields  
+	- Added ability to exclude "one_space" item for basic post parameters  
+	- Added ability to exclude "one_space" for taxonomies  
+	- Added ability to exclude "one_space" for custom fields 
+	- Updated "data-browser-by-ws.pot" translation file
+
+06.04.2016 - ver 1.1.0
+
+	- Added new section "default query" 
+	- Added ability  to add default query based on basic post parameters
+	- Added ability  to add default query based on taxonomies
+	- Added ability  to add default query based on custom fields
+	- Added ability  to add multiple default queries 
+	- Improved error messages
+	
+01.04.2016 - ver 1.0.2
+
+	- major user interface improvement
+	- Fixed some css bogs
+	- Improved documentation file
+
+27.03.2016 - ver 1.0.1
+
+	- Changed setting interface 
+	- Changed default setting for table
+	- Changed default setting for chart box
+	- Changed default setting for DataBrowser section
+	- Fixed some css bogs
+	- Improved documentation file
+
+20.03.2016 - ver 1.0.0
+
+	- First release 
