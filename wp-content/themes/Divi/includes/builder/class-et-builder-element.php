@@ -354,7 +354,7 @@ class ET_Builder_Element {
 		$post_id = apply_filters( 'et_is_ab_testing_active_post_id', get_the_ID() );
 
 		// If the section/row/module is disabled, hide it
-		if ( isset( $this->shortcode_atts['disabled'] ) && 'on' === $this->shortcode_atts['disabled'] && ! $et_fb_processing_shortcode_object ) {
+		if ( isset( $this->shortcode_atts['disabled'] ) && 'on' === $this->shortcode_atts['disabled'] && ! et_fb_enabled() ) {
 			return;
 		}
 
@@ -1626,7 +1626,7 @@ class ET_Builder_Element {
 		}
 
 		$output = sprintf(
-			'%6$s<div class="et-pb-option et-pb-option--%10$s%1$s%2$s%3$s%8$s%9$s"%4$s tabindex="-1">%5$s</div> <!-- .et-pb-option -->%7$s',
+			'%6$s<div class="et-pb-option%1$s%2$s%3$s%8$s%9$s"%4$s tabindex="-1">%5$s</div> <!-- .et-pb-option -->%7$s',
 			( ! empty( $field['type'] ) && 'tiny_mce' == $field['type'] ? ' et-pb-option-main-content' : '' ),
 			( ( $depends || isset( $field['depends_default'] ) ) ? ' et-pb-depends' : '' ),
 			( ! empty( $field['type'] ) && 'hidden' == $field['type'] ? ' et_pb_hidden' : '' ),
@@ -1635,8 +1635,7 @@ class ET_Builder_Element {
 			"\t",
 			"\n\n\t\t",
 			( ! empty( $field['type'] ) && 'hidden' == $field['type'] ? esc_attr( sprintf( ' et-pb-option-%1$s', $field['name'] ) ) : '' ),
-			( ! empty( $field['option_class'] ) ? ' ' . $field['option_class'] : '' ),
-			esc_attr( $field['type'] )
+			( ! empty( $field['option_class'] ) ? ' ' . $field['option_class'] : '' )
 		);
 
 		return $output;
@@ -1663,7 +1662,7 @@ class ET_Builder_Element {
 			$output = $field_el;
 		} else {
 			$output = sprintf(
-				'%3$s<div class="et-pb-option-container et-pb-option-container--%6$s%5$s">
+				'%3$s<div class="et-pb-option-container%5$s">
 					%1$s
 					%2$s
 				%4$s</div> <!-- .et-pb-option-container -->',
@@ -1671,8 +1670,7 @@ class ET_Builder_Element {
 				$description,
 				"\n\n\t\t\t\t",
 				"\t",
-				( isset( $field['type'] ) && 'custom_css' === $field['type'] ? ' et-pb-custom-css-option' : '' ),
-				esc_attr( $field['type'] )
+				( isset( $field['type'] ) && 'custom_css' === $field['type'] ? ' et-pb-custom-css-option' : '' )
 			);
 		}
 
@@ -1815,14 +1813,6 @@ class ET_Builder_Element {
 		}
 
 		switch( $field['type'] ) {
-			case 'warning':
-				$field_el = sprintf(
-					'<div class="et-pb-option-warning" data-name="%2$s" data-display_if="%3$s">%1$s</div>',
-					html_entity_decode( esc_html( $field['message'] ) ),
-					esc_attr( $field['name'] ),
-					esc_attr( $field['display_if'] )
-				);
-				break;
 			case 'tiny_mce':
 				if ( ! empty( $field['tiny_mce_html_mode'] ) ) {
 					$field['class'] .= ' html_mode';

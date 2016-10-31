@@ -427,11 +427,7 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 											<div class="box-content">
 												<?php
 													$checked = '';
-												if ( $is_new_global_setting && isset( $value['main_setting_name'] ) && isset( $value['sub_setting_name'] ) ) {
-													$saved_checkbox = et_get_option( $value['id'], '', '', false, $is_new_global_setting, $global_setting_main_name, $global_setting_sub_name );
-													$checked = ( 'on' === $saved_checkbox || (!$saved_checkbox && 'on' === $value['std']) ) ?
-														'checked="checked"' : '';
-												} else if ( '' != et_get_option( $value['id'] ) ) {
+												if ( '' != et_get_option( $value['id'] ) ) {
 													if ( 'on' == et_get_option( $value['id'] ) ) {
 														$checked = 'checked="checked"';
 													} else {
