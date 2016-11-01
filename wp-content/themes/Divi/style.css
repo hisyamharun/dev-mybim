@@ -1,11 +1,7 @@
 /*
 Theme Name: Divi
 Theme URI: http://www.elegantthemes.com/gallery/divi/
-<<<<<<< HEAD
-Version: 3.0.6
-=======
-Version: 3.0.11
->>>>>>> master
+Version: 3.0.16
 Description: Smart. Flexible. Beautiful. Divi is the most powerful theme in our collection.
 Author: Elegant Themes
 Author URI: http://www.elegantthemes.com
@@ -437,7 +433,6 @@ br.clear {
 .woocommerce #respond input#submit:hover,
 .woocommerce-page #respond input#submit:hover,
 .woocommerce #content input.button:hover,
-.woocommerce-message a.button.wc-forward,
 .wp-pagenavi span.current,
 .wp-pagenavi a:hover,
 .et_password_protected_form .et_submit_button,
@@ -6966,6 +6961,23 @@ p.et_pb_gallery_caption {
 	animation: gridFadeIn 1s 1 cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+/* Video Format Overlay */
+.et_pb_post .et_main_video_container {
+	position: relative;
+}
+
+.et_pb_post .et_pb_video_overlay .et_pb_video_play {
+	color: #fff;
+}
+
+.et_pb_post .et_pb_video_overlay_hover:hover {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.et_pb_blog_grid .et_main_video_overlay:hover:before {
+	background: rgba(0, 0, 0, 0.6);
+}
+
 /* Video Module */
 .et_pb_video {
 	position: relative;
@@ -7933,6 +7945,10 @@ body.chrome.parallax-map-support .et_pb_map {
 }
 
 /* Fullwidth Menu Module */
+.et_pb_fullwidth_menu {
+	position: relative;
+}
+
 .et_pb_fullwidth_menu .fullwidth-menu-nav,
 .et_pb_fullwidth_menu .fullwidth-menu-nav > ul {
 	float: none;
@@ -12050,11 +12066,11 @@ span.comment_date {
 		position: absolute;
 	}
 
-	.et_pb_blog_grid .mejs-container {
+	.et_pb_blog_grid .mejs-container.wp-audio-shortcode {
 		height: 80px !important;
 	}
 
-	.et_pb_blog_grid .mejs-controls {
+	.et_pb_blog_grid .mejs-audio .mejs-controls {
 		height: 100% !important;
 	}
 
