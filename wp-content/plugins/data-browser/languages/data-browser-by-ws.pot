@@ -1,0 +1,1995 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WordPress data browser pro\n"
+"POT-Creation-Date: 2016-06-08 21:38+0430\n"
+"PO-Revision-Date: 2016-06-08 21:38+0430\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: data-browser.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 1_include/2_adding_style_and_script/102_enqueue_css_and_js.php:160
+msgid "Clear"
+msgstr ""
+
+#: 1_include/2_adding_style_and_script/102_enqueue_css_and_js.php:160
+msgid "Default"
+msgstr ""
+
+#: 1_include/2_adding_style_and_script/102_enqueue_css_and_js.php:160
+msgid "Select Color"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:10
+msgid "Pie Chart"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:15
+#: 1_include/4_back_end/10_chart_customizer.php:28
+#: 1_include/4_back_end/10_chart_customizer.php:41
+#: 1_include/4_back_end/10_chart_customizer.php:54
+#: 1_include/4_back_end/10_chart_customizer.php:67
+#: 1_include/4_back_end/10_chart_customizer.php:80
+#: 1_include/4_back_end/10_chart_customizer.php:93
+#: 1_include/4_back_end/10_chart_customizer.php:106
+#: 1_include/4_back_end/10_chart_customizer.php:119
+#: 1_include/4_back_end/6_edit_boxes.php:14
+#: 1_include/4_back_end/6_edit_boxes.php:27
+#: 1_include/4_back_end/6_edit_boxes.php:40
+#: 1_include/4_back_end/6_edit_boxes.php:53
+#: 1_include/4_back_end/6_edit_boxes.php:66
+#: 1_include/4_back_end/6_edit_boxes.php:79
+#: 1_include/4_back_end/6_edit_boxes.php:92
+#: 1_include/4_back_end/6_edit_boxes.php:105
+#: 1_include/4_back_end/6_edit_boxes.php:119
+#: 1_include/4_back_end/6_edit_boxes.php:132
+#: 1_include/4_back_end/6_navigation_path.php:16
+#: 1_include/4_back_end/6_navigation_path.php:29
+#: 1_include/4_back_end/6_navigation_path.php:42
+#: 1_include/4_back_end/6_navigation_path.php:55
+#: 1_include/4_back_end/6_navigation_path.php:68
+#: 1_include/4_back_end/6_navigation_path.php:81
+#: 1_include/4_back_end/6_navigation_path.php:94
+#: 1_include/4_back_end/6_navigation_path.php:107
+#: 1_include/4_back_end/6_navigation_path.php:120
+#: 1_include/4_back_end/6_navigation_path.php:133
+#: 1_include/4_back_end/6_navigation_path.php:146
+msgid "Edit"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:23
+msgid "Donut Chart"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:36
+msgid "Bar Chart"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:49
+msgid "Column Chart"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:62
+msgid "Line Chart"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:75
+msgid "Scatter Chart"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:88
+msgid "Area Chart"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:101
+msgid "Stepped Area Chart"
+msgstr ""
+
+#: 1_include/4_back_end/10_chart_customizer.php:114
+msgid "Table"
+msgstr ""
+
+#: 1_include/4_back_end/11_default_query.php:14
+msgid "Default Queries"
+msgstr ""
+
+#: 1_include/4_back_end/11_default_query.php:17
+msgid "No Default Query"
+msgstr ""
+
+#: 1_include/4_back_end/11_default_query.php:65
+msgid "Groups"
+msgstr ""
+
+#: 1_include/4_back_end/11_default_query.php:80
+msgid "Basic Dimensions"
+msgstr ""
+
+#: 1_include/4_back_end/11_default_query.php:89
+msgid "Taxo Dimensions"
+msgstr ""
+
+#: 1_include/4_back_end/11_default_query.php:100
+msgid "Field Dimensions"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:14
+msgid "Attention "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:15
+msgid ""
+"This is a wrapper element , this element contain child elements and they "
+"have their own settings such as font settings. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:22
+msgid "Post per page"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:23
+msgid "Set post per page number."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:30
+msgid "Max visible pagination button "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:31
+msgid "Set the max visible pagination button."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:38
+msgid "Alternative for \"next sign\" "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:39
+msgid "Your custom text to replace the \"next sign\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:46
+msgid "Alternative for \"prev sign\" "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:47
+msgid "Your custom text to replace the \"prev sign\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:54
+msgid "Alternative for \"first\" button "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:55
+msgid "Your custom text to replace the \"first\" button."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:62
+msgid "Alternative for \"last\" button "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:63
+msgid "Your custom text to replace the \"last\" button."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:77
+msgid "Alternative text for \"all\" "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:78
+msgid "Your custom text to replace the \"all\" text   "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:88
+msgid "Text for group names "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:91
+msgid "Alternative text for basic"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:95
+msgid "Alternative text for taxo"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:99
+msgid "Alternative text for field"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:109
+msgid "Alternative text for \"sign after group element\" "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:110
+msgid "Your custom text to replace the \"sign after group element\" text. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:120
+msgid "Alternative text for \"sign after dimension element\""
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:121
+msgid "Your custom text to replace the \"sign after dimension element\" text. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:131
+msgid "Alternative text for \"sign before number element\""
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:132
+msgid "Your custom text to replace the \"sign before number element\" text."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:139
+msgid "Alternative text for \"sign after number element\" "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:140
+msgid "Your custom text to replace the \"sign after number element\" text.  "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:150
+msgid "Image for \"delete sign\" "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:153
+msgid "Image url including \"http://\" "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:157
+msgid "Image width "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:163
+msgid "Alternative text for \"delete sign text\""
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:164
+msgid ""
+"If you enter text to this field it will be visible before \"delete image sign"
+"\" and if you leave \"delete image sign\" address empty this text will be "
+"visible only. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:174
+msgid "Will remain background color "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:175
+msgid " Hover background color for areas that will remain after click.  "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:182
+msgid "Will be removed background color "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:183
+msgid "Hover background color for areas that will be removed after click.  "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:194
+msgid "Background color "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:196
+msgid "Set the background color. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:203
+msgid "Font"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:204
+msgid " Font settings for navigation path section. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:207
+msgid "Size"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:208
+msgid ""
+"Set the font size. you can use css standard values such as \"10px\" ,\"10%"
+"\" ,\"10em\" ,\"10cm\" ,\"initial\" or \"inherit\". "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:215
+#: 1_include/4_back_end/30_light_box_option_hole.php:760
+#: 1_include/4_back_end/30_light_box_option_hole.php:809
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:216
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:245
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:302
+msgid "Color"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:216
+msgid "Set the font color."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:222
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:91
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:517
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:664
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:810
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:892
+msgid "Font name"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:223
+msgid "Enter the font name. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:229
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:524
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:676
+msgid "Bold"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:238
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:533
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:685
+msgid "Italic"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:248
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:709
+msgid "Width and height"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:249
+msgid ""
+"You can use css standard values such as \"auto\" ,\"10px\" ,\"10%\" ,\"10em"
+"\" ,\"10cm\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:252
+msgid "Width"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:253
+msgid "Set the width."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:257
+msgid "Height"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:258
+msgid "Set the height."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:264
+msgid "Min width"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:265
+msgid "Set the min width. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:269
+msgid "Min height"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:270
+msgid "Set the min height. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:276
+msgid "max width"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:277
+msgid "Set the max width."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:281
+msgid "Max height"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:282
+msgid "Set the max height. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:289
+msgid "Text align"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:290
+msgid "Text align  Property settings."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:305
+msgid "Float"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:306
+msgid "Float Property settings."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:320
+msgid "Direction "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:321
+msgid " Direction Property settings."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:334
+msgid "Display"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:335
+msgid " Display Property settings. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:352
+msgid "Overflow-x "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:353
+msgid "Overflow-x Property settings."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:368
+msgid "Overflow-y "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:369
+msgid " Overflow-y Property settings. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:385
+msgid "Word wrap "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:386
+msgid ""
+"The word-wrap property allows long words to be able to be broken and wrap "
+"onto the next line. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:399
+msgid "Word break "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:400
+msgid ""
+" The word-break property specifies line breaking rules for non-CJK scripts."
+"Tip: CJK scripts are Chinese, Japanese and Korean (\"CJK\") scripts. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:414
+msgid "Letter spacing "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:415
+msgid ""
+"The letter-spacing property increases or decreases the space between "
+"characters in a text. you can use css standard values  for this property  "
+"such as \"normal\" ,\"10px\" ,\"-10\" ,\"2em\" ,\"2cm\" ,\"initial\" or "
+"\"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:422
+msgid "Word spacing "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:423
+msgid ""
+"The word-spacing property increases or decreases the white space between "
+"words. you can use css standard values  for this property  such as \"normal"
+"\" ,\"10px\" ,\"-10\" ,\"2em\" ,\"2cm\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:430
+msgid "Margins"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:431
+msgid ""
+"You can use css standard values for this property  such as \"10px\" ,\"10%"
+"\" ,\"10em\" ,\"10cm\" ,\"auto\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:434
+#: 1_include/4_back_end/30_light_box_option_hole.php:461
+msgid "Top"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:435
+msgid "Set the top margin. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:439
+#: 1_include/4_back_end/30_light_box_option_hole.php:466
+msgid "Bottom"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:440
+msgid "Set the bottom margin. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:444
+#: 1_include/4_back_end/30_light_box_option_hole.php:471
+msgid "Left"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:445
+msgid "Set the left margin. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:449
+#: 1_include/4_back_end/30_light_box_option_hole.php:476
+msgid "Right"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:450
+msgid "Set the right margin."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:457
+msgid "Padding"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:458
+msgid ""
+" You can use css standard values for this property  such as \"10px\" ,\"10%"
+"\" ,\"10em\" ,\"10cm\" ,\"auto\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:462
+msgid "Set the top padding."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:467
+msgid "Set the bottom padding."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:472
+msgid "Set the left padding."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:477
+msgid "Set the right padding."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:484
+msgid "Border"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:485
+msgid "Border settings."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:487
+#: 1_include/4_back_end/30_light_box_option_hole.php:531
+#: 1_include/4_back_end/30_light_box_option_hole.php:575
+#: 1_include/4_back_end/30_light_box_option_hole.php:619
+#: 1_include/4_back_end/30_light_box_option_hole.php:663
+#: 1_include/4_back_end/30_light_box_option_hole.php:731
+#: 1_include/4_back_end/30_light_box_option_hole.php:773
+msgid "enable or disable"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:494
+msgid "Border type "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:495
+msgid "The border typr property . "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:512
+#: 1_include/4_back_end/30_light_box_option_hole.php:556
+#: 1_include/4_back_end/30_light_box_option_hole.php:600
+#: 1_include/4_back_end/30_light_box_option_hole.php:644
+#: 1_include/4_back_end/30_light_box_option_hole.php:688
+msgid "Border width"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:513
+msgid ""
+"Set the border width. you can use css standard values for this property  "
+"such as \"10px\" ,\"10em\" ,\"10cm\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:519
+#: 1_include/4_back_end/30_light_box_option_hole.php:563
+#: 1_include/4_back_end/30_light_box_option_hole.php:607
+#: 1_include/4_back_end/30_light_box_option_hole.php:651
+#: 1_include/4_back_end/30_light_box_option_hole.php:695
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:700
+msgid "Border color"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:520
+msgid "Set the border color."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:528
+msgid "Border top "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:529
+msgid "The border-top property ."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:538
+#: 1_include/4_back_end/30_light_box_option_hole.php:582
+#: 1_include/4_back_end/30_light_box_option_hole.php:626
+#: 1_include/4_back_end/30_light_box_option_hole.php:670
+msgid "Border type"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:539
+msgid "Set the border-top type. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:557
+msgid "Set the border-top width.  "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:564
+msgid "Set the border-top color."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:572
+msgid "Border bottom "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:573
+msgid "The border-bottom property . "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:583
+msgid "Set the border-bottom type. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:601
+msgid ""
+"Set the border-bottom width. you can use css standard values for this "
+"property  such as \"10px\" ,\"10em\" ,\"10cm\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:608
+msgid "Set the border-bottom color. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:616
+msgid "Border left "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:617
+msgid "The border-left property ."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:627
+msgid "Set the border-left type. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:645
+msgid ""
+"Set the border-left width. you can use css standard values for this "
+"property  such as \"10px\" ,\"10em\" ,\"10cm\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:652
+msgid "Set the border-left color. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:660
+msgid "Border right "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:661
+msgid "The border-right property ."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:671
+msgid "Set the border-right type."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:689
+msgid ""
+"set the border-right width. you can use css standard values for this "
+"property  such as \"10px\" ,\"10em\" ,\"10cm\" ,\"initial\" or \"inherit\". "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:696
+msgid "Set the border-right color. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:704
+msgid "Border radius "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:705
+msgid ""
+"You can use css standard values for this property such as \"10px\" ,\"10%\" ,"
+"\"10em\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:707
+msgid "Top left radius"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:711
+msgid "Top right radius "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:715
+msgid "Bottom right radius "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:719
+msgid "Bottom left radius "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:727
+msgid "Text shadow"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:728
+msgid "The text-shadow property adds shadow to text."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:739
+#: 1_include/4_back_end/30_light_box_option_hole.php:781
+msgid "H-shadow"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:740
+msgid "The position of the horizontal shadow. for example \"5px\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:746
+#: 1_include/4_back_end/30_light_box_option_hole.php:788
+msgid "V-shadow"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:747
+msgid " The position of the vertical shadow. for example \"5px\". "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:753
+#: 1_include/4_back_end/30_light_box_option_hole.php:795
+msgid "Blur"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:754
+#: 1_include/4_back_end/30_light_box_option_hole.php:796
+msgid "The blur distance. for example \"5px\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:761
+msgid "The color of the shadow. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:769
+msgid "Box shadow"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:770
+msgid "Box shadow settings"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:782
+msgid " The position of the horizontal shadow. for example \"5px\". "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:789
+msgid " The position of the vertical shadow. for example \"5px\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:802
+msgid "Spread"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:803
+msgid "The size of shadow. for example \"5px\"."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:810
+msgid " The color of the shadow. "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:816
+msgid "Direction"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:817
+msgid " The shadow direction."
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:829
+msgid "Z-index"
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:830
+msgid ""
+".The z-index property specifies the stack order of an element.An element "
+"with greater stack order is always in front of an element with a lower stack "
+"order. you can use css standard values for this property  such as \"10\" ,"
+"\"auto\" ,\"initial\" or \"inherit\". "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:837
+msgid "Vertical align "
+msgstr ""
+
+#: 1_include/4_back_end/30_light_box_option_hole.php:838
+msgid ""
+"The vertical-align property sets the vertical alignment of an element. you "
+"can use css standard values for this property  such as \"50%\" ,\"10px\" ,"
+"\"-10px\" ,\"10cm\" ,\"baseline\",\"middle\",\"top\",\"bottom\",\"text-top\","
+"\"text-bottom\" ,\"initial\" or \"inherit\"."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:14
+msgid "pie hole "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:15
+msgid ""
+"If between 0 and 1, displays a donut chart. The hole with have a radius "
+"equal to number times the radius of the chart. "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:25
+msgid "Is 3D"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:26
+msgid " If turned on, displays a three-dimensional chart."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:39
+msgid "Connect steps"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:40
+msgid ""
+" If ON, will connect the steps to form a stepped line. Otherwise, only a top "
+"line appears. The default is to connect the steps."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:53
+msgid "Area opacity"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:54
+msgid ""
+"The default opacity of the colored area under an area chart series, where "
+"0.0 is fully transparent and 1.0 is fully opaque."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:64
+msgid "Line width"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:65
+msgid "Data line width in pixels. "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:75
+msgid "Slice text style"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:76
+msgid "Specifying the slice text style."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:78
+msgid "Overwrite global text style for slice text?"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:85
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:511
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:658
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:804
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:886
+msgid "Text color"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:97
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:541
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:593
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:670
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:834
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:916
+msgid "Font size"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:105
+msgid "Pie Slice Text"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:106
+msgid "The content of the text displayed on the slice."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:118
+msgid "Pie Start Angle"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:119
+msgid ""
+"The angle, in degrees, to rotate the chart by. The default of 0 will orient "
+"the leftmost edge of the first slice directly up."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:126
+msgid "Pie Residue Slice Color"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:127
+msgid ""
+"Color for the combination slice that holds all slices below slice Visibility "
+"Threshold. "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:132
+msgid "Pie Residue Slice Label"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:133
+msgid ""
+"A label for the combination slice that holds all slices below slice "
+"Visibility Threshold."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:144
+msgid "Curve type"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:145
+msgid ""
+"Controls the curve of the lines when the line width is not zero. Can be one "
+"of the following:1-\"none\" / Straight lines without curve.2-\"function\" / "
+"The angles of the line will be smoothed."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:155
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:230
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:259
+msgid "Orientation"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:156
+msgid ""
+"The orientation of the chart. When set to \"vertical\", rotates the axes of "
+"the chart."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:166
+msgid "Point shape"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:167
+msgid "The shape of individual data elements."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:182
+msgid "Point size "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:183
+msgid ""
+"Diameter of displayed points in pixels. if zero , default size will be "
+"used . "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:190
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:356
+msgid "Points visible"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:191
+msgid ""
+"Determines whether points will be displayed. Set to OFF to hide all points.  "
+"If you are usign a trendline, the pointsVisible option will affect the "
+"visibility of the points on all trendlines  ."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:201
+msgid "Crosshair"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:203
+msgid "Trigger"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:204
+msgid "When to display crosshairs."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:214
+msgid "Focused"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:217
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:246
+msgid "The crosshair color.leave empty to use auto color "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:223
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:252
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:315
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:553
+msgid "Opacity"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:224
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:253
+msgid "Between 0 and 1"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:231
+msgid ""
+"The crosshair orientation, which can be \"vertical\" for vertical hairs "
+"only, \"horizontal\" for horizontal hairs only, or \"both\" for traditional "
+"crosshairs.  "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:243
+msgid "Selected"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:260
+msgid ""
+"The crosshair orientation, which can be\"vertical\" for vertical hairs only, "
+"\"horizontal\" for horizontal hairs only, or \"both\" for traditional "
+"crosshairs.  "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:277
+msgid "Trendlines"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:279
+msgid "Enable trendlines "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:280
+msgid ""
+"The trendline is only available when the vertical chart axis and horizontal "
+"chart axis are numbers ."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:290
+msgid "Trendlines type"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:291
+msgid ""
+" Whether the trendlines is \"linear\" (the default), \"exponential\", or "
+"\"polynomial\"."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:303
+msgid " The color of the trendline."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:308
+msgid "Line Width"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:309
+msgid "The line width of the trendline , in pixels. "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:316
+msgid ""
+"The transparency of the trendline , from 0.0 (transparent) to 1.0 (opaque). "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:322
+msgid "Show R2"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:323
+msgid ""
+"Whether to show the coefficient of determination in the legend or trendline "
+"tooltip."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:332
+msgid "Visible in legend"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:333
+msgid ""
+"Whether the trendline equation appears in the legend. (It will appear in the "
+"trendline tooltip.) "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:342
+msgid "Degree"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:343
+msgid ""
+"Whether the trendline equation appears in the legend. (It will appear in the "
+"trendline tooltip.)"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:349
+msgid "Point size"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:350
+msgid ""
+"Trendlines are constucted by stamping a bunch of dots on the chart. this "
+"rarely-needed option lets you customize the size of the dots. The trendlines "
+"lineWidth option will usually be preferable. However, youll need this option "
+"if you want a different point size for your trendlines. "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:357
+msgid ""
+"Trendlines are constucted by stamping a bunch of dots on the chart. The "
+"trendlines pointsVisible option determines whether the points for a "
+"particular trendline are visible."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:371
+msgid "Data opacity "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:372
+msgid "The transparency of data points ,between 0 and 1."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:379
+msgid "Animation"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:381
+msgid "Startup"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:382
+msgid ""
+" Determines if the chart will animate on the initial draw. If ON, the chart "
+"will start at the baseline and animate to its final state."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:391
+msgid "Duration"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:392
+msgid "The duration of the animation, in milliseconds. For details."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:398
+msgid "easing"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:399
+msgid " The easing function applied to the animation."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:412
+msgid "Annotations"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:414
+msgid "Enable annotations "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:415
+msgid "Whether the annotations enabled or disabled."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:424
+msgid "Annotations content"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:425
+msgid "The annotations content ."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:436
+msgid "Annotations hover content"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:437
+msgid " The annotations hover content ."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:448
+msgid "Annotations both mode separator"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:449
+msgid "Separator used when \"both\" option of abave field selected"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:455
+msgid "Annotations content manual"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:456
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:463
+msgid ""
+"Your custom content / used when \"manual\" option of abave field selected"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:462
+msgid "Annotations hover content manual"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:469
+msgid "Always outside"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:470
+msgid "If ON, draws all annotations outside of the Bar."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:479
+msgid "High contrast"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:480
+msgid "High contrast."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:490
+msgid "Style"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:491
+msgid "Annotation type."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:501
+msgid "Annotations text style"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:502
+msgid " Specifying the annotations text style."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:504
+msgid "Overwrite global text style for annotations?  "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:547
+msgid "Aura color / The color of the text outline"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:566
+msgid "Axis titles position"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:567
+msgid "Where to place the axis titles, compared to the chart area."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:578
+msgid "Title position"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:579
+msgid "Where to place the chart title, compared to the chart area."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:594
+msgid "The default font size, in pixels, of all text in the chart."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:596
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:714
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:725
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:737
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:747
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:930
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:940
+msgid "Auto or manual"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:606
+msgid "Font name "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:607
+msgid "The default font face for all text in the chart."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:614
+msgid "Force iframe "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:615
+msgid ""
+"Draws the chart inside an inline frame. (Note that on IE8, this option is "
+"ignored; all IE8 charts are drawn in i-frames.) "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:625
+msgid "Enable interactivity"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:626
+msgid ""
+"Whether the chart throws user-based events or reacts to user interaction. if "
+"off, the chart will not throw \"select\" or other interaction-based events "
+"(but will throw ready or error events)."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:636
+msgid "Reverse Categories"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:637
+msgid ""
+"If turned on, will draw series from bottom to top. The default is to draw "
+"top-to-bottom."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:647
+msgid "Title text style"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:648
+msgid "Specifying the title text style."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:650
+msgid "Overwrite global text style for title?"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:698
+msgid "Background color"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:702
+msgid "Border width in pixels"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:712
+msgid "Chart area width"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:713
+msgid "Chart area width."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:723
+msgid "Chart area height"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:724
+msgid "Chart area height."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:735
+msgid "Chart width"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:736
+msgid "Width of the chart, in pixels."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:745
+msgid "Chart height"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:746
+msgid "Height of the chart, in pixels."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:758
+msgid "Legend"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:760
+msgid "Legend max lines"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:761
+msgid ""
+"Maximum number of lines in the legend. Set this to a number greater than one "
+"to add lines to your legend."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:767
+msgid "Position"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:768
+msgid "Position of the legend."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:781
+msgid "Alignment"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:782
+msgid "Alignment of the legend."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:794
+msgid "Legend text style"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:795
+msgid "Specifying the legend text style."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:797
+msgid "Overwrite global text style for legend? "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:817
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:899
+msgid "Bold or normal"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:826
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:908
+msgid "Italic or normal"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:842
+msgid "Tooltip"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:844
+msgid "Ignore bounds"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:845
+msgid ""
+"If turned on, allows the drawing of tooltips to flow outside of the bounds "
+"of the chart on all sides."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:854
+msgid "Tooltip show color Code"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:855
+msgid ""
+"If turned on,  show colored squares next to the slice information in the "
+"tooltip."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:864
+msgid "Tooltip trigger"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:865
+msgid "The user interaction that causes the tooltip to be displayed."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:876
+msgid "Tooltip text style"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:877
+msgid "Specifying the tooltip text style."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:879
+msgid "Overwrite global text style for tooltip?"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:928
+msgid "Table width"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:929
+msgid "Width of the table, in pixels."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:938
+msgid "Table height"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:939
+msgid "Height of the table, in pixels."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:950
+msgid "Page"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:951
+msgid "Enable or disable paging through the data."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:961
+msgid "Page size"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:962
+msgid ""
+"The number of rows in each page, when paging is enabled with the page option."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:983
+msgid "Rtl table"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:984
+msgid ""
+"Adds basic support for right-to-left languages (such as Arabic or Hebrew) by "
+"reversign the column order of the table, so that column zero is the "
+"rightmost column, and the last column is the leftmost column.  "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:994
+msgid "Scroll left start position"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:995
+msgid ""
+"Sets the horizontal scrolling position, in pixels, if the table has "
+"horizontal scroll bars because you have set the width property. The table "
+"will open scrolled that many pixels past the leftmost column. "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1002
+msgid "Show row number"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1003
+msgid "If ON . shows the row number as the first column of the table. "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1013
+msgid "Sort"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1014
+msgid "If ON . sort columns when the user clicks a column heading. "
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1024
+msgid "Sort ascending"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1025
+msgid ""
+"The order in which the initial sort column is sorted. ON for ascending, OFF "
+"for descending. Ignored if sortColumn is not specified."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1035
+msgid "Sort column"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1036
+msgid ""
+"An index of a column in the data table, by which the table is initially "
+"sorted. The column will be marked with a small arrow indicating the sort "
+"order."
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1043
+msgid "Start page"
+msgstr ""
+
+#: 1_include/4_back_end/31_light_box_option_for_charts.php:1044
+msgid ""
+"The first table page to display. Used only if page is in mode enable/event. "
+msgstr ""
+
+#: 1_include/4_back_end/32_light_box_option.php:11
+#: 1_include/4_back_end/33_light_box_option.php:11
+msgid "Select which element you want to edit. "
+msgstr ""
+
+#: 1_include/4_back_end/34_light_box_option_for_sort_charts.php:10
+msgid "Chart type "
+msgstr ""
+
+#: 1_include/4_back_end/34_light_box_option_for_sort_charts.php:11
+msgid "Select chart type. "
+msgstr ""
+
+#: 1_include/4_back_end/34_light_box_option_for_sort_charts.php:22
+msgid "Chart title "
+msgstr ""
+
+#: 1_include/4_back_end/34_light_box_option_for_sort_charts.php:23
+msgid "Set chart title. "
+msgstr ""
+
+#: 1_include/4_back_end/400_echo_terminal_bottons_for_opened_browser_setting.php:9
+msgid "close"
+msgstr ""
+
+#: 1_include/4_back_end/400_echo_terminal_bottons_for_opened_browser_setting.php:12
+msgid "Save "
+msgstr ""
+
+#: 1_include/4_back_end/400_echo_terminal_bottons_for_opened_browser_setting.php:15
+msgid "Save and close"
+msgstr ""
+
+#: 1_include/4_back_end/400_echo_terminal_bottons_for_opened_browser_setting.php:18
+msgid "reset to default"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:10
+msgid "Include posts based on statuses"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:11
+msgid " If you disable all \"publish\" will be used."
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:27
+msgid "Exclude value from charts if its length more than \"x\""
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:28
+msgid ""
+"If length of text value is more than \"this\" do not include it in charts. "
+"\"0\" or empty mean 1000."
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:31
+msgid "For basic post parameter"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:35
+#: 1_include/4_back_end/5_general_setting.php:53
+#: 1_include/4_back_end/5_general_setting.php:71
+#: 1_include/4_back_end/5_general_setting.php:107
+#: 1_include/4_back_end/5_general_setting.php:144
+#: 1_include/4_back_end/5_general_setting.php:177
+msgid "For taxonomies "
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:39
+#: 1_include/4_back_end/5_general_setting.php:75
+#: 1_include/4_back_end/5_general_setting.php:93
+msgid "For custom fields"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:45
+msgid "Exclude value from charts if rpeated less than \"x\""
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:46
+msgid ""
+"If repetition of a value is less than \"this\" do not show it in charts.  "
+"\"0\" or empty mean no restriction."
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:49
+#: 1_include/4_back_end/5_general_setting.php:67
+#: 1_include/4_back_end/5_general_setting.php:85
+#: 1_include/4_back_end/5_general_setting.php:103
+#: 1_include/4_back_end/5_general_setting.php:135
+#: 1_include/4_back_end/5_general_setting.php:168
+msgid "For basic post parameter "
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:57
+#: 1_include/4_back_end/5_general_setting.php:111
+#: 1_include/4_back_end/5_general_setting.php:153
+#: 1_include/4_back_end/5_general_setting.php:186
+msgid "For custom fields "
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:63
+msgid "Hide chart if its items less than \"x\" in first load"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:64
+msgid ""
+"If chart items less than \"this\" hide the chart .  \"0\" or empty mean no "
+"restriction."
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:81
+msgid "Hide chart if its items less than \"x\" always"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:82
+msgid ""
+"If chart items less than \"this\" hide the chart .  \"0\" or empty mean no "
+"restriction. "
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:89
+msgid "For taxonomies"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:99
+msgid "Hide chart items more than \"x\""
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:100
+msgid ""
+"If chart items more than \"this\"  hide Surpluses .  \"0\" or empty mean "
+"1000. "
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:117
+msgid "Alternative for empty values "
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:118
+msgid ""
+"If a value is empty replace it with the following text . this text most be "
+"unique otherwise it cause some inaccuracy in a chart that have same text as "
+"item . "
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:124
+msgid "Alternative for one space values"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:125
+msgid ""
+"If a value is \"one space\" replace it with the following text . this text "
+"most be unique otherwise it cause some inaccuracy in a chart that have same "
+"text as item."
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:131
+msgid "Exclude \"empty_value item\" form the charts"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:132
+msgid "If a chart contains \"empty_value item\" exclude it from the chart"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:164
+msgid "Exclude \"one_space item\" form the charts"
+msgstr ""
+
+#: 1_include/4_back_end/5_general_setting.php:165
+msgid "If a chart contains \"one_space item\" exclude it from the chart"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:9
+msgid "Edit data browser box "
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:22
+msgid "Navigation path section"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:35
+msgid "Chart section box style"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:48
+msgid "single chart box style"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:61
+msgid "Post list box"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:74
+msgid "Post list item box"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:87
+msgid "Post list pagination"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:100
+msgid "Pagination box"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:114
+msgid "single post light box"
+msgstr ""
+
+#: 1_include/4_back_end/6_edit_boxes.php:127
+msgid "single post box"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:11
+msgid "Single query wrapper"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:24
+msgid "First static (all count)"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:37
+msgid "Group element"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:50
+msgid "The sign after group element"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:63
+msgid "Dimension element"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:76
+msgid "The sign after dimension element"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:89
+msgid "Value element"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:102
+msgid "Number element"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:115
+msgid "Sign before and after number element"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:128
+msgid "Delete sign"
+msgstr ""
+
+#: 1_include/4_back_end/6_navigation_path.php:141
+msgid "Nav path hover"
+msgstr ""
+
+#: 1_include/4_back_end/7_chart_section.php:16
+msgid "Sort the charts"
+msgstr ""
+
+#: 1_include/4_back_end/7_chart_section.php:17
+msgid "Drag and drape your favorit source to the box . "
+msgstr ""
+
+#: 1_include/4_back_end/8_post_list.php:13
+msgid "Post list item content"
+msgstr ""
+
+#: 1_include/4_back_end/8_post_list.php:14
+#: 1_include/4_back_end/9_single_post.php:13
+msgid "Drag and drape your favorit content to the box for post list items"
+msgstr ""
+
+#: 1_include/4_back_end/9_single_post.php:12
+msgid "single post content"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:8
+msgctxt "ws-data-browser"
+msgid "browsers"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:9
+msgctxt "ws-data-browser"
+msgid "browser"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:10
+#: 1_include/4_back_end/base/1_post_types.php:11
+msgid "browsers"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:12
+msgid "Parent Item:"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:13
+msgid "All browsers"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:14
+msgid "Add New browser"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:15
+msgid "Add New"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:16
+msgid "New browser"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:17
+msgid "Edit browser"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:18
+msgid "Update browser"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:19
+msgid "View browser"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:20
+msgid "Search browsers"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:21
+msgid "Not found"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:22
+msgid "Not found in Trash"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:25
+msgid "ws_db_browser_screens_cpt"
+msgstr ""
+
+#: 1_include/4_back_end/base/1_post_types.php:26
+msgid "browser screens Post Type Description"
+msgstr ""
+
+#: 1_include/5_front_end/9_post_list.php:34
+msgid " NO Post Founded "
+msgstr ""
+
+#: 1_include/5_front_end/9_post_list.php:35
+msgid "You most review the default queries . "
+msgstr ""
+
+#: 1_include/condition_control_center.php:191
+msgid "Values"
+msgstr ""
+
+#: 1_include/condition_control_center.php:310
+msgid "General"
+msgstr ""
+
+#: 1_include/condition_control_center.php:311
+msgid "Edit Charts"
+msgstr ""
+
+#: 1_include/condition_control_center.php:312
+msgid "Edit Boxes"
+msgstr ""
+
+#: 1_include/condition_control_center.php:313
+msgid "Navigation Section "
+msgstr ""
+
+#: 1_include/condition_control_center.php:314
+msgid "Chart Section "
+msgstr ""
+
+#: 1_include/condition_control_center.php:315
+msgid "Post List Section"
+msgstr ""
+
+#: 1_include/condition_control_center.php:316
+msgid "single Post Section"
+msgstr ""
+
+#: 1_include/condition_control_center.php:317
+msgid "Default Query"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WordPress data browser pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://codecanyon.net/user/widesoft"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "WordPress data browser pro by wide soft"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "wide soft"
+msgstr ""

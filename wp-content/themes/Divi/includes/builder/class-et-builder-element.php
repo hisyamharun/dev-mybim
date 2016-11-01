@@ -354,7 +354,7 @@ class ET_Builder_Element {
 		$post_id = apply_filters( 'et_is_ab_testing_active_post_id', get_the_ID() );
 
 		// If the section/row/module is disabled, hide it
-		if ( isset( $this->shortcode_atts['disabled'] ) && 'on' === $this->shortcode_atts['disabled'] && ! et_fb_enabled() ) {
+		if ( isset( $this->shortcode_atts['disabled'] ) && 'on' === $this->shortcode_atts['disabled'] && ! $et_fb_processing_shortcode_object ) {
 			return;
 		}
 
@@ -560,7 +560,11 @@ class ET_Builder_Element {
 					$global_content_processed = $global_content;
 				}
 
-				$global_atts = shortcode_parse_atts( $global_content_processed );
+				// Ensuring that all possible attributes exist to avoid remaining child attributes being used by global parents' attributes
+				$global_atts = wp_parse_args(
+					shortcode_parse_atts( $global_content_processed ),
+					array_map( '__return_empty_string', $this->whitelisted_fields )
+				);
 
 				foreach( $this->shortcode_atts as $single_attr => $value ) {
 					if ( isset( $global_atts[$single_attr] ) ) {
@@ -868,7 +872,7 @@ class ET_Builder_Element {
 					'tab_slug' => 'advanced',
 				);
 
-				if ( et_fb_is_enabled() ) {
+				if ( et_fb_is_enabled() || et_fb_is_retrieving_builder_data() ) {
 					$additional_options["{$option_name}_font_size_last_edited"] = array(
 						'type'     => 'skip',
 						'tab_slug' => 'advanced',
@@ -918,7 +922,7 @@ class ET_Builder_Element {
 					'tab_slug' => 'advanced',
 				);
 
-				if ( et_fb_is_enabled() ) {
+				if ( et_fb_is_enabled() || et_fb_is_retrieving_builder_data() ) {
 					$additional_options["{$option_name}_letter_spacing_last_edited"] = array(
 						'type'     => 'skip',
 						'tab_slug' => 'advanced',
@@ -958,7 +962,7 @@ class ET_Builder_Element {
 					'tab_slug' => 'advanced',
 				);
 
-				if ( et_fb_is_enabled() ) {
+				if ( et_fb_is_enabled() || et_fb_is_retrieving_builder_data() ) {
 					$additional_options["{$option_name}_line_height_last_edited"] = array(
 						'type'     => 'skip',
 						'tab_slug' => 'advanced',
@@ -1117,7 +1121,7 @@ class ET_Builder_Element {
 				$additional_options['custom_margin'] = array_merge( $additional_options['custom_margin'], $this->advanced_options['custom_margin_padding']['custom_margin'] );
 			}
 
-			if ( et_fb_is_enabled() ) {
+			if ( et_fb_is_enabled() || et_fb_is_retrieving_builder_data() ) {
 				$additional_options["custom_margin_last_edited"] = array(
 					'type'     => 'skip',
 					'tab_slug' => 'advanced',
@@ -1167,7 +1171,7 @@ class ET_Builder_Element {
 				$additional_options['custom_padding'] = array_merge( $additional_options['custom_padding'], $this->advanced_options['custom_margin_padding']['custom_padding'] );
 			}
 
-			if ( et_fb_is_enabled() ) {
+			if ( et_fb_is_enabled() || et_fb_is_retrieving_builder_data() ) {
 				$additional_options["custom_padding_last_edited"] = array(
 					'type'     => 'skip',
 					'tab_slug' => 'advanced',
@@ -1450,6 +1454,21 @@ class ET_Builder_Element {
 				'type'     => 'skip',
 				'tab_slug' => 'advanced',
 			);
+
+			if ( et_fb_is_enabled() || et_fb_is_retrieving_builder_data() ) {
+				$additional_options["{$option_name}_text_size_last_edited"] = array(
+					'type'     => 'skip',
+					'tab_slug' => 'advanced',
+				);
+				$additional_options["{$option_name}_letter_spacing_last_edited"] = array(
+					'type'     => 'skip',
+					'tab_slug' => 'advanced',
+				);
+				$additional_options["{$option_name}_letter_spacing_hover_last_edited"] = array(
+					'type'     => 'skip',
+					'tab_slug' => 'advanced',
+				);
+			}
 		}
 
 		$this->_additional_fields_options = array_merge( $this->_additional_fields_options, $additional_options );
@@ -1626,7 +1645,7 @@ class ET_Builder_Element {
 		}
 
 		$output = sprintf(
-			'%6$s<div class="et-pb-option%1$s%2$s%3$s%8$s%9$s"%4$s tabindex="-1">%5$s</div> <!-- .et-pb-option -->%7$s',
+			'%6$s<div class="et-pb-option et-pb-option--%10$s%1$s%2$s%3$s%8$s%9$s"%4$s tabindex="-1">%5$s</div> <!-- .et-pb-option -->%7$s',
 			( ! empty( $field['type'] ) && 'tiny_mce' == $field['type'] ? ' et-pb-option-main-content' : '' ),
 			( ( $depends || isset( $field['depends_default'] ) ) ? ' et-pb-depends' : '' ),
 			( ! empty( $field['type'] ) && 'hidden' == $field['type'] ? ' et_pb_hidden' : '' ),
@@ -1635,7 +1654,8 @@ class ET_Builder_Element {
 			"\t",
 			"\n\n\t\t",
 			( ! empty( $field['type'] ) && 'hidden' == $field['type'] ? esc_attr( sprintf( ' et-pb-option-%1$s', $field['name'] ) ) : '' ),
-			( ! empty( $field['option_class'] ) ? ' ' . $field['option_class'] : '' )
+			( ! empty( $field['option_class'] ) ? ' ' . $field['option_class'] : '' ),
+			isset( $field['type'] ) ? esc_attr( $field['type'] ) : ''
 		);
 
 		return $output;
@@ -1662,7 +1682,7 @@ class ET_Builder_Element {
 			$output = $field_el;
 		} else {
 			$output = sprintf(
-				'%3$s<div class="et-pb-option-container%5$s">
+				'%3$s<div class="et-pb-option-container et-pb-option-container--%6$s%5$s">
 					%1$s
 					%2$s
 				%4$s</div> <!-- .et-pb-option-container -->',
@@ -1670,7 +1690,8 @@ class ET_Builder_Element {
 				$description,
 				"\n\n\t\t\t\t",
 				"\t",
-				( isset( $field['type'] ) && 'custom_css' === $field['type'] ? ' et-pb-custom-css-option' : '' )
+				( isset( $field['type'] ) && 'custom_css' === $field['type'] ? ' et-pb-custom-css-option' : '' ),
+				isset( $field['type'] ) ? esc_attr( $field['type'] ) : ''
 			);
 		}
 
@@ -1813,6 +1834,14 @@ class ET_Builder_Element {
 		}
 
 		switch( $field['type'] ) {
+			case 'warning':
+				$field_el = sprintf(
+					'<div class="et-pb-option-warning" data-name="%2$s" data-display_if="%3$s">%1$s</div>',
+					html_entity_decode( esc_html( $field['message'] ) ),
+					esc_attr( $field['name'] ),
+					esc_attr( $field['display_if'] )
+				);
+				break;
 			case 'tiny_mce':
 				if ( ! empty( $field['tiny_mce_html_mode'] ) ) {
 					$field['class'] .= ' html_mode';
@@ -2604,6 +2633,7 @@ class ET_Builder_Element {
 		$fields['locked'] = '';
 		$fields['template_type'] = '';
 		$fields['inline_fonts'] = '';
+		$fields['collapsed'] = '';
 
 		return $fields;
 	}
